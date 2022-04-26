@@ -77,7 +77,7 @@ a{
 
 #main{
     width:100%;
-    height:3000px;
+    height:2910px;
     position:relative;
 }
 
@@ -190,4 +190,14 @@ a{
         transform:translateX(-50%);
         background-color:#DBEEFF;
         box-shadow:0 2px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    #footer{
+        width:100%;
+        height:260px;
+        float:left;
+        left:50%;
+        position:relative;
+        transform:translateX(-50%);
+        background-color:#343434;
     }
