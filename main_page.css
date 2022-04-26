@@ -179,3 +179,15 @@ a{
             background-color:#DBEEFF;
             box-shadow:0 2px 3px rgba(0, 0, 0, 0.3);
         }
+
+    #record{
+        width:1200px;
+        height:680px;
+        float:left;
+        top:480px;
+        left:50%;
+        position:relative;
+        transform:translateX(-50%);
+        background-color:#DBEEFF;
+        box-shadow:0 2px 3px rgba(0, 0, 0, 0.3);
+    }
