@@ -77,7 +77,7 @@ a{
 
 #main{
     width:100%;
-    height:2000px;
+    height:3000px;
     position:relative;
 }
 
@@ -91,7 +91,7 @@ a{
         transform:translateX(-50%);
     }
 
-        #tab_menu li{
+        .tab{
             width:140px;
             height:40px;
             float:left;
@@ -124,7 +124,7 @@ a{
         transform:translateX(-50%);
     }
         #travel{
-            width:180px;
+            width:200px;
             height:640px;
             float:left;
             background-color:#343434;
@@ -156,4 +156,26 @@ a{
             height:160px;
             float:left;
             background-color:#6DB8FF;
+        }
+
+    #custom_travel{
+        width:1200px;
+        height:400px;
+        float:left;
+        top:320px;
+        left:50%;
+        position:relative;
+        transform:translateX(-50%);
+    }
+        #custom_tab{
+            float:left;
+        }
+
+        #custom_contents{
+            width:1200px;
+            height:360px;
+            float:left;
+            position:relative;
+            background-color:#DBEEFF;
+            box-shadow:0 2px 3px rgba(0, 0, 0, 0.3);
         }
