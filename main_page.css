@@ -8,196 +8,69 @@ a{
     text-decoration:none;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 #head{
     width:100%;
-    height:92px;
+    height:100px;
+    box-shadow:0px 1px 10px 2px gray;
     position: relative;
-    background-color:#343434;
+    background-color:#333f32;
 }
-
     #logo{
-        width:50%;
-        height:100%;
+        width:25%;
+        height:100px;
         float:left;
     }
 
-        #logo img{
-            width:84px;
-            height:84px;
-            float:left;
-            margin-left:50%;
-        }
+    #logo img{
+        width:85px;
+        height:42px;
+        float:right;
+        margin-top:25px;
+    }
 
-        #logo p{
-            float:left;
-            margin-left:5%;
-            color:white;
-            font-size:17pt;
-            line-height:92px;
-            letter-spacing:1px;
-            text-shadow:-1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-        }
-
-        #head_menu{
-            width:50%;
-            height:100%;
-            float:left
-        }
-
-            #head_menu ul{
-                margin-left:10%;
-            }
-
-                #head_menu li{
-                    width:100px;
-                    height:92px;
-                    float:left;
-                    color:white;
-                    font-size:12pt;
-                    line-height:92px;
-                    list-style:none;
-                }
-#slide_banner{
-    width:100%;
-    height:560px;
-    position:relative;
-}
-
-    #slide_page{
-        width:100%;
-        height:100%;
+    #head_menu{
+        width:75%;
+        height:100px;
         float:left;
     }
-        .slide_img{
+        #head_menu ul{
             width:100%;
-            height:100%;
-            object-fit:cover;
-            position:absolute;
-        }
-
-#main{
-    width:100%;
-    height:2910px;
-    position:relative;
-}
-
-    #custom{
-        width:1200px;
-        height:400px;
-        float:left;
-        margin-top:120px;
-        left:50%;
-        position:relative;
-        transform:translateX(-50%);
-    }
-
-        .tab{
-            width:140px;
-            height:40px;
+            height:100px;
             float:left;
-            margin-left:15px;
-            font-size:11pt;
-            line-height:40px;
-            text-align:center;
-            list-style:none;
-            position:relative;
-            background-color:#F6FBFF;
-            box-shadow:0 2px 3px rgba(0, 0, 0, 0.3);
+            margin-left:15%;
         }
-
-            .tabs_panel{
-                width:1200px;
-                height:360px;
+            #head_menu ul li{
+                width:100px;
+                height:80px;
                 float:left;
-                position:relative;
-                background-color:#DBEEFF;
-                box-shadow:0 2px 3px rgba(0, 0, 0, 0.3);
+                margin-right:150px;
+                list-style:none;
             }
+                #head_menu ul li a{
+                    width:100%;
+                    height:20px;
+                    float:left;
+                    margin-bottom:10px;
+                    color:#DDD1BB;
+                    font-size:12pt;
+                    text-align:center;
+                    line-height:80px;
+                }
 
-    #travel_book{
-        width:1200px;
-        height:640px;
-        float:left;
-        top:160px;
-        left:50%;
-        position:relative;
-        transform:translateX(-50%);
-    }
-        #travel{
-            width:200px;
-            height:640px;
-            float:left;
-            background-color:#343434;
-        }
+                #head_menu ul li hr{
+                    height:1px;
+                    margin-top:60px;
+                    border:0px;
+                    background-color:#DDD1BB;
+                }
 
-        #night_view{
-            width:1000px;
-            height:160px;
-            float:left;
-            background-color:#EDF7FF;
-        }
-
-        #sea{
-            width:1000px;
-            height:160px;
-            float:left;
-            background-color:#C9E5FF;
-        }
-
-        #building{
-            width:1000px;
-            height:160px;
-            float:left;
-            background-color:#98CDFF;
-        }
-
-        #view{
-            width:1000px;
-            height:160px;
-            float:left;
-            background-color:#6DB8FF;
-        }
-
-    #custom_travel{
-        width:1200px;
-        height:400px;
-        float:left;
-        top:320px;
-        left:50%;
-        position:relative;
-        transform:translateX(-50%);
-    }
-        #custom_tab{
-            float:left;
-        }
-
-        #custom_contents{
-            width:1200px;
-            height:360px;
-            float:left;
-            position:relative;
-            background-color:#DBEEFF;
-            box-shadow:0 2px 3px rgba(0, 0, 0, 0.3);
-        }
-
-    #record{
-        width:1200px;
-        height:680px;
-        float:left;
-        top:480px;
-        left:50%;
-        position:relative;
-        transform:translateX(-50%);
-        background-color:#DBEEFF;
-        box-shadow:0 2px 3px rgba(0, 0, 0, 0.3);
-    }
-
-    #footer{
-        width:100%;
-        height:260px;
-        float:left;
-        left:50%;
-        position:relative;
-        transform:translateX(-50%);
-        background-color:#343434;
-    }
+                #head_menu ul li img{
+                    width:42px;
+                    height:42px;
+                    float:left;
+                    margin-top:25px;
+                }
