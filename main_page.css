@@ -44,10 +44,9 @@ body{
             margin-left:15%;
         }
             #head_menu ul li{
-                width:100px;
-                height:80px;
+                width:200px;
+                height:190px;
                 float:left;
-                margin-right:150px;
                 list-style:none;
             }
                 #head_menu ul li a{
@@ -62,6 +61,7 @@ body{
                 }
 
                 #head_menu ul li hr{
+                    width:84px;
                     height:1px;
                     margin-top:60px;
                     border:0px;
@@ -71,7 +71,7 @@ body{
                 #head_menu ul li img{
                     width:42px;
                     height:42px;
-                    float:left;
+                    float:right;
                     margin-top:25px;
                 }
 #main{
