@@ -158,6 +158,49 @@ body{
                         width:198px;
                         margin-left:83px;
                     }
+    #record{
+        width:100%;
+        height:50%;
+        float:left;
+        position:relative;
+    }
+        .contents{
+            width:250px;
+            height:100%;
+            float:left;
+            top:10%;
+            left:25%;
+            margin-right:20px;
+            position:relative;
+            transform:translate(-50%);
+        }
+            .img{
+                width:250px;
+                height:330px;
+                float:left;
+                position:absolute;
+            }
+
+            .contents a{
+                width:45px;
+                height:20px;
+                float:left;
+                margin-top:295px;
+                margin-left:155px;
+                color:#FFFAE9;
+                font-size:11pt;
+                line-height:20px;
+                position:absolute;
+            }
+
+            .arrow{
+                width:30px;
+                height:30px;
+                float:left;
+                margin-top:290px;
+                margin-left:205px;
+                position:absolute;
+            }
 
 #footer{
     width:100%;
