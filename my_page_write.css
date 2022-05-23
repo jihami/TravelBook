@@ -1,0 +1,393 @@
+*{
+    margin:0 auto;
+    padding:0;
+}
+
+a{
+    color:#333;
+    text-decoration:none;
+}
+
+body{
+    overflow-x: hidden;
+    color:#333F32;
+    background-color:#FFFAE9;
+}
+
+input:focus{
+    outline:none;
+}
+
+#head{
+    width:100%;
+    height:100px;
+    box-shadow:0px 1px 10px 2px gray;
+    position: relative;
+    background-color:#333f32;
+}
+    #logo{
+        width:25%;
+        height:100px;
+        float:left;
+    }
+
+        #logo img{
+            width:85px;
+            height:42px;
+            float:right;
+            margin-top:25px;
+        }
+
+    #head_menu{
+        width:75%;
+        height:100px;
+        float:left;
+    }
+        #head_menu ul{
+            width:100%;
+            height:100px;
+            float:left;
+            margin-left:15%;
+        }
+            #head_menu ul li{
+                width:200px;
+                height:190px;
+                float:left;
+                list-style:none;
+            }
+                #head_menu ul li a{
+                    width:100%;
+                    height:20px;
+                    float:left;
+                    margin-bottom:10px;
+                    color:#DDD1BB;
+                    font-size:12pt;
+                    text-align:center;
+                    line-height:80px;
+                }
+
+                #head_menu ul li hr{
+                    width:84px;
+                    height:1px;
+                    margin-top:60px;
+                    border:0px;
+                    background-color:#DDD1BB;
+                }
+
+                #head_menu ul li img{
+                    width:42px;
+                    height:42px;
+                    float:right;
+                    margin-top:25px;
+                }
+
+#main{
+    width:100%;
+    height:2200px;
+    float:left;
+    position:relative;
+}
+
+    #contents{
+        width:1180px;
+        height:80%;
+        float:left;
+        left:50%;
+        position:relative;
+        transform:translate(-50%);
+    }
+        #title{
+            width:100%;
+            height:50px;
+            float:left;
+            top:130px;
+            left:50%;
+            text-align:center;
+            transform:translate(-50%);
+            position:relative;
+        }
+            #title p{
+                width:100px;
+                height:20px;
+                font-size:12pt;
+                font-weight:bold;
+                text-align:center;
+                margin-bottom:10px;
+            }
+        #write_title{
+            width:100%;
+            height:50px;
+            float:left;
+            margin-bottom:20px;
+            position:relative;
+            background-color:#333f32;
+            box-shadow:1px 2px 5px 1px #ccc7ba;
+        }
+            #input_title{
+                width:90%;
+                height:20px;
+                float:left;
+                margin-top:15px;
+                margin-left:20px;
+                color:#fffae9;
+                font-size:9pt;
+                line-height:20px;
+                border:none;
+                background-color:transparent;
+            }
+
+            #input_title::placeholder{
+                color:#fffae9;
+            }
+
+        #write_menu{
+            width:100%;
+            height:134px;
+            float:left;
+            position:relative;
+            background-color:#FFFAE9;
+            box-shadow:1px 2px 5px 1px #ccc7ba;
+        }
+
+            .menu_item{
+                width:30px;
+                height:70px;
+                float:left;
+                margin-top:15px;
+                margin-right:80px;
+            }
+
+            #book{
+                margin-left:25px;
+            }
+
+            .menu_item img{
+                width:30px;
+                height:30px;
+            }
+
+            .menu_item p{
+                width:30px;
+                height:35px;
+                float:bottom;
+                color:gray;
+                font-size:9pt;
+                text-align:center;
+                line-height:35px;
+            }
+
+        #write_contents{
+            width:100%;
+            height:1000px;
+            float:left;
+            position:relative;
+        }
+            #write_top{
+                width:100%;
+                height:48%;
+                float:left;
+                margin-top:90px;
+                position:relative;
+            }
+                #contents_writing{
+                    width:700px;
+                    height:400px;
+                    float:left;
+                    position:relative;
+                }
+                    #contents_writing form{
+                        position:absolute;
+                        z-index:1;
+                    }
+                        .input_record{
+                            width:275px;
+                            height:340px;
+                            float:left;
+                            margin-top:30px;
+                            font-size:10pt;
+                            resize:none;
+                            border:none;
+                            background-color:transparent;
+                        }
+
+                        textarea:focus{
+                            outline:none;
+                        }
+
+                        #record_write_left{
+                            margin-left:15px;
+                        }
+
+                        #record_write_right{
+                            margin-left:15px;
+                        }
+
+                    #write_background{
+                        width:700px;
+                        height:400px;
+                        float:left;
+                        position:absolute;
+                        filter:drop-shadow(0px 5px 4px #ccc7ba);
+                    }
+
+                #add_page{
+                    width:280px;
+                    height:180px;
+                    float:left;
+                    margin-top:216px;
+                    margin-left:35px;
+                }
+
+        #write_bottom{
+            width:100%;
+            height:52%;
+            float:left;
+            position:relative;
+        }
+            #start_date{
+                width:460px;
+                height:35px;
+                float:left;
+                margin-top:100px;
+                position:relative;
+            }
+
+            #end_date{
+                width:460px;
+                height:35px;
+                float:left;
+                margin-top:100px;
+                position:relative;
+            }
+
+            #start_date{
+                margin-left:17%;
+                margin-right:5%;
+            }
+
+                #write_bottom p {
+                    float:left;
+                    margin-right:15px;
+                    font-size:11pt;
+                    line-height:40px;
+                    color:gray;
+                }
+
+                #write_bottom > div input{
+                    padding-left:10px;
+                }
+
+                .year{
+                    width:120px;
+                    height:35px;
+                    float:left;
+                    margin-right:15px;
+                    border:none;
+                    background-color:#E1D5BF;
+                    box-shadow:0px 2px 5px 1px #b6b5a9;
+                }
+
+                .month{
+                    width:90px;
+                    height:35px;
+                    float:left;
+                    margin-right:15px;
+                    border:none;
+                    background-color:#E1D5BF;
+                    box-shadow:0px 2px 5px 1px #b6b5a9;
+                }
+
+                .day{
+                    width:90px;
+                    height:35px;
+                    float:left;
+                    border:none;
+                    background-color:#E1D5BF;
+                    box-shadow:0px 2px 5px 1px #b6b5a9;
+                }
+
+                input:focus{
+                    outline:none;
+                }
+
+            #save_diary{
+                width:200px;
+                height:35px;
+                float:right;
+                margin-top:65px;
+                position:relative;
+            }
+                #save_diary button{
+                    width:100px;
+                    height:35px;
+                    float:left;
+                    margin-right:10px;
+                    border:none;
+                    background-color:#e1d5bf;
+                    box-shadow:0px 2px 5px 1px #b6b5a9;
+                }
+
+                #save p{
+                    width:80px;
+                    height:35px;
+                    float:left;
+                    margin:0;
+                    color:gray;
+                    font-size:10pt;
+                    text-align:center;
+                    line-height:30px;
+                }
+
+                #privacy{
+                    appearance:none;
+                    width:20px;
+                    height:20px;
+                    float:left;
+                    margin-top:8px;
+                    border:none;
+                    border-radius:50px;
+                    background-color:#E1D5BF;
+                }
+    #menu{
+        width:1200px;
+        height:20%;
+        float:left;
+        left:50%;
+        margin-bottom:80px;
+        position:relative;
+        transform:translate(-50%);
+    }
+        #menu > div{
+            width:280px;
+            height:72px;
+            float:left;
+            margin:100px 10px 0 10px;
+            position:relative;
+            background-color:#F7F0DF;
+            box-shadow:1px 2px 5px 1px #ccc7ba;
+        }
+            .title{
+                width:75px;
+                height:20px;
+                float:left;
+                margin-top:40px;
+                font-size:11pt;
+                text-align:right;
+                line-height:20px;
+            }
+
+            #menu > div img {
+                width: 10px;
+                height: 18px;
+                float: left;
+                margin-top: -18px;
+                margin-left: 250px;
+            }
+
+#footer{
+    width:100%;
+    height:250px;
+    float:left;
+    position:relative;
+    background-color:#333f32;
+}

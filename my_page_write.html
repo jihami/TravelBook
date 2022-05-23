@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MYPAGE_WRITE</title>
+    <link rel="stylesheet" href="my_page_write.css">
+</head>
+<body>
+    <div id="head">
+        <div id="logo">
+            <img src="img/logo.png">
+        </div>
+
+        <div id="head_menu">
+            <ul>
+                <li>
+                    <a href="#" style="color:black;">My page</a>
+                    <hr style="background-color:black;">
+                </li>
+                <li>
+                    <a href="#">Travel</a>
+                    <hr>
+                </li>
+
+                <li style="width:100px;">
+                    <img src="img/user.png">
+                </li>
+
+                <li>
+                    <a href="#" style="text-align:left; line-height:95px; margin-left:10px;">여행하지함</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="width:100%; height:42px;
+                    background-color:rgba(51, 63, 50, 0.48);">
+        <p style="width:220px; height:42px;
+                      float:left; margin-left:19%;
+                      color:#333; font-size:11pt;
+                      text-align:center; line-height:42px;">main > My page > 글쓰기</p>
+    </div>
+
+    <div id="main">
+        <div id="contents">
+            <div id="title">
+                <p>여행 기록하기</p>
+            </div>
+
+            <div id="write_title">
+                <input type="text" name="write_title" id="input_title" placeholder="책의 제목을 입력해주세요">
+            </div>
+
+            <div id="write_menu">
+                <a href="#" class="menu_item" id="book">
+                    <img src="img/write_book.png">
+                    <p>책</p>
+                </a>
+
+                <a href="#" class="menu_item" id="photo">
+                    <img src="img/write_photo.png">
+                    <p>사진</p>
+                </a>
+
+                <a href="#" class="menu_item" id="writing">
+                    <img src="img/write_writing.png">
+                    <p>글</p>
+                </a>
+
+                <hr style="margin-top:87px;">
+            </div>
+
+            <div id="write_contents">
+                <div id="write_top">
+                    <div id="contents_writing">
+                        <form>
+                            <div style="width:1px; height:17px;
+                             float:left; margin-top:30px;
+                             margin-left:30px;
+                             background-color:#000000;"></div>
+                            <textarea type="text" name="record_write_left" class="input_record" id="record_write_left" placeholder="여행 기록을 작성해보세요"></textarea>
+
+                            <div style="width:1px; height:17px;
+                             float:left; margin-top:30px;
+                             margin-left:40px;
+                             background-color:#000000;"></div>
+                            <textarea type="text" name="record_write_right" class="input_record" id="record_write_right" placeholder="여행 기록을 작성해보세요"></textarea>
+                        </form>
+
+                        <img src="img/write_background.png" id="write_background">
+                    </div>
+                    <div id="add_page">
+                        <a href="#">
+                            <img src="img/add_page.png">
+                        </a>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div id="write_bottom">
+                    <div id="start_date">
+                        <p>여행 시작일</p>
+                        <input type="text" id="start_year" class="year" name="start_year" placeholder="2022">
+                        <input type="text" id="start_month" class="month" name="start_month" placeholder="05">
+                        <input type="text" id="start_day" class="day" name="start_day" placeholder="23">
+                    </div>
+
+                    <div id="end_date">
+                        <p>여행 최종일</p>
+                        <input type="text" id="end_year" class="year" name="end_year" placeholder="2022">
+                        <input type="text" id="end_month" class="month" name="end_month" placeholder="05">
+                        <input type="text" id="end_day" class="day" name="end_day" placeholder="23">
+                    </div>
+
+                    <div id="save_diary">
+                        <button>등록</button>
+                        <p>privacy</p>
+                        <input type="radio" id="privacy" name="privacy" value="privacy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr style="width:1180px">
+
+        <div id="menu">
+            <div id="write" style="background-color:#E1D5BF;">
+                <p class="title">글쓰기</p>
+                <a href="#">
+                    <img src="img/arrow2.png">
+                </a>
+            </div>
+
+            <div id="record">
+                <p class="title">기록보기</p>
+                <a href="#">
+                    <img src="img/arrow2.png">
+                </a>
+            </div>
+
+            <div id="like">
+                <p class="title">찜행지</p>
+                <a href="#">
+                    <img src="img/arrow2.png">
+                </a>
+            </div>
+
+            <div id="profile_edit">
+                <p class="title">프로필수정</p>
+                <a href="#">
+                    <img src="img/arrow2.png">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>
