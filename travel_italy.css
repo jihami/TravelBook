@@ -118,6 +118,7 @@ textarea:focus{
 
         #title > img {
             float:left;
+            margin-top:35px;
             margin-left:758px;
             position:absolute;
             z-index:1;
@@ -226,7 +227,7 @@ textarea:focus{
             height:718px;
             float:left;
             top:15%;
-            left:50%;
+            left:31%;
             position:relative;
             transform:translate(-50%);
         }
@@ -258,7 +259,7 @@ textarea:focus{
             height:13px;
             float:left;
             margin-top:960px;
-            left:-2%;
+            margin-left:-600px;
             position:relative;
             transform:translate(-50%);
         }
@@ -266,8 +267,8 @@ textarea:focus{
                 width:13px;
                 height:13px;
                 float:left;
-                margin:0 4px 4px 0;
-                border-radius:5px;
+                margin:0 5px 5px 0;
+                border-radius:10px;
                 background-color:#9DA092;
             }
 
@@ -431,8 +432,8 @@ textarea:focus{
                     width:13px;
                     height:13px;
                     float:left;
-                    margin:0 4px 4px 0;
-                    border-radius:5px;
+                    margin:0 5px 5px 0;
+                    border-radius:10px;
                     background-color:#9DA092;
                 }
 
