@@ -1,0 +1,40 @@
+*{
+    border: 1px solid red;
+}
+div{
+    display: inline-block;
+}
+a{
+    color: white;
+    display: inline;
+}
+a:link {
+    color: white;
+    text-decoration: none;
+}
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    color: blue;
+}
+a:active{
+    color: white;
+    color: aqua;
+}
+ul{
+    display: inline-block;
+}
+ul li{
+    color: white;
+    list-style: none;
+    float: right;
+    padding-right: 100px;
+}
+nav{
+    justify-content: center;
+    background-color: #333333;
+    text-align: center;
+}
+
