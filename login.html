@@ -1,32 +1,68 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="755000722799-o2hl132e8puc06j8agslgj66eli1npc3.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+    <!--firebase 필수 요소-->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <!-- jQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 <body>
-<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-<div class="g-signin2" data-onsuccess="onSignIn" ></div>
-<a href="#" onclick="signOut();">Sign out</a>
+<button type="button" onclick="login()" id="login">login</button>
+<button type="button" onclick="logout()" id="logout">logout</button>
 <script>
-    function onSignIn(googleUser) {
-        // Useful data for your client-side scripts:
-        var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log('Full Name: ' + profile.getName());
-        console.log('Given Name: ' + profile.getGivenName());
-        console.log('Family Name: ' + profile.getFamilyName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
+    const firebaseConfig = {
+        apiKey: "AIzaSyAJuLCUy6eWpWgZwfD7_MP4sWMZNv4mlIc",
+        authDomain: "trip-8b70a.firebaseapp.com",
+        projectId: "trip-8b70a",
+        storageBucket: "trip-8b70a.appspot.com",
+        messagingSenderId: "1057567867513",
+        appId: "1:1057567867513:web:0e238f2993fde770138aa8",
+        measurementId: "G-L03PDZHGE9"
+    };
+    firebase.initializeApp(firebaseConfig);
 
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
+    // 구글 인증 기능 추가
+    var provider = new firebase.auth.GoogleAuthProvider();
+
+    function login(){
+        // 인증하기
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+
+            console.log(user)		// 인증 후 어떤 데이터를 받아오는지 확인해보기 위함.
+            console.log(user.displayName)
+            console.log(user.email)
+            document.getElementById("login").innerHTML = user.displayName
+
+        }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+        });
     }
-    function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-            console.log('User signed out.');
+
+    function logout() {
+        firebase.auth().signOut().then(() => {
+            // Sign-out successful.
+            document.getElementById("login").innerHTML = "login"
+        }).catch((error) => {
+            // An error happened.
+            console.log("logoutError")
         });
     }
 </script>

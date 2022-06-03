@@ -4,37 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Welcome to Firebase Hosting</title>
-
-    <!-- update the version number as needed -->
-<!--    <script defer src="/__/firebase/9.8.2/firebase-app-compat.js"></script>-->
-<!--    &lt;!&ndash; include only the Firebase features as you need &ndash;&gt;-->
-<!--    <script defer src="/__/firebase/9.8.2/firebase-auth-compat.js"></script>-->
-<!--    <script defer src="/__/firebase/9.8.2/firebase-database-compat.js"></script>-->
-<!--    <script defer src="/__/firebase/9.8.2/firebase-firestore-compat.js"></script>-->
-<!--    <script defer src="/__/firebase/9.8.2/firebase-functions-compat.js"></script>-->
-<!--    <script defer src="/__/firebase/9.8.2/firebase-messaging-compat.js"></script>-->
-<!--    <script defer src="/__/firebase/9.8.2/firebase-storage-compat.js"></script>-->
-<!--    <script defer src="/__/firebase/9.8.2/firebase-analytics-compat.js"></script>-->
-<!--    <script defer src="/__/firebase/9.8.2/firebase-remote-config-compat.js"></script>-->
-<!--    <script defer src="/__/firebase/9.8.2/firebase-performance-compat.js"></script>
--->
     <!--firebase 필수 요소-->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
-    <!--
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-<!--    <script defer src="/__/firebase/init.js?useEmulator=true"></script>-->
-
     <!-- jQuery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   </head>
   <body>
-
+  <button type="button" onclick="authpop()">popup auth</button>
   <script>
       const firebaseConfig = {
         apiKey: "AIzaSyAJuLCUy6eWpWgZwfD7_MP4sWMZNv4mlIc",
@@ -47,28 +27,8 @@
       };
       firebase.initializeApp(firebaseConfig);
 
-      // 구글 인증 기능 추가
-      var provider = new firebase.auth.GoogleAuthProvider();
 
-      // 인증하기
-      firebase.auth().signInWithPopup(provider).then(function(result) {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-
-        console.log(user)		// 인증 후 어떤 데이터를 받아오는지 확인해보기 위함.
-// ...
-      }).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
-      });
+      }
     </script>
   </body>
 </html>
