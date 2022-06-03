@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>MAIN PAGE</title>
+<!--  <link rel="preconnect" href="https://fonts.googleapis.com">-->
+<!--  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+<!--  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">-->
   <link rel="stylesheet" href="main_page.css">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script src="main.js"></script>
@@ -35,8 +38,78 @@
 
   <div id="main">
     <div id="slide">
-       <div class="slide_img" style="background-color: #D3C3AA99"></div>
-       <div class="slide_img" style="background-color: #333F32"></div>
+       <div class="slide_img" style="background-color: #D3C3AA99">
+         <div id="first_text_btn">
+           <p>
+             Record Your<br>
+             Travels!
+           </p>
+
+           <div style="width:8px; height:135px;
+                       float:left; margin-left:20px;
+                       position:relative; background-color:#333f32;"></div>
+
+           <button id="first_record_btn">
+             go to record&nbsp;
+             <img src="img/arrow4.png">
+           </button>
+         </div>
+
+         <div id="first_img">
+           <div class="img" style="margin-left:60px;">
+             <img src="img/slide_1/img1.png" style="margin-top:25px; margin-left:15px">
+             <div class="img_border" style="margin-top:37px;"></div>
+             <div class="img_line"></div>
+           </div>
+
+           <div class="img" style="margin-top:265px; margin-left:80px;">
+             <img src="img/slide_1/img2.png" style="margin-top:15px; margin-left:15px;">
+             <div class="img_border"></div>
+             <div class="img_line" style="margin-top:167px;"></div>
+           </div>
+
+           <div class="img" style="margin-top:563px; margin-left:80px;">
+             <img src="img/slide_1/img3.png" style="margin-top:15px;">
+             <div class="img_border" style="margin-left:15px;"></div>
+             <div class="img_line" style="margin-top:167px;"></div>
+           </div>
+
+           <div class="img" style="margin-top:650px; margin-left:80px;">
+             <img src="img/slide_1/img4.png" style="margin-top:15px;">
+             <div class="img_border" style="margin-left:15px;"></div>
+           </div>
+         </div>
+       </div>
+
+       <div class="slide_img" style="background-color: #333F32">
+         <div id="second_text_btn">
+           <div style="width:8px; height:135px;
+                       float:left; margin-right:20px;
+                       position:relative; background-color:#E1D5BF;"></div>
+
+           <p>
+             happy memories<br>
+             Keep it for a long time.
+           </p>
+
+           <button id="second_record_btn">
+             go to record&nbsp;
+             <img src="img/arrow5.png">
+           </button>
+         </div>
+
+         <div id="second_img">
+           <div class="img" style="margin-top:580px; margin-left:870px; z-index:1">
+             <img src="img/slide_2/img1.png">
+             <div class="img_border" style="width:280px; height:355px; margin-top:15px; margin-left:15px; border:3px solid #E1D5BF;"></div>
+           </div>
+
+           <div class="img" style="margin-top:453px; margin-left:-250px;">
+             <img src="img/slide_2/img2.png" style="margin-top:15px; margin-left:15px;">
+             <div class="img_border" style="width:390px; height:270px; border:3px solid #E1D5BF;"></div>
+           </div>
+         </div>
+       </div>
     </div>
   </div>
 
