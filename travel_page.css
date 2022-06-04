@@ -129,7 +129,7 @@ body{
             margin-left:10px;
             margin-right:10px;
             background-color:#E1D5BF;
-            box-shadow:1px 1px 6px 1px #b4b0a2;
+            box-shadow:1px 1px 6px 1px rgba(0, 0, 0, 0.25);
         }
             .country a{
                 width:130px;
@@ -158,6 +158,42 @@ body{
 
         #europe{
             margin-left:19%;
+        }
+
+        #europe:hover{
+            width:188px;
+            height:455px;
+            box-shadow:8px 8px 10px 1px rgba(0, 95, 199, 0.18);
+        }
+
+        #north_america:hover{
+            width:188px;
+            height:455px;
+            box-shadow:8px 8px 10px 1px rgba(255, 0, 0, 0.18);
+        }
+
+        #south_america:hover{
+            width:188px;
+            height:455px;
+            box-shadow:8px 8px 10px 1px rgba(255, 0, 0, 0.18);
+        }
+
+        #asia:hover{
+            width:188px;
+            height:455px;
+            box-shadow:8px 8px 10px 1px rgba(255, 234, 0, 0.18);
+        }
+
+        #oceania:hover{
+            width:188px;
+            height:455px;
+            box-shadow:8px 8px 10px 1px rgba(11, 93, 0, 0.18);
+        }
+
+        #africa:hover{
+            width:188px;
+            height:455px;
+            box-shadow:8px 8px 10px 1px rgba(0, 0, 0, 0.18);
         }
 
 #footer{

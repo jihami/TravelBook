@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>MYPAGE_FAVORITE</title>
     <link rel="stylesheet" href="my_page_favorite.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="my_page_favorite.js"></script>
 </head>
 <body>
     <div id="head">
@@ -53,10 +55,21 @@
             </div>
 
             <ul id="category">
-                <li id="change">카테고리 변경</li>
-                <li class="option">&nbsp;&nbsp;&nbsp;&nbsp;최근 순</li>
-                <li class="option">&nbsp;&nbsp;&nbsp;&nbsp;초성 순</li>
-                <li class="option">&nbsp;&nbsp;&nbsp;&nbsp;찜한 순</li>
+                <li class="option" id="main_menu">
+                    <a href="#">&nbsp;&nbsp;카테고리 변경</a>
+
+                    <ul id="sub_menu">
+                        <li class="option">
+                            <a href="#">&nbsp;&nbsp;최근 순</a>
+                        </li>
+                        <li class="option">
+                            <a href="#">&nbsp;&nbsp;초성 순</a>
+                        </li>
+                        <li class="option">
+                            <a href="#">&nbsp;&nbsp;찜한 순</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
 
             <div id="list">
@@ -104,29 +117,29 @@
 
         <div id="menu">
             <div id="write">
-                <p class="title">글쓰기</p>
-                <a href="#">
+                <a href="my_page_write.html">
+                    <p class="title">글쓰기</p>
                     <img src="img/arrow2.png">
                 </a>
             </div>
 
             <div id="record">
-                <p class="title">기록보기</p>
-                <a href="#">
+                <a href="record_france.html">
+                    <p class="title">기록보기</p>
                     <img src="img/arrow2.png">
                 </a>
             </div>
 
             <div id="like" style="background-color:#E1D5BF;">
-                <p class="title">찜행지</p>
-                <a href="#">
+                <a href="my_page_favorite.html">
+                    <p class="title">찜행지</p>
                     <img src="img/arrow2.png">
                 </a>
             </div>
 
             <div id="profile_edit">
-                <p class="title">프로필수정</p>
-                <a href="#">
+                <a href="my_page_edit.html">
+                    <p class="title">프로필수정</p>
                     <img src="img/arrow2.png">
                 </a>
             </div>

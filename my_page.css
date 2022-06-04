@@ -81,6 +81,7 @@ body{
     height:1200px;
     float:left;
     position:relative;
+    background-color:#FFFAE9;
 }
     #profile{
         width:100%;
@@ -182,24 +183,23 @@ body{
             }
 
             .contents a{
-                width:45px;
-                height:20px;
+                width:130px;
+                height:30px;
                 float:left;
-                margin-top:295px;
-                margin-left:155px;
+                margin-top:285px;
+                margin-left:100px;
                 color:#FFFAE9;
                 font-size:11pt;
-                line-height:20px;
+                text-align:right;
+                line-height:30px;
                 position:absolute;
             }
 
             .arrow{
                 width:30px;
                 height:30px;
-                float:left;
-                margin-top:290px;
-                margin-left:205px;
-                position:absolute;
+                float:right;
+                position:relative;
             }
 
 #footer{

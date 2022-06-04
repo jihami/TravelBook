@@ -9,6 +9,10 @@ body{
     background-color:#333f32;
 }
 
+input:focus{
+    outline:none;
+}
+
 #contents{
     width:580px;
     height:700px;
@@ -83,8 +87,14 @@ body{
 
             #button button{
                 float:left;
-                border:1px solid gray;
+                cursor:pointer;
+                border:none;
                 background-color:#e1d5bf;
+            }
+
+            #button button:hover{
+                color:#FFFAE9;
+                background-color:#333f32;
             }
 
             #sing{

@@ -8,7 +8,7 @@
 <!--  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">-->
   <link rel="stylesheet" href="main_page.css">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script src="main.js"></script>
+  <script src="main_page.js"></script>
 </head>
 <body>
   <div id="head">
@@ -49,7 +49,7 @@
                        float:left; margin-left:20px;
                        position:relative; background-color:#333f32;"></div>
 
-           <button id="first_record_btn">
+           <button id="first_record_btn" onclick="location.href='record_france.html'">
              go to record&nbsp;
              <img src="img/arrow4.png">
            </button>
@@ -92,7 +92,7 @@
              Keep it for a long time.
            </p>
 
-           <button id="second_record_btn">
+           <button id="second_record_btn" onclick="location.href='record_france.html'">
              go to record&nbsp;
              <img src="img/arrow5.png">
            </button>
@@ -110,6 +110,39 @@
            </div>
          </div>
        </div>
+    </div>
+
+    <div id="travel_destination">
+      <div id="introduce">
+        <div id="l_content">
+          <div></div>
+          <p id="num">06</p>
+          <img src="img/record_line1.png">
+          <p id="country">France</p>
+        </div>
+
+        <div id="explanation">
+          <img src="img/main/img1.png">
+          <div id="img_back"></div>
+
+          <div id="ex_text">
+            <div class="text_border">
+              <p></p>
+            </div>
+
+            <div class="text_border">
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tourist"></div>
+      <div id="night_view"></div>
+      <div id="building"></div>
+      <button id="more" onclick="location.href='travel_page.html'">
+        more&nbsp;&nbsp;
+        <img src="img/arrow4.png">
+      </button>
     </div>
   </div>
 

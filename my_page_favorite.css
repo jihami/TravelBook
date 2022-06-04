@@ -115,39 +115,47 @@ body{
             float:left;
             margin-top:130px;
             margin-left:70%;
-            color:#fffae9;
-            font-size:11pt;
-            appearance:none;
-            border:none;
-            background-color:#efe7d3;
+            position:relative;
+            z-index:1
         }
 
-            #change{
+            #main_menu{
                 width:127px;
                 height:37px;
-                line-height:37px;
+                float:none;
+                cursor:pointer;
                 list-style:none;
-                color:#333;
-                text-align:center;
                 background-color:#EFE7D3;
             }
 
-            #change:hover{
-                color:#fffae9;
-                background-color:#333F32;
-            }
+                #main_menu a{
+                    color:black;
+                    line-height:37px;
+                }
 
-            .option{
-                width:127px;
-                height:37px;
-                line-height:37px;
-                list-style:none;
-                background-color:#9a9d8f;
-            }
+                    #sub_menu{
+                        width:127px;
+                        height:111px;
+                        display:none;
+                        background-color:#9a9d8f;
+                    }
 
-            .option:hover{
-                background-color:#333F32;
-            }
+                    #sub_menu .option{
+                        width:127px;
+                        height:37px;
+                        cursor:pointer;
+                        list-style:none;
+                        background-color:#9a9d8f;
+                    }
+
+                        #sub_menu .option a{
+                            color:#FFFAE9;
+                            line-height:37px;
+                        }
+
+                    #sub_menu .option:hover{
+                        background-color:#333F32;
+                    }
 
 
         #list{
