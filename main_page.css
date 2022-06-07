@@ -226,7 +226,7 @@ button{
 
         #introduce{
             width:100%;
-            height:1077px;
+            height:1377px;
             float:left;
             position:relative;
         }
@@ -267,10 +267,89 @@ button{
                     margin-top:-25px;
                     margin-left:455px;
                     color:#D3C3AA;
-                    font-size:30pt;
+                    font-size:50pt;
+                    font-family:'Abhaya Libre', serif;
                     text-align:center;
                     line-height:70px;
                 }
+
+            #explanation{
+                width:1180px;
+                height:1337px;
+                margin-top:37px;
+                float:left;
+            }
+
+                #explanation > img{
+                    float:left;
+                    margin-top:150px;
+                    margin-left:240px;
+                    position:relative;
+                    z-index:1;
+                    box-shadow:4px 4px 8px 0px rgba(0, 0, 0, 0.25);
+                }
+
+                #img_back{
+                    width:590px;
+                    height:390px;
+                    float:left;
+                    margin-top:135px;
+                    margin-left:255px;
+                    position:absolute;
+                    background-color:#333f32;
+                    box-shadow:4px 4px 8px 0px rgba(0, 0, 0, 0.25);
+                }
+
+                #ex_text{
+                    width:100%;
+                    height:1084px;
+                    float:left;
+                    position:relative;
+                }
+
+                    .text_border{
+                        width:590px;
+                        float:left;
+                        margin-left:145px;
+                        border:2px solid #333f32;
+                        position:relative;
+                    }
+                        .text_hr{
+                            width:1px;
+                            float:left;
+                            margin-left:30px;
+                            margin-right:20px;
+                            background-color:#333f32;
+                            position:relative;
+                        }
+
+                        .text_border p{
+                            width:535px;
+                            float:left;
+                            color:#333f32;
+                            font-size:11pt;
+                            position:relative;
+                        }
+
+                        #temperatures{
+                            height:60px;
+                            margin-top:70px;
+                        }
+
+                        #precipitation_humidity{
+                            height:60px;
+                            margin-top:20px;
+                        }
+
+                        #sunrise_sunset{
+                            height:80px;
+                            margin-top:20px;
+                        }
+
+                        #getup{
+                            height:160px;
+                            margin-top:40px;
+                        }
 
         #tourist{
             width:100%;
@@ -279,6 +358,45 @@ button{
             position:relative;
         }
 
+            #tourist > div{
+                width:1439px;
+                height:400px;
+                float:left;
+                margin-top:377px;
+                margin-left:481px;
+                position:absolute;
+                background-color:#deceaa;
+            }
+
+            #tourist img{
+                margin-left:370px;
+                float:left;
+                margin-right:30px;
+                position:relative;
+                box-shadow:4px 4px 8px 0px rgba(0, 0, 0, 0.25);
+            }
+
+            .title{
+                width:180px;
+                height:35px;
+                float:left;
+                color:#333f32;
+                font-size:25pt;
+                font-family:'Abhaya Libre', serif;
+                border-bottom:2px solid #333f32;
+                position:relative;
+            }
+
+            #tourist p{
+                width:1000px;
+                height:220px;
+                float:left;
+                margin-top:20px;
+                color:#333f32;
+                font-size:11pt;
+                position:relative;
+            }
+
         #night_view{
             width:100%;
             height:583px;
@@ -286,11 +404,73 @@ button{
             position:relative;
         }
 
+            #night_view div{
+                width:1050px;
+                height:98px;
+                float:left;
+                margin-top:255px;
+                margin-left:870px;
+                position:absolute;
+                background-color:#deceaa;
+            }
+
+            #night_view p{
+                margin-left:770px;
+                margin-bottom:30px;
+                position:relative;
+            }
+
+            #night_view img{
+                position:relative;
+                box-shadow:4px 4px 8px 0px rgba(0, 0, 0, 0.25);
+            }
+
         #building{
             width:100%;
             height:963px;
             float:left;
             position:relative;
+        }
+
+            #building p{
+                margin-left:370px;
+            }
+
+            .build{
+                width:200px;
+                height:550px;
+                float:left;
+                margin-top:25px;
+                margin-right:12px;
+                position:relative;
+            }
+
+                .build_border{
+                    width:180px;
+                    height:530px;
+                    float:left;
+                    margin-top:8px;
+                    border:3px solid white;
+                    position:absolute;
+                }
+
+                .build img{
+                    margin-left:13px;
+                    box-shadow:4px 4px 8px 0px rgba(0, 0, 0, 0.25);
+                }
+
+        #more{
+            width:180px;
+            height:48px;
+            float:right;
+            margin-right:370px;
+            color:white;
+            font-size:20pt;
+            font-family:'Abhaya Libre', serif;
+            border:none;
+            position:relative;
+            background-color:rgba(51, 63, 50, 0.8);
+            box-shadow:4px 4px 8px 0px rgba(0, 0, 0, 0.25);
         }
 
 #footer{

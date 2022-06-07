@@ -5,7 +5,7 @@
   <title>MAIN PAGE</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@800&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="main_page.css">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script src="main_page.js"></script>
@@ -126,19 +126,108 @@
           <div id="img_back"></div>
 
           <div id="ex_text">
-            <div class="text_border">
-              <p></p>
+            <div class="text_border" style="height:330px; margin-top:-50px;">
+              <div class="text_hr" style="height:33px; margin-top:93px;"></div>
+              <p id="temperatures">#기온<br>
+                 6월 파리의 평균 기온은 17도이고, 평균 최저 기온은 12도, 평균 최고 기온은 21도로<br>
+                 일년 중 3번째로 따뜻한 달입니다.
+              </p>
+
+              <div class="text_hr" style="height:33px; margin-top:43px;"></div>
+              <p id="precipitation_humidity">
+                #강수 및 습도<br>
+                6월 파리의 평군 총 강수량은 57mm이며, 한 달 중 13일 비 예보가 있지만<br>
+                강수량이 많지 않아 걱정하지 않아도 됩니다. 이 달의 평균 습도는 75%입니다.
+              </p>
+
+              <div class="text_hr" style="height:47px; margin-top:35px;"></div>
+              <p id="sunrise_sunset">
+                #일출 및 일몰 시간
+                6월 파리의 일출 시간은 오전 05:46 ~ 오전 05:51이며<br>
+                일몰 시간은 오후 21:45 ~ 오후 21:57입니다.<br>
+                6월 말로 갈 수록 일몰 시간이 늦어집니다.
+              </p>
             </div>
 
-            <div class="text_border">
-              <p></p>
+            <div class="text_border" style="height:230px; margin-top:30px;">
+              <div class="text_hr" style="height:123px; margin-top:73px;"></div>
+              <p id="getup">
+                #추천 옷차림<br>
+                맨투맨, 니트와 같이 소매가 긴 티셔츠, 긴바지, 가벼운 운동화, 모자 , 선글라스, 외투<br><br>
+
+                6월 파리는 낮에는 따땃하고 아침, 저녁으로는 쌀쌀함을 느낄 수 있습니다.<br>
+                맨투맨, 니트 등 소매가 긴 티셔츠, 긴바지, 가벼운 운동화 등<br>
+                한국의 봄, 가을철 의류를 준비해야 합니다.<br>
+                아침, 저녁으로 떨어지는 기온에 대비하여 외투를 준비하고 강한 자외선으로부터<br>
+                피부와 눈을 보호하기 위한 모자, 선글라스를 준비한다면 도움이 될 것입니다.
+              </p>
             </div>
           </div>
         </div>
       </div>
-      <div id="tourist"></div>
-      <div id="night_view"></div>
-      <div id="building"></div>
+
+      <div id="tourist">
+        <div></div>
+        <img src="img/main/img2.png">
+
+        <label class="title">
+          Paris
+        </label>
+
+        <p>
+          #루브르 박물관<br>
+          세계에서 가장 크고 가장 많은 방문객이 찾아오는 루브르 박물관은 파리에서 가장 먼저 가봐야 할 곳입니다.<br>
+          수많은 세계 문화 유물과 르네상스, 바로크 양식의 미술품이 전시되어 있는 곳입니다.<br><br>
+
+          #에펠탑<br>
+          에펠탑에는 직접 올라가볼 수 있으며, 야경에는 더웃 멋있는 풍경을 볼 수 있습니다.<br><br>
+
+          #개선문
+          나폴레옹이 오스텔리츠 전투에서 승리 후 승리를 기념하기 위해 세운 개선물은<br>
+          오늘날 파리를 상징하는 또 다른 렌드마크가 됐습니다.<br>
+          개선물은 보는 것으로도 의미가 있지만 개선물 정산에 올라서면 파리 시내 전망을 내려다 볼 수 있습니다.
+        </p>
+      </div>
+
+      <div id="night_view">
+        <div></div>
+
+        <p class="title">Night view</p>
+
+        <img src="img/main/view1.png" style="margin-left:770px; margin-right:18px;">
+        <img src="img/main/view2.png">
+      </div>
+
+      <div id="building">
+        <div style="width:1050px; height:375px;
+                float:left; margin-top:288px;
+                position:absolute; background-color:#deceaa;"></div>
+
+        <p class="title">Building</p>
+
+        <div style="width:100%; height:550px; float:left; position:relative;">
+          <div class="build" style="margin-left:362px;">
+            <div class="build_border"></div>
+            <img src="img/main/bulid1.png">
+          </div>
+
+          <div class="build">
+            <div class="build_border"></div>
+            <img src="img/main/bulid2.png">
+          </div>
+
+          <div class="build">
+            <div class="build_border"></div>
+            <img src="img/main/bulid3.png">
+          </div>
+
+          <div class="build">
+            <div class="build_border"></div>
+            <img src="img/main/bulid4.png">
+          </div>
+        </div>
+      </div>
+
       <button id="more" onclick="location.href='travel_page.html'">
         more&nbsp;&nbsp;
         <img src="img/arrow4.png">
