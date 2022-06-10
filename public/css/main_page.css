@@ -8,7 +8,6 @@ a{
     color:#333;
     text-decoration:none;
 }
-
 body{
     overflow-x: hidden;
 }
@@ -79,6 +78,7 @@ button{
                     float:right;
                     margin-top:25px;
                 }
+
 #main{
     width:100%;
     height:5246px;

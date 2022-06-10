@@ -7,9 +7,64 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@800&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main_page.css">
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script src="js/main_page.js"></script>
 </head>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAJuLCUy6eWpWgZwfD7_MP4sWMZNv4mlIc",
+    authDomain: "trip-8b70a.firebaseapp.com",
+    projectId: "trip-8b70a",
+    storageBucket: "trip-8b70a.appspot.com",
+    messagingSenderId: "1057567867513",
+    appId: "1:1057567867513:web:0e238f2993fde770138aa8",
+    measurementId: "G-L03PDZHGE9"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+  // 구글 인증 기능 추가
+  var provider = new firebase.auth.GoogleAuthProvider();
+
+  function login(){
+    // 인증하기
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      var token = result.credential.accessToken;
+      // The signed-in user info.
+      var user = result.user;
+
+      console.log(user)		// 인증 후 어떤 데이터를 받아오는지 확인해보기 위함.
+      console.log(user.displayName)
+      console.log(user.email)
+      document.getElementById("login").innerHTML = user.displayName
+
+    }).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+    });
+  }
+
+  function logout() {
+    firebase.auth().signOut().then(() => {
+      // Sign-out successful.
+      document.getElementById("login").innerHTML = "login"
+    }).catch((error) => {
+      // An error happened.
+      console.log("logoutError")
+    });
+  }
+</script>
 <body>
   <div id="head">
     <div id="logo">
@@ -30,12 +85,13 @@
           <img src="../img/user.png">
         </li>
         <li>
-          <a href="#" style="text-align:left; line-height:95px; margin-left:10px;">여행하지함</a>
+<!--          <div onclick="login()"><a href="#" style="text-align:left; line-height:95px; margin-left:10px;" id="login">Login</a></div>-->
+          <a href="#" style="text-align:left; line-height:95px; margin-left:10px;" id="login"  onclick="login()">Login</a>
+          <a href="#" style="text-align:left; line-height:95px; margin-left:10px;" id="logout" onclick="logout()">Logout</a>
         </li>
       </ul>
     </div>
   </div>
-
   <div id="main">
     <div id="slide">
        <div class="slide_img" style="background-color: #D3C3AA99">
