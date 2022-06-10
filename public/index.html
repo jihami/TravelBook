@@ -25,6 +25,7 @@
     appId: "1:1057567867513:web:0e238f2993fde770138aa8",
     measurementId: "G-L03PDZHGE9"
   };
+
   firebase.initializeApp(firebaseConfig);
 
   // 구글 인증 기능 추가
@@ -43,6 +44,15 @@
       console.log(user.email)
       document.getElementById("login").innerHTML = user.displayName
 
+      // 로그인 완료 시 로그아웃 버튼 보이기
+      $(function(){
+        $('#logout').show();
+      })
+
+      // 세션에 email 사용하여 저장
+      sessionStorage.setItem("email", user.email)
+      sessionStorage.setItem("name", user.displayName)
+
     }).catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
@@ -59,11 +69,32 @@
     firebase.auth().signOut().then(() => {
       // Sign-out successful.
       document.getElementById("login").innerHTML = "login"
+
+      // 로그아웃 시 버튼 숨기기
+      $(function(){
+        $('#logout').hide();
+      })
+
+      // 로그아웃 시 세션 삭제
+      sessionStorage.removeItem("email")
+      sessionStorage.removeItem("name")
     }).catch((error) => {
       // An error happened.
       console.log("logoutError")
     });
+
   }
+
+  // 세션이 있다면 로그인 상태 유지
+  $(function (){
+    if(sessionStorage.length != 0){
+      document.getElementById('login').innerHTML = sessionStorage.getItem("name")
+
+      $(function(){
+        $('#logout').show();
+      })
+    }
+  })
 </script>
 <body>
   <div id="head">
@@ -86,8 +117,8 @@
         </li>
         <li>
 <!--          <div onclick="login()"><a href="#" style="text-align:left; line-height:95px; margin-left:10px;" id="login">Login</a></div>-->
-          <a href="#" style="text-align:left; line-height:95px; margin-left:10px;" id="login"  onclick="login()">Login</a>
-          <a href="#" style="text-align:left; line-height:95px; margin-left:10px;" id="logout" onclick="logout()">Logout</a>
+          <a href="#" style="text-align:left; line-height:95px; margin-left:10px; position:relative;" id="login"  onclick="login()">Login</a>
+          <a href="#" style="text-align:left; line-height:95px; margin-left:-90px; position:absolute; display:none;" id="logout" onclick="logout()">Logout</a>
         </li>
       </ul>
     </div>

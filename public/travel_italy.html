@@ -7,11 +7,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/travel_italy.css">
+    <script>
+        sessionStorage.getItem("email")
+        sessionStorage.getItem("name")
+    </script>
 </head>
 <body>
 <div id="head">
     <div id="logo">
-        <a href="main_page.html"><img src="../img/logo.png"></a>
+        <a href="index.html"><img src="../img/logo.png"></a>
     </div>
 
     <div id="head_menu">
@@ -30,7 +34,7 @@
             </li>
 
             <li>
-                <a href="#" style="text-align:left; line-height:95px; margin-left:10px;">여행하지함</a>
+                <a href="#" id="user" style="text-align:left; line-height:95px; margin-left:10px;">여행하지함</a>
             </li>
         </ul>
     </div>
