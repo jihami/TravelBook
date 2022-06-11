@@ -1,16 +1,3 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyAJuLCUy6eWpWgZwfD7_MP4sWMZNv4mlIc",
-    authDomain: "trip-8b70a.firebaseapp.com",
-    projectId: "trip-8b70a",
-    storageBucket: "trip-8b70a.appspot.com",
-    messagingSenderId: "1057567867513",
-    appId: "1:1057567867513:web:0e238f2993fde770138aa8",
-    measurementId: "G-L03PDZHGE9"
-};
-
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-
 // 구글 인증 기능 추가
 var provider = new firebase.auth.GoogleAuthProvider();
 
@@ -18,7 +5,7 @@ function login(){
     // 인증하기
     firebase.auth().signInWithPopup(provider).then(function(result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential.accessToken;
+        // var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
 
@@ -41,16 +28,14 @@ function login(){
         success()
         //닉네임 체크
         function success() { //저장완료시 결과페이지로 넘어가도록
-            // await db.collection(email).doc(email).add({"name":name,"email":email}); // 문서를 하나 더 만듦
-            db.collection(email).doc(email).set({"name":name,"email":email, info : " "}); // 내용을 덮어씀
-            db.collection(email).get().then((data)=>{
-                data.forEach((doc)=>{
-                    // console.log(doc.data().email)
-                    if (doc.data().info == " "){
-                        location.href = "login_info.html";
-                    }
-                })
-            })
+            // db.collection(email).doc(email).add({"name":name,"email":email, info : 0}); // 내용을 하나더 만듦
+            db.collection(email).doc(email).set({"name":name,"email":email}); // 내용을 덮어씀
+            db.collection('w2027@e-mirim.hs.kr').get().then(snap => {
+                if (snap.size <= 1){
+                    location.href = "login_info.html";
+                }
+                console.log(snap.size)
+            });
         }
     })//.catch(function(error) {
     //     // Handle Errors here.
@@ -67,7 +52,7 @@ function login(){
 function logout() {
     firebase.auth().signOut().then(() => {
         // Sign-out successful.
-        document.getElementById("login").innerHTML = "login"
+        document.getElementById("login").innerHTML = "Login"
 
         // 로그아웃 시 버튼 숨기기
         $(function(){
@@ -77,16 +62,17 @@ function logout() {
         // 로그아웃 시 세션 삭제
         sessionStorage.removeItem("email")
         sessionStorage.removeItem("name")
-    }).catch((error) => {
-        // An error happened.
-        console.log("logoutError")
-    });
+    })//.catch((error) => {
+    //     // An error happened.
+    //     console.log("logoutError")
+    // });
 
 }
 
 // 세션이 있다면 로그인 상태 유지
 $(function (){
-    if(sessionStorage.length != 0){
+    len = sessionStorage.length
+    if(len !== 0){
         document.getElementById('login').innerHTML = sessionStorage.getItem("name")
 
         $(function(){
