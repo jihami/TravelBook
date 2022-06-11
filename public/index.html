@@ -15,313 +15,232 @@
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script src="js/main_page.js"></script>
 </head>
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyAJuLCUy6eWpWgZwfD7_MP4sWMZNv4mlIc",
-    authDomain: "trip-8b70a.firebaseapp.com",
-    projectId: "trip-8b70a",
-    storageBucket: "trip-8b70a.appspot.com",
-    messagingSenderId: "1057567867513",
-    appId: "1:1057567867513:web:0e238f2993fde770138aa8",
-    measurementId: "G-L03PDZHGE9"
-  };
-
-  firebase.initializeApp(firebaseConfig);
-
-  // 구글 인증 기능 추가
-  var provider = new firebase.auth.GoogleAuthProvider();
-
-  function login(){
-    // 인증하기
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      var token = result.credential.accessToken;
-      // The signed-in user info.
-      var user = result.user;
-
-      console.log(user)		// 인증 후 어떤 데이터를 받아오는지 확인해보기 위함.
-      console.log(user.displayName)
-      console.log(user.email)
-      document.getElementById("login").innerHTML = user.displayName
-
-      // 로그인 완료 시 로그아웃 버튼 보이기
-      $(function(){
-        $('#logout').show();
-      })
-
-      // 세션에 email 사용하여 저장
-      sessionStorage.setItem("email", user.email)
-      sessionStorage.setItem("name", user.displayName)
-
-    }).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
-    });
-  }
-
-  function logout() {
-    firebase.auth().signOut().then(() => {
-      // Sign-out successful.
-      document.getElementById("login").innerHTML = "login"
-
-      // 로그아웃 시 버튼 숨기기
-      $(function(){
-        $('#logout').hide();
-      })
-
-      // 로그아웃 시 세션 삭제
-      sessionStorage.removeItem("email")
-      sessionStorage.removeItem("name")
-    }).catch((error) => {
-      // An error happened.
-      console.log("logoutError")
-    });
-
-  }
-
-  // 세션이 있다면 로그인 상태 유지
-  $(function (){
-    if(sessionStorage.length != 0){
-      document.getElementById('login').innerHTML = sessionStorage.getItem("name")
-
-      $(function(){
-        $('#logout').show();
-      })
-    }
-  })
-</script>
 <body>
-  <div id="head">
-    <div id="logo">
-      <a href="index.html"><img src="../img/logo.png"></a>
-    </div>
-
-    <div id="head_menu">
-      <ul>
-        <li>
-          <a href="my_page.html">My page</a>
-          <hr>
-        </li>
-        <li>
-          <a href="travel_page.html">Travel</a>
-          <hr>
-        </li>
-        <li style="width:100px;">
-          <img src="../img/user.png">
-        </li>
-        <li>
-<!--          <div onclick="login()"><a href="#" style="text-align:left; line-height:95px; margin-left:10px;" id="login">Login</a></div>-->
-          <a href="#" style="text-align:left; line-height:95px; margin-left:10px; position:relative;" id="login"  onclick="login()">Login</a>
-          <a href="#" style="text-align:left; line-height:95px; margin-left:-90px; position:absolute; display:none;" id="logout" onclick="logout()">Logout</a>
-        </li>
-      </ul>
-    </div>
+<div id="head">
+  <div id="logo">
+    <a href="index.html"><img src="../img/logo.png"></a>
   </div>
-  <div id="main">
-    <div id="slide">
-       <div class="slide_img" style="background-color: #D3C3AA99">
-         <div id="first_text_btn">
-           <p>
-             Record Your<br>
-             Travels!
-           </p>
 
-           <div style="width:8px; height:135px;
+  <div id="head_menu">
+    <ul>
+      <li>
+        <a href="my_page.html">My page</a>
+        <hr>
+      </li>
+      <li>
+        <a href="travel_page.html">Travel</a>
+        <hr>
+      </li>
+      <li style="width:100px;">
+        <img src="../img/user.png">
+      </li>
+      <li>
+        <!--          <div onclick="login()"><a href="#" style="text-align:left; line-height:95px; margin-left:10px;" id="login">Login</a></div>-->
+        <a href="#" style="text-align:left; line-height:95px; margin-left:10px; position:relative;" id="login"  onclick="login()">Login</a>
+        <a href="#" style="text-align:left; line-height:95px; margin-left:-90px; position:absolute; display:none;" id="logout" onclick="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div id="main">
+  <div id="slide">
+    <div class="slide_img" style="background-color: #D3C3AA99">
+      <div id="first_text_btn">
+        <p>
+          Record Your<br>
+          Travels!
+        </p>
+
+        <div style="width:8px; height:135px;
                        float:left; margin-left:20px;
                        position:relative; background-color:#333f32;"></div>
 
-           <button id="first_record_btn" onclick="location.href='record_france.html'">
-             go to record&nbsp;
-             <img src="../img/arrow4.png">
-           </button>
-         </div>
+        <button id="first_record_btn" onclick="location.href='record_france.html'">
+          go to record&nbsp;
+          <img src="../img/arrow4.png">
+        </button>
+      </div>
 
-         <div id="first_img">
-           <div class="img" style="margin-left:60px;">
-             <img src="../img/slide_1/img1.png" style="margin-top:25px; margin-left:15px">
-             <div class="img_border" style="margin-top:37px;"></div>
-             <div class="img_line"></div>
-           </div>
+      <div id="first_img">
+        <div class="img" style="margin-left:60px;">
+          <img src="../img/slide_1/img1.png" style="margin-top:25px; margin-left:15px">
+          <div class="img_border" style="margin-top:37px;"></div>
+          <div class="img_line"></div>
+        </div>
 
-           <div class="img" style="margin-top:265px; margin-left:80px;">
-             <img src="../img/slide_1/img2.png" style="margin-top:15px; margin-left:15px;">
-             <div class="img_border"></div>
-             <div class="img_line" style="margin-top:167px;"></div>
-           </div>
+        <div class="img" style="margin-top:265px; margin-left:80px;">
+          <img src="../img/slide_1/img2.png" style="margin-top:15px; margin-left:15px;">
+          <div class="img_border"></div>
+          <div class="img_line" style="margin-top:167px;"></div>
+        </div>
 
-           <div class="img" style="margin-top:563px; margin-left:80px;">
-             <img src="../img/slide_1/img3.png" style="margin-top:15px;">
-             <div class="img_border" style="margin-left:15px;"></div>
-             <div class="img_line" style="margin-top:167px;"></div>
-           </div>
+        <div class="img" style="margin-top:563px; margin-left:80px;">
+          <img src="../img/slide_1/img3.png" style="margin-top:15px;">
+          <div class="img_border" style="margin-left:15px;"></div>
+          <div class="img_line" style="margin-top:167px;"></div>
+        </div>
 
-           <div class="img" style="margin-top:650px; margin-left:80px;">
-             <img src="../img/slide_1/img4.png" style="margin-top:15px;">
-             <div class="img_border" style="margin-left:15px;"></div>
-           </div>
-         </div>
-       </div>
+        <div class="img" style="margin-top:650px; margin-left:80px;">
+          <img src="../img/slide_1/img4.png" style="margin-top:15px;">
+          <div class="img_border" style="margin-left:15px;"></div>
+        </div>
+      </div>
+    </div>
 
-       <div class="slide_img" style="background-color: #333F32">
-         <div id="second_text_btn">
-           <div style="width:8px; height:135px;
+    <div class="slide_img" style="background-color: #333F32">
+      <div id="second_text_btn">
+        <div style="width:8px; height:135px;
                        float:left; margin-right:20px;
                        position:relative; background-color:#E1D5BF;"></div>
 
-           <p>
-             happy memories<br>
-             Keep it for a long time.
-           </p>
-
-           <button id="second_record_btn" onclick="location.href='record_france.html'">
-             go to record&nbsp;
-             <img src="../img/arrow5.png">
-           </button>
-         </div>
-
-         <div id="second_img">
-           <div class="img" style="margin-top:580px; margin-left:870px; z-index:1">
-             <img src="../img/slide_2/img1.png">
-             <div class="img_border" style="width:280px; height:355px; margin-top:15px; margin-left:15px; border:3px solid #E1D5BF;"></div>
-           </div>
-
-           <div class="img" style="margin-top:453px; margin-left:-250px;">
-             <img src="../img/slide_2/img2.png" style="margin-top:15px; margin-left:15px;">
-             <div class="img_border" style="width:390px; height:270px; border:3px solid #E1D5BF;"></div>
-           </div>
-         </div>
-       </div>
-    </div>
-
-    <div id="travel_destination">
-      <div id="introduce">
-        <div id="l_content">
-          <div></div>
-          <p id="num">06</p>
-          <img src="../img/record_line1.png">
-          <p id="country">France</p>
-        </div>
-
-        <div id="explanation">
-          <img src="../img/main/img1.png">
-          <div id="img_back"></div>
-
-          <div id="ex_text">
-            <div class="text_border" style="height:330px; margin-top:-50px;">
-              <div class="text_hr" style="height:33px; margin-top:93px;"></div>
-              <p id="temperatures">#기온<br>
-                 6월 파리의 평균 기온은 17도이고, 평균 최저 기온은 12도, 평균 최고 기온은 21도로<br>
-                 일년 중 3번째로 따뜻한 달입니다.
-              </p>
-
-              <div class="text_hr" style="height:33px; margin-top:43px;"></div>
-              <p id="precipitation_humidity">
-                #강수 및 습도<br>
-                6월 파리의 평군 총 강수량은 57mm이며, 한 달 중 13일 비 예보가 있지만<br>
-                강수량이 많지 않아 걱정하지 않아도 됩니다. 이 달의 평균 습도는 75%입니다.
-              </p>
-
-              <div class="text_hr" style="height:47px; margin-top:35px;"></div>
-              <p id="sunrise_sunset">
-                #일출 및 일몰 시간
-                6월 파리의 일출 시간은 오전 05:46 ~ 오전 05:51이며<br>
-                일몰 시간은 오후 21:45 ~ 오후 21:57입니다.<br>
-                6월 말로 갈 수록 일몰 시간이 늦어집니다.
-              </p>
-            </div>
-
-            <div class="text_border" style="height:230px; margin-top:30px;">
-              <div class="text_hr" style="height:123px; margin-top:73px;"></div>
-              <p id="getup">
-                #추천 옷차림<br>
-                맨투맨, 니트와 같이 소매가 긴 티셔츠, 긴바지, 가벼운 운동화, 모자 , 선글라스, 외투<br><br>
-
-                6월 파리는 낮에는 따땃하고 아침, 저녁으로는 쌀쌀함을 느낄 수 있습니다.<br>
-                맨투맨, 니트 등 소매가 긴 티셔츠, 긴바지, 가벼운 운동화 등<br>
-                한국의 봄, 가을철 의류를 준비해야 합니다.<br>
-                아침, 저녁으로 떨어지는 기온에 대비하여 외투를 준비하고 강한 자외선으로부터<br>
-                피부와 눈을 보호하기 위한 모자, 선글라스를 준비한다면 도움이 될 것입니다.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="tourist">
-        <div></div>
-        <img src="../img/main/img2.png">
-
-        <label class="title">
-          Paris
-        </label>
-
         <p>
-          #루브르 박물관<br>
-          세계에서 가장 크고 가장 많은 방문객이 찾아오는 루브르 박물관은 파리에서 가장 먼저 가봐야 할 곳입니다.<br>
-          수많은 세계 문화 유물과 르네상스, 바로크 양식의 미술품이 전시되어 있는 곳입니다.<br><br>
-
-          #에펠탑<br>
-          에펠탑에는 직접 올라가볼 수 있으며, 야경에는 더웃 멋있는 풍경을 볼 수 있습니다.<br><br>
-
-          #개선문
-          나폴레옹이 오스텔리츠 전투에서 승리 후 승리를 기념하기 위해 세운 개선물은<br>
-          오늘날 파리를 상징하는 또 다른 렌드마크가 됐습니다.<br>
-          개선물은 보는 것으로도 의미가 있지만 개선물 정산에 올라서면 파리 시내 전망을 내려다 볼 수 있습니다.
+          happy memories<br>
+          Keep it for a long time.
         </p>
+
+        <button id="second_record_btn" onclick="location.href='record_france.html'">
+          go to record&nbsp;
+          <img src="../img/arrow5.png">
+        </button>
       </div>
 
-      <div id="night_view">
-        <div></div>
+      <div id="second_img">
+        <div class="img" style="margin-top:580px; margin-left:870px; z-index:1">
+          <img src="../img/slide_2/img1.png">
+          <div class="img_border" style="width:280px; height:355px; margin-top:15px; margin-left:15px; border:3px solid #E1D5BF;"></div>
+        </div>
 
-        <p class="title">Night view</p>
-
-        <img src="../img/main/view1.png" style="margin-left:770px; margin-right:18px;">
-        <img src="../img/main/view2.png">
-      </div>
-
-      <div id="building">
-        <div style="width:1050px; height:375px;
-                float:left; margin-top:288px;
-                position:absolute; background-color:#deceaa;"></div>
-
-        <p class="title">Building</p>
-
-        <div style="width:100%; height:550px; float:left; position:relative;">
-          <div class="build" style="margin-left:362px;">
-            <div class="build_border"></div>
-            <img src="../img/main/bulid1.png">
-          </div>
-
-          <div class="build">
-            <div class="build_border"></div>
-            <img src="../img/main/bulid2.png">
-          </div>
-
-          <div class="build">
-            <div class="build_border"></div>
-            <img src="../img/main/bulid3.png">
-          </div>
-
-          <div class="build">
-            <div class="build_border"></div>
-            <img src="../img/main/bulid4.png">
-          </div>
+        <div class="img" style="margin-top:453px; margin-left:-250px;">
+          <img src="../img/slide_2/img2.png" style="margin-top:15px; margin-left:15px;">
+          <div class="img_border" style="width:390px; height:270px; border:3px solid #E1D5BF;"></div>
         </div>
       </div>
-
-      <button id="more" onclick="location.href='travel_page.html'">
-        more&nbsp;&nbsp;
-        <img src="../img/arrow4.png">
-      </button>
     </div>
   </div>
 
-  <div id="footer"></div>
+  <div id="travel_destination">
+    <div id="introduce">
+      <div id="l_content">
+        <div></div>
+        <p id="num">06</p>
+        <img src="../img/record_line1.png">
+        <p id="country">France</p>
+      </div>
+
+      <div id="explanation">
+        <img src="../img/main/img1.png">
+        <div id="img_back"></div>
+
+        <div id="ex_text">
+          <div class="text_border" style="height:330px; margin-top:-50px;">
+            <div class="text_hr" style="height:33px; margin-top:93px;"></div>
+            <p id="temperatures">#기온<br>
+              6월 파리의 평균 기온은 17도이고, 평균 최저 기온은 12도, 평균 최고 기온은 21도로<br>
+              일년 중 3번째로 따뜻한 달입니다.
+            </p>
+
+            <div class="text_hr" style="height:33px; margin-top:43px;"></div>
+            <p id="precipitation_humidity">
+              #강수 및 습도<br>
+              6월 파리의 평군 총 강수량은 57mm이며, 한 달 중 13일 비 예보가 있지만<br>
+              강수량이 많지 않아 걱정하지 않아도 됩니다. 이 달의 평균 습도는 75%입니다.
+            </p>
+
+            <div class="text_hr" style="height:47px; margin-top:35px;"></div>
+            <p id="sunrise_sunset">
+              #일출 및 일몰 시간
+              6월 파리의 일출 시간은 오전 05:46 ~ 오전 05:51이며<br>
+              일몰 시간은 오후 21:45 ~ 오후 21:57입니다.<br>
+              6월 말로 갈 수록 일몰 시간이 늦어집니다.
+            </p>
+          </div>
+
+          <div class="text_border" style="height:230px; margin-top:30px;">
+            <div class="text_hr" style="height:123px; margin-top:73px;"></div>
+            <p id="getup">
+              #추천 옷차림<br>
+              맨투맨, 니트와 같이 소매가 긴 티셔츠, 긴바지, 가벼운 운동화, 모자 , 선글라스, 외투<br><br>
+
+              6월 파리는 낮에는 따땃하고 아침, 저녁으로는 쌀쌀함을 느낄 수 있습니다.<br>
+              맨투맨, 니트 등 소매가 긴 티셔츠, 긴바지, 가벼운 운동화 등<br>
+              한국의 봄, 가을철 의류를 준비해야 합니다.<br>
+              아침, 저녁으로 떨어지는 기온에 대비하여 외투를 준비하고 강한 자외선으로부터<br>
+              피부와 눈을 보호하기 위한 모자, 선글라스를 준비한다면 도움이 될 것입니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tourist">
+      <div></div>
+      <img src="../img/main/img2.png">
+
+      <label class="title">
+        Paris
+      </label>
+
+      <p>
+        #루브르 박물관<br>
+        세계에서 가장 크고 가장 많은 방문객이 찾아오는 루브르 박물관은 파리에서 가장 먼저 가봐야 할 곳입니다.<br>
+        수많은 세계 문화 유물과 르네상스, 바로크 양식의 미술품이 전시되어 있는 곳입니다.<br><br>
+
+        #에펠탑<br>
+        에펠탑에는 직접 올라가볼 수 있으며, 야경에는 더웃 멋있는 풍경을 볼 수 있습니다.<br><br>
+
+        #개선문
+        나폴레옹이 오스텔리츠 전투에서 승리 후 승리를 기념하기 위해 세운 개선물은<br>
+        오늘날 파리를 상징하는 또 다른 렌드마크가 됐습니다.<br>
+        개선물은 보는 것으로도 의미가 있지만 개선물 정산에 올라서면 파리 시내 전망을 내려다 볼 수 있습니다.
+      </p>
+    </div>
+
+    <div id="night_view">
+      <div></div>
+
+      <p class="title">Night view</p>
+
+      <img src="../img/main/view1.png" style="margin-left:770px; margin-right:18px;">
+      <img src="../img/main/view2.png">
+    </div>
+
+    <div id="building">
+      <div style="width:1050px; height:375px;
+                float:left; margin-top:288px;
+                position:absolute; background-color:#deceaa;"></div>
+
+      <p class="title">Building</p>
+
+      <div style="width:100%; height:550px; float:left; position:relative;">
+        <div class="build" style="margin-left:362px;">
+          <div class="build_border"></div>
+          <img src="../img/main/bulid1.png">
+        </div>
+
+        <div class="build">
+          <div class="build_border"></div>
+          <img src="../img/main/bulid2.png">
+        </div>
+
+        <div class="build">
+          <div class="build_border"></div>
+          <img src="../img/main/bulid3.png">
+        </div>
+
+        <div class="build">
+          <div class="build_border"></div>
+          <img src="../img/main/bulid4.png">
+        </div>
+      </div>
+    </div>
+
+    <button id="more" onclick="location.href='travel_page.html'">
+      more&nbsp;&nbsp;
+      <img src="../img/arrow4.png">
+    </button>
+  </div>
+</div>
+
+<div id="footer"></div>
 </body>
 </html>
