@@ -1,4 +1,3 @@
-
 const firebaseConfig = {
     apiKey: "AIzaSyAJuLCUy6eWpWgZwfD7_MP4sWMZNv4mlIc",
     authDomain: "trip-8b70a.firebaseapp.com",
@@ -10,7 +9,7 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore;
+const db = firebase.firestore();
 
 // 구글 인증 기능 추가
 var provider = new firebase.auth.GoogleAuthProvider();
@@ -37,32 +36,32 @@ function login(){
         sessionStorage.setItem("email", user.email)
         sessionStorage.setItem("name", user.displayName)
         const email = user.email
-        const name = user.name
-        check()
+        const name = user.displayName
+        console.log(email, name)
+        success()
         //닉네임 체크
-        function check() { //저장완료시 결과페이지로 넘어가도록
+        function success() { //저장완료시 결과페이지로 넘어가도록
             // await db.collection(email).doc(email).add({"name":name,"email":email}); // 문서를 하나 더 만듦
-            db.collection(email).doc(email).set({"name":name,"email":email,"info" : " "}); // 내용을 덮어씀
+            db.collection(email).doc(email).set({"name":name,"email":email, info : " "}); // 내용을 덮어씀
             db.collection(email).get().then((data)=>{
                 data.forEach((doc)=>{
+                    // console.log(doc.data().email)
                     if (doc.data().info == " "){
                         location.href = "login_info.html";
-                    }else {
-                        console.log("저장완료")
                     }
                 })
             })
         }
-    }).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
-    });
+    })//.catch(function(error) {
+    //     // Handle Errors here.
+    //     var errorCode = error.code;
+    //     var errorMessage = error.message;
+    //     // The email of the user's account used.
+    //     var email = error.email;
+    //     // The firebase.auth.AuthCredential type that was used.
+    //     var credential = error.credential;
+    //     // ...
+    // });
 }
 
 function logout() {
