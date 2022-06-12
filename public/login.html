@@ -14,57 +14,8 @@
 
 </head>
 <body>
-<button type="button" onclick="login()" id="login">login</button>
+<button type="button" onclick="login()" id="submit">login</button>
 <button type="button" onclick="logout()" id="logout">logout</button>
-<script>
-    const firebaseConfig = {
-        apiKey: "AIzaSyAJuLCUy6eWpWgZwfD7_MP4sWMZNv4mlIc",
-        authDomain: "trip-8b70a.firebaseapp.com",
-        projectId: "trip-8b70a",
-        storageBucket: "trip-8b70a.appspot.com",
-        messagingSenderId: "1057567867513",
-        appId: "1:1057567867513:web:0e238f2993fde770138aa8",
-        measurementId: "G-L03PDZHGE9"
-    };
-    firebase.initializeApp(firebaseConfig);
 
-    // 구글 인증 기능 추가
-    var provider = new firebase.auth.GoogleAuthProvider();
-
-    function login(){
-        // 인증하기
-        firebase.auth().signInWithPopup(provider).then(function(result) {
-            // This gives you a Google Access Token. You can use it to access the Google API.
-            var token = result.credential.accessToken;
-            // The signed-in user info.
-            var user = result.user;
-
-            console.log(user)		// 인증 후 어떤 데이터를 받아오는지 확인해보기 위함.
-            console.log(user.displayName)
-            console.log(user.email)
-            document.getElementById("login").innerHTML = user.displayName
-
-        }).catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // The email of the user's account used.
-            var email = error.email;
-            // The firebase.auth.AuthCredential type that was used.
-            var credential = error.credential;
-            // ...
-        });
-    }
-
-    function logout() {
-        firebase.auth().signOut().then(() => {
-            // Sign-out successful.
-            document.getElementById("login").innerHTML = "login"
-        }).catch((error) => {
-            // An error happened.
-            console.log("logoutError")
-        });
-    }
-</script>
 </body>
 </html>

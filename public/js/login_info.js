@@ -1,0 +1,18 @@
+// 세션이 있다면 로그인 상태 유지
+$(function (){
+    if(sessionStorage.length != 0){
+        document.getElementById('title').innerHTML = sessionStorage.getItem("name") + "님의 닉네임 설정"
+    }
+})
+async function sub(){
+    const email = sessionStorage.getItem("email")
+    const name = sessionStorage.getItem("name")
+    const nickName = document.getElementById('nickname').value;
+    const info = document.getElementById('info').value;
+
+    // await db.collection(email).doc(email).add({"name":name,"email":email}); // 문서를 하나 더 만듦
+    await db.collection(email).doc(name).set({"nickName":nickName,"info":info}); // 내용을 덮어씀
+    // db.collection(email).doc("name").set({"name":name,"email":email, "nickname":nickName, "info":info}); // 내용을 덮어씀
+    alert("저장 완료!");
+    location.href = "index.html";
+}
