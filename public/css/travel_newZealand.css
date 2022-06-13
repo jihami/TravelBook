@@ -110,7 +110,7 @@ textarea:focus{
     }
 
         #title > div{
-            width:850px;
+            width:950px;
             height:160px;
             float:left;
             background-color:#333f32;
@@ -120,7 +120,7 @@ textarea:focus{
         #title > img {
             float:left;
             margin-top:35px;
-            margin-left:718px;
+            margin-left:655px;
             position:absolute;
             z-index:1;
         }
@@ -202,7 +202,7 @@ textarea:focus{
             height:300px;
             float:left;
             margin-top:40px;
-            margin-left:33px;
+            margin-left:45px;
             position:relative;
             z-index:1;
         }
@@ -240,10 +240,11 @@ textarea:focus{
             z-index:1;
         }
 
-            #auckland_l p{
+            #auckland_l > p{
                 width:100%;
                 float:left;
                 margin-top:5px;
+                margin-left:12px;
                 font-size:10pt;
             }
 
@@ -328,10 +329,11 @@ textarea:focus{
             z-index:1;
         }
 
-            #wellington_l p{
+            #wellington_l > p{
                 width:100%;
                 float:left;
                 margin-top:5px;
+                margin-left:-12px;
                 font-size:10pt;
             }
 
@@ -339,7 +341,7 @@ textarea:focus{
                 width:270px;
                 height:350px;
                 float:left;
-                margin-top:50px;
+                margin-top:30px;
             }
 
                 #wellington_l ul li{

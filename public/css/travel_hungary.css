@@ -110,7 +110,7 @@ textarea:focus{
     }
 
         #title > div{
-            width:850px;
+            width:930px;
             height:160px;
             float:left;
             background-color:#333f32;
@@ -120,7 +120,7 @@ textarea:focus{
         #title > img {
             float:left;
             margin-top:35px;
-            margin-left:688px;
+            margin-left:768px;
             position:absolute;
             z-index:1;
         }
@@ -240,10 +240,11 @@ textarea:focus{
             z-index:1;
         }
 
-            #budapest_l p{
+            #budapest_l >  p{
                 width:100%;
                 float:left;
                 margin-top:5px;
+                margin-left:12px;
                 font-size:10pt;
             }
 
@@ -328,10 +329,11 @@ textarea:focus{
             z-index:1;
         }
 
-            #sentendre_l p{
+            #sentendre_l > p{
                 width:100%;
                 float:left;
                 margin-top:5px;
+                margin-left:-9px;
                 font-size:10pt;
             }
 

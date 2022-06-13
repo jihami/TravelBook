@@ -110,7 +110,7 @@ textarea:focus{
     }
 
         #title > div{
-            width:850px;
+            width:930px;
             height:160px;
             float:left;
             background-color:#333f32;
@@ -120,7 +120,7 @@ textarea:focus{
         #title > img {
             float:left;
             margin-top:35px;
-            margin-left:655px;
+            margin-left:735px;
             position:absolute;
             z-index:1;
         }
@@ -202,7 +202,7 @@ textarea:focus{
             height:300px;
             float:left;
             margin-top:40px;
-            margin-left:33px;
+            margin-left:48px;
             position:relative;
             z-index:1;
         }
@@ -240,10 +240,11 @@ textarea:focus{
             z-index:1;
         }
 
-            #phuket_l p{
+            #phuket_l > p{
                 width:100%;
                 float:left;
                 margin-top:5px;
+                margin-left:11px;
                 font-size:10pt;
             }
 
@@ -328,10 +329,11 @@ textarea:focus{
             z-index:1;
         }
 
-            #bangkok_l p{
+            #bangkok_l > p{
                 width:100%;
                 float:left;
                 margin-top:5px;
+                margin-left:-8px;
                 font-size:10pt;
             }
 
@@ -339,7 +341,7 @@ textarea:focus{
                 width:270px;
                 height:350px;
                 float:left;
-                margin-top:50px;
+                margin-top:40px;
             }
 
                 #bangkok_l ul li{

@@ -110,7 +110,7 @@ textarea:focus{
     }
 
         #title > div{
-            width:850px;
+            width:930px;
             height:160px;
             float:left;
             background-color:#333f32;
@@ -120,7 +120,7 @@ textarea:focus{
         #title > img {
             float:left;
             margin-top:35px;
-            margin-left:718px;
+            margin-left:798px;
             position:absolute;
             z-index:1;
         }
@@ -202,7 +202,7 @@ textarea:focus{
             height:300px;
             float:left;
             margin-top:40px;
-            margin-left:33px;
+            margin-left:48px;
             position:relative;
             z-index:1;
         }
@@ -240,10 +240,11 @@ textarea:focus{
             z-index:1;
         }
 
-            #rio_l p{
+            #rio_l > p{
                 width:100%;
                 float:left;
                 margin-top:5px;
+                margin-left:10px;
                 font-size:10pt;
             }
 
@@ -328,10 +329,11 @@ textarea:focus{
             z-index:1;
         }
 
-            #saoPaulo_l p{
+            #saoPaulo_l > p{
                 width:100%;
                 float:left;
                 margin-top:5px;
+                margin-left:-8px;
                 font-size:10pt;
             }
 
