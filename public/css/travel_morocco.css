@@ -1,0 +1,659 @@
+*{
+    margin:0 auto;
+    padding:0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+a{
+    color:#333;
+    text-decoration:none;
+}
+
+body{
+    width:100%;
+    overflow-x: hidden;
+    color:#333F32;
+    background-color:#FFFAE9;
+}
+
+input:focus{
+    outline:none;
+}
+
+textarea:focus{
+    outline:none;
+}
+
+#head{
+    width:100%;
+    height:100px;
+    box-shadow:0px 5px 40px 10px rgba(0, 0, 0, 0.25);
+    position: relative;
+    background-color:#333f32;
+}
+    #logo{
+        width:25%;
+        height:100px;
+        float:left;
+    }
+
+        #logo img{
+            width:85px;
+            height:42px;
+            float:right;
+            margin-top:25px;
+        }
+
+    #head_menu{
+        width:75%;
+        height:100px;
+        float:left;
+    }
+        #head_menu ul{
+            width:100%;
+            height:100px;
+            float:left;
+            margin-left:15%;
+        }
+            #head_menu ul li{
+                width:200px;
+                height:190px;
+                float:left;
+                list-style:none;
+            }
+                #head_menu ul li a{
+                    width:100%;
+                    height:20px;
+                    float:left;
+                    margin-bottom:10px;
+                    color:#DDD1BB;
+                    font-size:12pt;
+                    text-align:center;
+                    line-height:80px;
+                }
+
+                #head_menu ul li hr{
+                    width:84px;
+                    height:1px;
+                    margin-top:60px;
+                    border:0px;
+                    background-color:#DDD1BB;
+                }
+
+                #head_menu ul li img{
+                    width:42px;
+                    height:42px;
+                    float:right;
+                    margin-top:25px;
+            }
+#main{
+    width:100%;
+    height:5780px;
+    float:left;
+    position:relative;
+    background-color:#FFFAE9;
+}
+
+    .write_background{
+        width:700px;
+        height:400px;
+        float:left;
+        filter:drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    #title{
+        width:1000px;
+        height:160px;
+        float:left;
+        margin-top:165px;
+        position:relative;
+    }
+
+        #title > div{
+            width:950px;
+            height:160px;
+            float:left;
+            background-color:#333f32;
+            position:absolute;
+        }
+
+        #title > img {
+            float:left;
+            margin-top:35px;
+            margin-left:749px;
+            position:absolute;
+            z-index:1;
+        }
+
+    #morocco_info{
+        width:100%;
+        height:450px;
+        margin-top:180px;
+        float:left;
+        position:relative;
+    }
+
+        #morocco_info > img{
+            height:400px;
+            float:left;
+            z-index:1;
+        }
+
+        #write_info{
+            margin-left:20px;
+            position:absolute;
+        }
+
+        #info_l{
+            width:280px;
+            height:350px;
+            float:left;
+            margin-top:30px;
+            margin-left:60px;
+            position:relative;
+            z-index:1;
+        }
+
+            #flag{
+                width:100%;
+                height:155px;
+                float:left;
+                margin-left:20px;
+                position:relative;
+            }
+
+                #flag p{
+                    font-size:11pt;
+                }
+
+                #flag img{
+                    margin-top:15px;
+                    margin-left:20px;
+                    box-shadow:2px 2px 4px 2px rgba(0, 0, 0, 0.25);
+                }
+
+                #flag div{
+                    width:172px;
+                    height:62px;
+                    float:left;
+                    margin-top:-50px;
+                    margin-left:40px;
+                    position:absolute;
+                    background-color:#E1D5BF;
+                    z-index:-1;
+                }
+
+            #basic_info{
+                width:100%;
+                height:160px;
+                float:left;
+                margin-top:30px;
+                margin-left:20px;
+                position:relative;
+            }
+
+                #basic_info ul li{
+                    margin-bottom:13px;
+                    font-size:10pt;
+                }
+
+        #info_r{
+            width:300px;
+            height:300px;
+            float:left;
+            margin-top:40px;
+            margin-left:45px;
+            position:relative;
+            z-index:1;
+        }
+
+            #info_r p{
+                width:271px;
+                font-size:10pt;
+                line-height:16px;
+            }
+
+    .city{
+        width:100%;
+        height:405px;
+        float:left;
+        position:relative;
+        z-index:1;
+    }
+
+    #marrakech{
+        margin-top:245px;
+    }
+
+        #write_marrakech{;
+            margin-left:370px;
+            position:absolute;
+        }
+
+        #marrakech_l{
+            width:300px;
+            height:400px;
+            float:left;
+            margin-top:20px;
+            margin-left:410px;
+            position:relative;
+            z-index:1;
+        }
+
+            #marrakech_l > p{
+                width:100%;
+                float:left;
+                margin-top:5px;
+                margin-left:12px;
+                font-size:10pt;
+            }
+
+            #marrakech_l ul{
+                width:270px;
+                height:350px;
+                float:left;
+                margin-top:20px;
+                margin-left:20px;
+            }
+
+                #marrakech_l ul li{
+                    width:45px;
+                    font-size:10pt;
+                    float:left;
+                }
+
+                #marrakech_l ul p{
+                    width:210px;
+                    float:left;
+                    margin-left:5px;
+                    margin-top:-1px;
+                    margin-bottom:10px;
+                    font-size:10pt;
+                }
+
+        #marrakech_r{
+            width:300px;
+            height:400px;
+            float:left;
+            margin-top:20px;
+            margin-left:30px;
+            position:relative;
+            z-index:1;
+        }
+
+            #marrakech_r ul{
+                margin-top:10px;
+                margin-left:20px;
+            }
+
+                #marrakech_r ul li{
+                    width:45px;
+                    font-size:10pt;
+                    float:left;
+                }
+
+                    #marrakech_r ul p{
+                        width:210px;
+                        float:left;
+                        margin-left:5px;
+                        margin-bottom:10px;
+                        font-size:10pt;
+                    }
+
+        #marrakech_img{
+            width:282px;
+            height:100%;
+            float:left;
+            margin-left:50px;
+            position:relative;
+        }
+
+
+    #casablanca{
+        margin-top:380px;
+    }
+
+        #write_casablanca {
+            float: left;
+            margin-left:20px;
+            position:absolute;
+        }
+
+        #casablanca_l{
+            width:300px;
+            height:400px;
+            float:left;
+            margin-top:50px;
+            margin-left:80px;
+            position:relative;
+            z-index:1;
+        }
+
+            #casablanca_l p{
+                width:100%;
+                float:left;
+                margin-top:5px;
+                font-size:10pt;
+            }
+
+            #casablanca_l ul{
+                width:270px;
+                height:350px;
+                float:left;
+                margin-top:50px;
+            }
+
+                #casablanca_l ul li{
+                    width:45px;
+                    font-size:10pt;
+                    float:left;
+                }
+
+                #casablanca_l ul p{
+                    width:210px;
+                    float:left;
+                    margin-top:-1px;
+                    margin-bottom:10px;
+                    font-size:10pt;
+                }
+
+        #casablanca_r{
+            width:300px;
+            height:400px;
+            float:left;
+            margin-top:10px;
+            margin-left:30px;
+            position:relative;
+            z-index:1;
+        }
+
+            #casablanca_r ul{
+                width:270px;
+                height:350px;
+                float:left;
+                margin-top:50px;
+            }
+
+                #casablanca_r ul li{
+                    width:45px;
+                    font-size:10pt;
+                    float:left;
+                }
+
+                #casablanca_r ul p{
+                    width:210px;
+                    float:left;
+                    margin-top:-1px;
+                    margin-bottom:10px;
+                    font-size:10pt;
+                }
+
+    #favorite_add{
+        width:200px;
+        height:30px;
+        float:left;
+        margin-top:195px;
+        margin-left:1520px;
+        position:relative;
+    }
+
+        #favorite_add p {
+            width:140px;
+            height:30px;
+            float:left;
+            font-size:15pt;
+            text-align:center;
+            line-height:30px;
+            position:relative;
+        }
+
+        #favorite_add img{
+            width:30px;
+            height:30px;
+            float:left;
+        }
+
+    #morocco_record{
+        width:100%;
+        height:1285px;
+        float:left;
+        position:relative;
+        z-index:1;
+    }
+
+        #morocco_record > p{
+            width:374px;
+            height:20px;
+            float:left;
+            left:50%;
+            color:#344031;
+            font-size:15pt;
+            font-weight:bold;
+            text-align:center;
+            line-height:20px;
+            position:relative;
+            transform:translate(-50%);
+        }
+
+        #record_list{
+            width:1200px;
+            height:718px;
+            float:left;
+            top:15%;
+            left:31%;
+            position:relative;
+            transform:translate(-50%);
+        }
+
+            .record{
+                width:180px;
+                height:298px;
+                float:left;
+                margin:0 60px 60px 60px;
+                position:relative;
+            }
+
+                .record hr{
+                    margin:20px 0 13px 0;
+                }
+
+                .record p{
+                    width:180px;
+                    height:20px;
+                    float:left;
+                    font-size:14px;
+                    font-weight:bold;
+                    text-align:center;
+                    line-height:20px;
+                }
+
+        #record_slide_btn{
+            width:80px;
+            height:13px;
+            float:left;
+            margin-top:960px;
+            margin-left:-600px;
+            position:relative;
+            transform:translate(-50%);
+        }
+            #record_slide_btn div{
+                width:13px;
+                height:13px;
+                float:left;
+                margin:0 5px 5px 0;
+                border-radius:10px;
+                background-color:#9DA092;
+            }
+
+    #morocco_tip{
+        width:100%;
+        height:1630px;
+        float:left;
+        position:relative;
+    }
+        #morocco_tip > div > p{
+            width:100%;
+            height:82px;
+            float:left;
+            color:#344031;
+            font-size:15pt;
+            font-weight:bold;
+            text-align:center;
+            line-height:82px;
+            position:relative;
+        }
+
+        #tip_top{
+            width:100%;
+            height:223px;
+            float:left;
+            margin-top:95px;
+            position:relative;
+        }
+
+            #tip_top form{
+                width:980px;
+                height:100%;
+                float:left;
+                left:50%;
+                position:relative;
+                transform:translate(-50%);
+            }
+                #search{
+                    width:100%;
+                    height:55px;
+                    float:left;
+                    margin-bottom:30px;
+                    position:relative;
+                    background-color:#333f32;
+                }
+                    #tip_search{
+                        width:880px;
+                        height:20px;
+                        float:left;
+                        margin-top:19px;
+                        margin-left:30px;
+                        color:white;
+                        font-size:11pt;
+                        border:none;
+                        background-color:transparent;
+                    }
+
+                    #tip_search::placeholder{
+                        color:#ffffff;
+                    }
+
+                #write{
+                    width:100%;
+                    height:93px;
+                    float:left;
+                    border-radius:5px;
+                    position:relative;
+                    background-color:rgba(51, 63, 50, 0.5);
+                }
+
+                    #tip_write{
+                        width:910px;
+                        height:30px;
+                        float:left;
+                        margin-top:15px;
+                        margin-left:30px;
+                        resize:none;
+                        color:#FFFAE9;
+                        font-size:12pt;
+                        border:none;
+                        background-color:transparent;
+                    }
+
+                    #tip_write::placeholder{
+                        color:#FFFAE9;
+                    }
+
+                    #write button{
+                        width:70px;
+                        height:20px;
+                        float:right;
+                        margin-top:10px;
+                        color:#FFFAE9;
+                        font-size:12pt;
+                        text-align:center;
+                        line-height:20px;
+                        border:none;
+                        background-color:transparent;
+                    }
+
+        #tip_bottom{
+            width:100%;
+            height:1233px;
+            float:left;
+            position:relative;
+        }
+
+            #tip_list{
+                width:980px;
+                height:855px;
+                float:left;
+                left:50%;
+                margin-top:40px;
+                position:relative;
+                transform:translate(-50%);
+            }
+
+                .tip{
+                    width:980px;
+                    height:130px;
+                    margin-bottom:37px;
+                    position:relative;
+                }
+                    .user_id{
+                        width:200px;
+                        height:20px;
+                        margin-top:12px;
+                        margin-left:90px;
+                        font-size:12pt;
+                        text-align:left;
+                        line-height:20px;
+                        position:absolute;
+                    }
+
+                    .tip img{
+                        position:absolute;
+                        z-index:-1;
+                    }
+
+                    .tip_subject{
+                        width:830px;
+                        height:40px;
+                        margin-top:75px;
+                        margin-left:90px;
+                        color:white;
+                        font-size:12pt;
+                        text-align:left;
+                        position:absolute;
+                    }
+
+            #tip_slide_btn{
+                width:80px;
+                height:13px;
+                float:left;
+                margin-top:960px;
+                left:-2%;
+                position:relative;
+                transform:translate(-50%);
+            }
+                #tip_slide_btn div{
+                    width:13px;
+                    height:13px;
+                    float:left;
+                    margin:0 5px 5px 0;
+                    border-radius:10px;
+                    background-color:#9DA092;
+                }
+
+#footer{
+    width:100%;
+    height:250px;
+    float:left;
+    position:relative;
+    background-color:#333F32;
+}
