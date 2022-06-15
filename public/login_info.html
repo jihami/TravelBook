@@ -15,29 +15,25 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="js/fb.js"></script>
     <script src="js/login_info.js"></script>
-    <script>
-        sessionStorage.getItem("email")
-        sessionStorage.getItem("name")
-    </script>
 </head>
 <body>
     <div id="contents">
         <div id="top">
             <p id="title">닉네임 설정</p>
-            <img src="../img/user_color.png">
+            <img src="../img/user_color.png" alt="user">
         </div>
 
         <form id="input">
             <ul>
                 <li>
                     <p class="input_title">닉네임&nbsp; | </p>
-                    <input type="text" name="nickname" class="input_text" id="nickname" placeholder="12글자 이내">
+                    <label for="nickname"><input type="text" name="nickname" class="input_text" id="nickname" placeholder="12글자 이내"></label>
                     <hr>
                 </li>
 
                 <li>
                     <p class="input_title">소개&nbsp;&nbsp;&nbsp;&nbsp; | </p>
-                    <input type="text" name="info" class="input_text" id="info" placeholder="자신을 소개하는 글을 작성해보세요">
+                    <label for="info"><input type="text" name="info" class="input_text" id="info" placeholder="자신을 소개하는 글을 작성해보세요"></label>
                     <hr>
                 </li>
             </ul>
