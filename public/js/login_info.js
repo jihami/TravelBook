@@ -18,6 +18,7 @@ async function sub() {
         // db.collection(email).doc("name").set({"name":name,"email":email, "nickname":nickName, "info":info}); // 내용을 덮어씀
         alert("저장 완료!");
         sessionStorage.setItem("nickName", nickName);
+        sessionStorage.setItem("info", info);
         location.href = "index.html";
     }
 }
