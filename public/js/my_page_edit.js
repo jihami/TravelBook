@@ -73,12 +73,10 @@ $(function (){
     nickName = sessionStorage.getItem("nickName")
     email = sessionStorage.getItem("email")
     info = sessionStorage.getItem("info")
-    if(len !== 0){ //로그인 되어 있으면
+    if(len !== 0){
         if(nickName == null){
-            console.log("D")
             location.href = "login_info.html";
         }else{
-            console.log("o")
             document.getElementById('login').innerHTML = nickName
             document.getElementById('nickname').value = nickName;
             document.getElementById('email').value = email;
@@ -88,7 +86,6 @@ $(function (){
             })
         }
     }
-
 })
 
 $(function(){
