@@ -7,15 +7,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/my_page.css">
-    <script>
-        sessionStorage.getItem("email")
-        sessionStorage.getItem("name")
-    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/fb.js"></script>
+    <script src="js/my_page.js"></script>
 </head>
 <body>
     <div id="head">
         <div id="logo">
-            <a href="index.html"><img src="../img/logo.png"></a>
+            <a href="index.html"><img src="../img/logo.png" alt="logo"></a>
         </div>
 
         <div id="head_menu">
@@ -30,11 +34,12 @@
                 </li>
 
                 <li style="width:100px;">
-                    <img src="../img/user.png">
+                    <img src="../img/user.png" alt="userIcon">
                 </li>
 
                 <li>
-                    <a href="#" id="user" style="text-align:left; line-height:95px; margin-left:10px;">여행하지함</a>
+                    <a href="#" style="text-align:left; line-height:95px; margin-left:10px; position:relative;" id="login"  onclick="login()">Login</a>
+                    <a href="#" style="text-align:left; line-height:95px; margin-left:-90px; position:absolute; display:none;" id="logout" onclick="logout()">Logout</a>
                 </li>
             </ul>
         </div>
@@ -45,7 +50,7 @@
             <div id="title">
                 <p>My page</p>
                 <hr>
-                <img src="../img/user_color.png">
+                <img src="../img/user_color.png" alt="userIcon">
             </div>
 
 
@@ -53,19 +58,19 @@
                 <ul>
                     <li>
                         <p class="input_title">name</p>
-                        <input type="text" name="nickname" class="input_text" id="nickname" value="여행하지함" readonly>
+                        <label for="nickname"><input type="text" name="nickname" class="input_text" id="nickname" value="" readonly></label>
                         <hr>
                     </li>
 
                     <li>
                         <p class="input_title">e-mail</p>
-                        <input type="text" name="email" class="input_text" id="email" value="d1234@e-mirim.hr.kr" readonly>
+                        <label for="email"><input type="text" name="email" class="input_text" id="email" value="" readonly></label>
                         <hr>
                     </li>
 
                     <li>
                         <p class="input_title">소개말</p>
-                        <input type="text" name="info" class="input_text" id="info" value="travel book 개발자" readonly>
+                        <label for="info"><input type="text" name="info" class="input_text" id="info" value="" readonly></label>
                         <hr>
                     </li>
                 </ul>
@@ -74,38 +79,38 @@
 
         <div id="record">
             <div class="contents">
-                <img src="../img/write.png" class="img">
+                <img src="../img/write.png" class="img" alt="img">
 
                 <a href="my_page_write.html">
                     글쓰기&nbsp;&nbsp;
-                    <img src="../img/arrow3.png" class="arrow">
+                    <img src="../img/arrow3.png" class="arrow" alt="arrow">
                 </a>
             </div>
 
             <div class="contents">
-                <img src="../img/record.png" class="img">
+                <img src="../img/record.png" class="img" alt="img">
 
                 <a href="record_france.html">
                     기록보기&nbsp;&nbsp;
-                    <img src="../img/arrow3.png" class="arrow">
+                    <img src="../img/arrow3.png" class="arrow" alt="aroow">
                 </a>
             </div>
 
             <div class="contents">
-                <img src="../img/favorite.png" class="img">
+                <img src="../img/favorite.png" class="img" alt="img">
 
                 <a href="my_page_favorite.html">
                     찜행지&nbsp;&nbsp;
-                    <img src="../img/arrow3.png" class="arrow">
+                    <img src="../img/arrow3.png" class="arrow" alt="arrow">
                 </a>
             </div>
 
             <div class="contents">
-                <img src="../img/edit.png" class="img">
+                <img src="../img/edit.png" class="img" alt="img">
 
                 <a href="my_page_edit.html">
                     프로필 수정&nbsp;&nbsp;
-                    <img src="../img/arrow3.png" class="arrow">
+                    <img src="../img/arrow3.png" class="arrow" alt="arrow">
                 </a>
             </div>
         </div>

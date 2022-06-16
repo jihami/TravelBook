@@ -30,9 +30,15 @@ function login(){
                         for(let doc in querySnapshot.data()){
                             console.log( `key : ${doc}, value : ${querySnapshot.data()[doc]}` )
                             nickName = querySnapshot.data().nickName
+                            info = querySnapshot.data().info
                             console.log(nickName)
-                            sessionStorage.setItem("nickName", nickName);
+                            sessionStorage.setItem("nickName",nickName);
+                            sessionStorage.setItem("info",info);
+                            console.log(info)
                             document.getElementById('login').innerHTML = nickName;
+                            document.getElementById('nickname').value = nickName;
+                            document.getElementById('email').value = email;
+                            document.getElementById('info').value = info;
                         }
                     }
                 })
@@ -56,6 +62,7 @@ function logout() {
         sessionStorage.removeItem("email");
         sessionStorage.removeItem("name");
         sessionStorage.removeItem("nickName");
+        sessionStorage.removeItem("info");
     })
 
 }
@@ -64,11 +71,16 @@ function logout() {
 $(function (){
     len = sessionStorage.length
     nickName = sessionStorage.getItem("nickName")
+    email = sessionStorage.getItem("email")
+    info = sessionStorage.getItem("info")
     if(len !== 0){
         if(nickName == null){
             location.href = "login_info.html";
         }else{
             document.getElementById('login').innerHTML = nickName
+            document.getElementById('nickname').value = nickName;
+            document.getElementById('email').value = email;
+            document.getElementById('info').value = info;
             $(function(){
                 $('#logout').show();
             })
