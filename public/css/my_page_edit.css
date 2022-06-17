@@ -104,6 +104,9 @@ body{
         position:relative;
 
     }
+        #profile_img{
+            border-radius: 100%;
+        }
         #title{
             width:84px;
             height:30%;

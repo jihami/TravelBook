@@ -1,6 +1,7 @@
 // 세션이 있다면 로그인 상태 유지
 $(function (){
     len = sessionStorage.length
+    photoURL = sessionStorage.getItem("photoURL")
     nickName = sessionStorage.getItem("nickName")
     email = sessionStorage.getItem("email")
     info = sessionStorage.getItem("info")
@@ -8,7 +9,7 @@ $(function (){
         if(nickName == null){
             location.href = "login_info.html";
         }else{
-            document.getElementById('login').innerHTML = nickName
+            document.getElementById("profile_img").src = photoURL;
             document.getElementById('nickname').value = nickName;
             document.getElementById('email').value = email;
             document.getElementById('info').value = info;
