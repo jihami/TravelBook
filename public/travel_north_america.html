@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>North America</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/travel.css">
+    <script>
+        sessionStorage.getItem("email")
+        sessionStorage.getItem("name")
+    </script>
+</head>
+<body>
+    <div id="head">
+        <div id="logo">
+            <a href="index.html"><img src="../img/logo.png"></a>
+        </div>
+
+        <div id="head_menu">
+            <ul>
+                <li>
+                    <a href="my_page.html" style="color:black;">My page</a>
+                    <hr style="background-color:black;">
+                </li>
+                <li>
+                    <a href="travel_page.html">Travel</a>
+                    <hr>
+                </li>
+
+                <li style="width:100px;">
+                    <img src="../img/user.png">
+                </li>
+
+                <li>
+                    <a href="#" id="user" style="text-align:left; line-height:95px; margin-left:10px;">여행하지함</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="width:100%; height:42px;
+                    background-color:rgba(51, 63, 50, 0.48);">
+        <p style="width:220px; height:42px;
+                      float:left; margin-left:19%;
+                      color:#333; font-size:11pt;
+                      text-align:center; line-height:42px;">Travel > 북아메리카</p>
+    </div>
+
+    <div id="main">
+        <div style="width:100%; height:360px;
+                        float:left; position:absolute;
+                        background-color:#D3C3AA; z-index:-1;"></div>
+
+        <div id="travel_place">
+            <div id="title">
+                <p>북아메리카</p>
+
+            </div>
+
+            <div id="list">
+                <div class="place" onclick="location.href='travel_mexico.html'">
+                    <img src="../img/mexico/flag.png">
+
+                    <p class="place_title">멕시코</p>
+                    <hr>
+                    <p class="place_info">화려하게 꽃 피웠던 문명의 보고로<br>아름다운 자연환경과 보석 같은<br>문화유산이 빛나는 나라</p>
+                </div>
+
+                <div class="place" onclick="location.href='travel_usa.html'">
+                    <img src="../img/usa/flag.png">
+
+                    <p class="place_title">미국</p>
+                    <hr>
+                    <p class="place_info">짧은 역사에도 세계 강대국이며,<br>50개 주와 특별 자치구 1개로 구성되어 있는 연방 합중국 나라</p>
+                </div>
+
+                <div class="place" onclick="location.href='travel_canada.html'">
+                    <img src="../img/canada/flag.png">
+
+                    <p class="place_title">캐나다</p>
+                    <hr>
+                    <p class="place_info">자연과 사람이 더불어 행복한<br>단풍의 나라</p>
+                </div>
+
+                <div class="place" onclick="location.href='travel_cuba.html'">
+                    <img src="../img/cuba/flag.png">
+
+                    <p class="place_title">쿠바</p>
+                    <hr>
+                    <p class="place_info">아름다운 해변과 살사, 음악의 나라</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>
