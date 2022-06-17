@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MYPAGE_FAVORITE</title>
+    <title>RECORD</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/my_page_favorite.css">
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="js/my_page_favorite.js"></script>
+    <link rel="stylesheet" href="css/record.css">
     <script>
         sessionStorage.getItem("email")
         sessionStorage.getItem("name")
@@ -47,7 +45,7 @@
         <p style="width:220px; height:42px;
                       float:left; margin-left:19%;
                       color:#333; font-size:11pt;
-                      text-align:center; line-height:42px;">main > My page > 찜행지</p>
+                      text-align:center; line-height:42px;">main > My page > 기록보기</p>
     </div>
 
     <div id="main">
@@ -55,49 +53,43 @@
                         float:left; position:absolute;
                         background-color:#D3C3AA; z-index:-1;"></div>
 
-        <div id="favorite_place">
+        <div id="record_place">
             <div id="title">
-                <p>찜행지</p>
+                <p>기록보기</p>
 
             </div>
 
             <div id="list">
                 <div class="place">
-                    <img src="../img/diary.png">
+                    <img src="../img/diary.png" onclick="location.href='record_page.html'">
 
-                    <p class="place_title">전체</p>
+                    <p class="place_title">프랑스</p>
                     <hr>
-                    <p class="place_count">찜한 여행지 16개</p>
+                    <p class="place_count">2022.06.13</p>
                 </div>
 
                 <div class="place">
-                    <img src="../img/diary.png">
+                    <img src="../img/diary.png" onclick="location.href='record_page.html'">
 
-                    <p class="place_title">유럽 여행지</p>
+                    <p class="place_title">미국</p>
                     <hr>
-                    <p class="place_count">찜한 여행지 7개</p>
+                    <p class="place_count">2020.01.05</p>
                 </div>
 
                 <div class="place">
-                    <img src="../img/diary.png">
+                    <img src="../img/diary.png" onclick="location.href='record_page.html'">
 
-                    <p class="place_title">바다가 예쁜 여행지</p>
+                    <p class="place_title">대한민국</p>
                     <hr>
-                    <p class="place_count">찜한 여행지 5개</p>
+                    <p class="place_count">2019.09.25</p>
                 </div>
 
                 <div class="place">
-                    <img src="../img/diary.png">
+                    <img src="../img/diary.png" onclick="location.href='record_page.html'">
 
-                    <p class="place_title">국내 여행지</p>
+                    <p class="place_title">스페인</p>
                     <hr>
-                    <p class="place_count">찜한 여행지 4개</p>
-                </div>
-
-                <div class="place" id="add_place">
-                    <img src="../img/add_diary.png">
-
-                    <p class="place_title">책 추가</p>
+                    <p class="place_count">2018.11.30</p>
                 </div>
             </div>
         </div>
@@ -112,14 +104,14 @@
                 </a>
             </div>
 
-            <div id="record">
+            <div id="record" style="background-color:#E1D5BF;">
                 <a href="record.html">
                     <p class="title">기록보기</p>
                     <img src="../img/arrow2.png">
                 </a>
             </div>
 
-            <div id="like" style="background-color:#E1D5BF;">
+            <div id="like">
                 <a href="my_page_favorite.html">
                     <p class="title">찜행지</p>
                     <img src="../img/arrow2.png">

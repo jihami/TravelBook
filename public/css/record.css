@@ -1,0 +1,205 @@
+*{
+    margin:0 auto;
+    padding:0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+a{
+    color:#333;
+    text-decoration:none;
+}
+
+body{
+    overflow-x: hidden;
+    color:#333F32;
+    background-color:#FFFAE9;
+}
+
+#head{
+    width:100%;
+    height:100px;
+    box-shadow:0px 1px 10px 2px gray;
+    position: relative;
+    background-color:#333f32;
+}
+    #logo{
+        width:25%;
+        height:100px;
+        float:left;
+    }
+
+        #logo img{
+            width:85px;
+            height:42px;
+            float:right;
+            margin-top:25px;
+        }
+
+    #head_menu{
+        width:75%;
+        height:100px;
+        float:left;
+    }
+        #head_menu ul{
+            width:100%;
+            height:100px;
+            float:left;
+            margin-left:15%;
+        }
+            #head_menu ul li{
+                width:200px;
+                height:190px;
+                float:left;
+                list-style:none;
+            }
+                #head_menu ul li a{
+                    width:100%;
+                    height:20px;
+                    float:left;
+                    margin-bottom:10px;
+                    color:#DDD1BB;
+                    font-size:12pt;
+                    text-align:center;
+                    line-height:80px;
+                }
+
+                #head_menu ul li hr{
+                    width:84px;
+                    height:1px;
+                    margin-top:60px;
+                    border:0px;
+                    background-color:#DDD1BB;
+                }
+
+                #head_menu ul li img{
+                    width:42px;
+                    height:42px;
+                    float:right;
+                    margin-top:25px;
+                }
+
+#main{
+    width:100%;
+    height:60%;
+    float:left;
+    position:relative;
+}
+
+    #record_place{
+        width:100%;
+        height:70%;
+        float:left;
+        position:relative;
+
+    }
+        #title{
+            width:84px;
+            height:30%;
+            float:left;
+            top:130px;
+            left:50%;
+            transform:translate(-50%);
+            position:relative;
+        }
+            #title p{
+                width:100px;
+                height:20px;
+                font-size:12pt;
+                font-weight:bold;
+                text-align:center;
+                margin-bottom:10px;
+            }
+
+        #list{
+            width:1200px;
+            height:60%;
+            float:left;
+            left:51%;
+            margin-top:200px;
+            position:relative;
+            transform:translate(-50%);
+        }
+            .place{
+                width:180px;
+                height:300px;
+                float:left;
+                margin-bottom:60px;
+                margin-right:8%;
+            }
+                .place img{
+                    cursor:pointer;
+                    box-shadow:1px 2px 5px 1px #989898;
+                }
+                .place_title{
+                    width:100%;
+                    height:20px;
+                    float:left;
+                    margin-top:10px;
+                    margin-bottom:3px;
+                    font-size:11pt;
+                    text-align:center;
+                    line-height:20px;
+                }
+
+                .place_count{
+                    width:100%;
+                    height:15px;
+                    float:left;
+                    margin-top:3px;
+                    color:gray;
+                    font-size:9pt;
+                    text-align:center;
+                    line-height:15px;
+                }
+            #add_place{
+                cursor:pointer;
+            }
+
+
+    #menu{
+        width:100%;
+        height:30%;
+        float:left;
+        margin-bottom:80px;
+        position:relative;
+    }
+        #menu > div{
+            width:280px;
+            height:72px;
+            float:left;
+            margin-top:100px;
+            margin-right:20px;
+            position:relative;
+            background-color:#F7F0DF;
+            box-shadow:1px 2px 5px 1px #ccc7ba;
+        }
+
+        #write{
+            margin-left:19%;
+        }
+            .title{
+                width:75px;
+                height:20px;
+                float:left;
+                margin-top:40px;
+                margin-left:165px;
+                font-size:11pt;
+                text-align:right;
+                line-height:20px;
+            }
+
+            #menu > div img{
+                width:10px;
+                height:18px;
+                float:left;
+                margin-top:-18px;
+                margin-left:250px;
+            }
+
+#footer{
+    width:100%;
+    height:250px;
+    float:left;
+    position:relative;
+    background-color:#333f32;
+}
