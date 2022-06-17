@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ASIA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/travel.css">
+    <script>
+        sessionStorage.getItem("email")
+        sessionStorage.getItem("name")
+    </script>
+</head>
+<body>
+    <div id="head">
+        <div id="logo">
+            <a href="index.html"><img src="../img/logo.png"></a>
+        </div>
+
+        <div id="head_menu">
+            <ul>
+                <li>
+                    <a href="my_page.html" style="color:black;">My page</a>
+                    <hr style="background-color:black;">
+                </li>
+                <li>
+                    <a href="travel_page.html">Travel</a>
+                    <hr>
+                </li>
+
+                <li style="width:100px;">
+                    <img src="../img/user.png">
+                </li>
+
+                <li>
+                    <a href="#" id="user" style="text-align:left; line-height:95px; margin-left:10px;">여행하지함</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="width:100%; height:42px;
+                    background-color:rgba(51, 63, 50, 0.48);">
+        <p style="width:220px; height:42px;
+                      float:left; margin-left:19%;
+                      color:#333; font-size:11pt;
+                      text-align:center; line-height:42px;">Travel > 아시아</p>
+    </div>
+
+    <div id="main">
+        <div style="width:100%; height:360px;
+                        float:left; position:absolute;
+                        background-color:#D3C3AA; z-index:-1;"></div>
+
+        <div id="travel_place">
+            <div id="title">
+                <p>아시아</p>
+
+            </div>
+
+            <div id="list">
+                <div class="place" onclick="location.href='travel_nepal.html'">
+                    <img src="../img/nepal/flag.png" style="width:95px; margin-left:50px;">
+
+                    <p class="place_title">네팔</p>
+                    <hr>
+                    <p class="place_info">세계에서 가장 높은 산<br>'에베레스트'를 보유하고 있는 청정 여행지 나라</p>
+                </div>
+
+                <div class="place" onclick="location.href='travel_taiwan.html'">
+                    <img src="../img/taiwan/flag.png">
+
+                    <p class="place_title">대만</p>
+                    <hr>
+                    <p class="place_info">소박하고 고즈넉한 풍경, 골목골목<br> 나는 흙내음까지 매력적인 나라</p>
+                </div>
+
+                <div class="place" onclick="location.href='travel_korea.html'">
+                    <img src="../img/korea/flag.png">
+
+                    <p class="place_title">대한민국</p>
+                    <hr>
+                    <p class="place_info">아름다운 산과 바다를 볼 수 있으며,<br>계절별 풍경이 매력적인 나라</p>
+                </div>
+
+                <div class="place" onclick="location.href='travel_laos.html'">
+                    <img src="../img/laos/flag.png">
+
+                    <p class="place_title">라오스</p>
+                    <hr>
+                    <p class="place_info">시장경제를 도입한 공산국가로,<br>수도 비엔티안을 중심으로 총 16개 주로 이루어져 있는 나라.</p>
+                </div>
+
+                <div class="place" onclick="location.href='travel_singapore.html'">
+                    <img src="../img/singapore/flag.png">
+
+                    <p class="place_title">싱가포르</p>
+                    <hr>
+                    <p class="place_info">금융과 무역을 중심의 다양한 문화,<br>다 민족이 어울려 살고 있는 나라</p>
+                </div>
+
+                <div class="place" onclick="location.href='travel_japan.html'">
+                    <img src="../img/japan/flag.png">
+
+                    <p class="place_title">일본</p>
+                    <hr>
+                    <p class="place_info">오키나와에서 훅카이도까지 남과 북의 뚜력한 기후로 아름다운<br> 자연과 다양한 문화를 가진 나라</p>
+                </div>
+
+                <div class="place" onclick="location.href='travel_thailand.html'">
+                    <img src="../img/thailand/flag.png">
+
+                    <p class="place_title">태국</p>
+                    <hr>
+                    <p class="place_info">저렴한 물가와 맛잇는 음식, 다양한<br>볼거리가 있는 여행자들의 나라</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>
