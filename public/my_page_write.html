@@ -15,7 +15,7 @@
 <body>
     <div id="head">
         <div id="logo">
-            <a href="index.html"><img src="../img/logo.png"></a>
+            <a href="index.html"><img src="../img/logo.png" alt="logo"></a>
         </div>
 
         <div id="head_menu">
@@ -30,7 +30,7 @@
                 </li>
 
                 <li style="width:100px;">
-                    <img src="../img/user.png">
+                    <img src="../img/user.png" alt="userIcon">
                 </li>
 
                 <li>
@@ -45,7 +45,9 @@
         <p style="width:220px; height:42px;
                       float:left; margin-left:19%;
                       color:#333; font-size:11pt;
-                      text-align:center; line-height:42px;">main > My page > 글쓰기</p>
+                      text-align:center; line-height:42px;">
+            <a href="index.html">main</a> > <a href="my_page.html">My page</a> > <a href="my_page_write.html">글쓰기</a>
+        </p>
     </div>
 
     <div id="main">
@@ -55,22 +57,22 @@
             </div>
 
             <div id="write_title">
-                <input type="text" name="write_title" id="input_title" placeholder="책의 제목을 입력해주세요">
+                <label for="input_title"><input type="text" name="write_title" id="input_title" placeholder="책의 제목을 입력해주세요"></label>
             </div>
 
             <div id="write_menu">
                 <a href="#" class="menu_item" id="book">
-                    <img src="../img/write_book.png">
+                    <img src="../img/write_book.png" alt="img">
                     <p>책</p>
                 </a>
 
                 <a href="#" class="menu_item" id="photo">
-                    <img src="../img/write_photo.png">
+                    <img src="../img/write_photo.png" alt="img">
                     <p>사진</p>
                 </a>
 
                 <a href="#" class="menu_item" id="writing">
-                    <img src="../img/write_writing.png">
+                    <img src="../img/write_writing.png" alt="img">
                     <p>글</p>
                 </a>
 
@@ -85,20 +87,20 @@
                              float:left; margin-top:30px;
                              margin-left:30px;
                              background-color:#000000;"></div>
-                            <textarea type="text" name="record_write_left" class="input_record" id="record_write_left" placeholder="여행 기록을 작성해보세요"></textarea>
+                            <label for="record_write_left"><textarea type="text" name="record_write_left" class="input_record" id="record_write_left" placeholder="여행 기록을 작성해보세요"></textarea></label>
 
                             <div style="width:1px; height:17px;
                              float:left; margin-top:30px;
                              margin-left:40px;
                              background-color:#000000;"></div>
-                            <textarea type="text" name="record_write_right" class="input_record" id="record_write_right" placeholder="여행 기록을 작성해보세요"></textarea>
+                            <label for="record_write_right"><textarea type="text" name="record_write_right" class="input_record" id="record_write_right" placeholder="여행 기록을 작성해보세요"></textarea></label>
                         </form>
 
-                        <img src="../img/write_background.png" id="write_background">
+                        <img src="../img/write_background.png" id="write_background" alt="img">
                     </div>
                     <div id="add_page">
                         <a href="#">
-                            <img src="../img/add_page.png">
+                            <img src="../img/add_page.png" alt="img">
                         </a>
                     </div>
                 </div>
@@ -108,22 +110,22 @@
                 <div id="write_bottom">
                     <div id="start_date">
                         <p>여행 시작일</p>
-                        <input type="text" id="start_year" class="year" name="start_year" placeholder="2022">
-                        <input type="text" id="start_month" class="month" name="start_month" placeholder="05">
-                        <input type="text" id="start_day" class="day" name="start_day" placeholder="23">
+                        <label for="start_year"><input type="text" id="start_year" class="year" name="start_year" placeholder="2022"></label>
+                        <label for="start_month"><input type="text" id="start_month" class="month" name="start_month" placeholder="05"></label>
+                        <label for="start_day"><input type="text" id="start_day" class="day" name="start_day" placeholder="23"></label>
                     </div>
 
                     <div id="end_date">
                         <p>여행 최종일</p>
-                        <input type="text" id="end_year" class="year" name="end_year" placeholder="2022">
-                        <input type="text" id="end_month" class="month" name="end_month" placeholder="05">
-                        <input type="text" id="end_day" class="day" name="end_day" placeholder="23">
+                        <label for="end_year"><input type="text" id="end_year" class="year" name="end_year" placeholder="2022"></label>
+                        <label for="end_month"><input type="text" id="end_month" class="month" name="end_month" placeholder="05"></label>
+                        <label for="end_day"><input type="text" id="end_day" class="day" name="end_day" placeholder="23"></label>
                     </div>
 
                     <div id="save_diary">
                         <button>등록</button>
                         <p>privacy</p>
-                        <input type="radio" id="privacy" name="privacy" value="privacy">
+                        <label for="privacy"><input type="radio" id="privacy" name="privacy" value="privacy"></label>
                     </div>
                 </div>
             </div>
@@ -135,28 +137,28 @@
             <div id="write" style="background-color:#E1D5BF;">
                 <a href="my_page_write.html">
                     <p class="title">글쓰기</p>
-                    <img src="../img/arrow2.png">
+                    <img src="../img/arrow2.png" alt="img">
                 </a>
             </div>
 
             <div id="record">
                 <a href="record.html">
                     <p class="title">기록보기</p>
-                    <img src="../img/arrow2.png">
+                    <img src="../img/arrow2.png" alt="img">
                 </a>
             </div>
 
             <div id="like">
                 <a href="my_page_favorite.html">
                     <p class="title">찜행지</p>
-                    <img src="../img/arrow2.png">
+                    <img src="../img/arrow2.png" alt="img">
                 </a>
             </div>
 
             <div id="profile_edit">
                 <a href="my_page_edit.html">
                     <p class="title">프로필수정</p>
-                    <img src="../img/arrow2.png">
+                    <img src="../img/arrow2.png" alt="img">
                 </a>
             </div>
         </div>
