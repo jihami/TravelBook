@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EUROPE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/travel.css">
+    <script>
+        sessionStorage.getItem("email")
+        sessionStorage.getItem("name")
+    </script>
+</head>
+<body>
+    <div id="head">
+        <div id="logo">
+            <a href="index.html"><img src="../img/logo.png"></a>
+        </div>
+
+        <div id="head_menu">
+            <ul>
+                <li>
+                    <a href="my_page.html" style="color:black;">My page</a>
+                    <hr style="background-color:black;">
+                </li>
+                <li>
+                    <a href="travel_page.html">Travel</a>
+                    <hr>
+                </li>
+
+                <li style="width:100px;">
+                    <img src="../img/user.png">
+                </li>
+
+                <li>
+                    <a href="#" id="user" style="text-align:left; line-height:95px; margin-left:10px;">여행하지함</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="width:100%; height:42px;
+                    background-color:rgba(51, 63, 50, 0.48);">
+        <p style="width:220px; height:42px;
+                      float:left; margin-left:19%;
+                      color:#333; font-size:11pt;
+                      text-align:center; line-height:42px;">Travel > 유럽</p>
+    </div>
+
+    <div id="main">
+        <div style="width:100%; height:360px;
+                        float:left; position:absolute;
+                        background-color:#D3C3AA; z-index:-1;"></div>
+
+        <div id="travel_place">
+            <div id="title">
+                <p>유럽</p>
+
+            </div>
+
+            <div id="list">
+                <div class="place" onclick="location.href='travel_greece.html'">
+                    <img src="../img/greece/flag.png">
+
+                    <p class="place_title">그리스</p>
+                    <hr>
+                    <p class="place_info">고대 그리스 문명에 뿌리를 두고 있는<br>유럽 발칸 반도 국가</p>
+                </div>
+
+                <div class="place" onclick="location.href='travel_denmark.html'">
+                    <img src="../img/denmark/flag.png">
+
+                    <p class="place_title">덴마크</p>
+                    <hr>
+                    <p class="place_info">서유럽과 북유럽을 이어주는<br>가교와 같은 반도 국가</p>
+                </div>
+
+                <div class="place" onclick="location.href='travel_spain.html'">
+                    <img src="../img/spain/flag.png">
+
+                    <p class="place_title">스페인</p>
+                    <hr>
+                    <p class="place_info">연중 따뜻한 기후, 아름다운 해안,<br>퓽요로운 분위기가 매력적인 태양의 나라</p>
+                </div>
+
+                <div class="place" onclick="location.href='travel_iceland.html'">
+                    <img src="../img/iceland/flag.png">
+
+                    <p class="place_title">아이슬란드</p>
+                    <hr>
+                    <p class="place_info">화산과 빙하, 야생의 지역이 공존하는<br>대서양의 섬나라</p>
+                </div>
+
+                <div class="place" onclick="location.href='travel_unitedKingdom.html'">
+                    <img src="../img/unitedKingdom/flag.png">
+
+                    <p class="place_title">영국</p>
+                    <hr>
+                    <p class="place_info">유럽 대륙 서북쪽에 자리한 섬나라로<br>우아한 왕실 문화와 신사적 이미지가 연상되는 나라</p>
+                </div>
+
+                <div class="place" onclick="location.href='travel_italy.html'">
+                    <img src="../img/italy/flag.png">
+
+                    <p class="place_title">이탈리아</p>
+                    <hr>
+                    <p class="place_info">지중해의 햇살이 눈부신 나라</p>
+                </div>
+
+                <div class="place" onclick="location.href='travel_france.html'">
+                    <img src="../img/france/flag.png">
+
+                    <p class="place_title">프랑스</p>
+                    <hr>
+                    <p class="place_info">유럽은 물론 세계의 문화, 예술의 중심지<br>오랜 역사를 자랑하는 세계 제 1의 관광국</p>
+                </div>
+
+                <div class="place" onclick="location.href='travel_hungary.html'">
+                    <img src="../img/hungary/flag.png">
+
+                    <p class="place_title">헝가리</p>
+                    <hr>
+                    <p class="place_info">동유럽에서 가장 빠르게 변화하고<br>야경과 온천이 유명한 나라</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>
