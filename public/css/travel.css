@@ -125,12 +125,12 @@ body{
                 float:left;
                 margin-bottom:20px;
                 margin-right:10%;
-                cursor:pointer;
             }
                 .place img{
                     width:172px;
                     height:110px;
                     box-shadow:1px 2px 5px 1px #989898;
+                    cursor:pointer;
                 }
                 .place_title{
                     width:100%;
