@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oceania</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/travel.css">
+    <script>
+        sessionStorage.getItem("email")
+        sessionStorage.getItem("name")
+    </script>
+</head>
+<body>
+    <div id="head">
+        <div id="logo">
+            <a href="index.html"><img src="../img/logo.png"></a>
+        </div>
+
+        <div id="head_menu">
+            <ul>
+                <li>
+                    <a href="my_page.html" style="color:black;">My page</a>
+                    <hr style="background-color:black;">
+                </li>
+                <li>
+                    <a href="travel_page.html">Travel</a>
+                    <hr>
+                </li>
+
+                <li style="width:100px;">
+                    <img src="../img/user.png">
+                </li>
+
+                <li>
+                    <a href="#" id="user" style="text-align:left; line-height:95px; margin-left:10px;">여행하지함</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="width:100%; height:42px;
+                    background-color:rgba(51, 63, 50, 0.48);">
+        <p style="width:220px; height:42px;
+                      float:left; margin-left:19%;
+                      color:#333; font-size:11pt;
+                      text-align:center; line-height:42px;">Travel > 오세아니아</p>
+    </div>
+
+    <div id="main">
+        <div style="width:100%; height:360px;
+                        float:left; position:absolute;
+                        background-color:#D3C3AA; z-index:-1;"></div>
+
+        <div id="travel_place">
+            <div id="title">
+                <p>오세아니아</p>
+
+            </div>
+
+            <div id="list">
+                <div class="place" onclick="location.href='travel_newZealand.html'">
+                    <img src="../img/newZealand/flag.png" style="height:90px;">
+
+                    <p class="place_title">뉴질랜드</p>
+                    <hr>
+                    <p class="place_info">대도시가 밀집되어 있는 북섬과<br>설산, 호수 등 자연환경이 빼어난 남섬으로 이루어진 나라</p>
+                </div>W
+
+                <div class="place" onclick="location.href='travel_australia.html'">
+                    <img src="../img/australia/flag.png" style="height:90px;">
+
+                    <p class="place_title">호주</p>
+                    <hr>
+                    <p class="place_info">대륙이 하나의 나라인 유일한 나라,<br>세련된 도시부터 천혜의 자연까지 모든 것이 있는 나라</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>
