@@ -120,7 +120,7 @@ textarea:focus{
         #title > img {
             float:left;
             margin-top:35px;
-            margin-left:857px;
+            margin-left:803px;
             position:absolute;
             z-index:1;
         }
@@ -226,7 +226,7 @@ textarea:focus{
     }
 
         #write_valencia{;
-            margin-left:370px;
+            margin-left:460px;
             position:absolute;
         }
 
@@ -235,7 +235,7 @@ textarea:focus{
             height:400px;
             float:left;
             margin-top:20px;
-            margin-left:410px;
+            margin-left:500px;
             position:relative;
             z-index:1;
         }

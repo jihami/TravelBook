@@ -110,7 +110,7 @@ textarea:focus{
     }
 
         #title > div{
-            width:850px;
+            width:900px;
             height:160px;
             float:left;
             background-color:#333f32;
@@ -131,6 +131,7 @@ textarea:focus{
         height:25px;
         float:left;
         position:relative;
+        z-index:1;
     }
         #date p{
             width:100%;
@@ -157,7 +158,7 @@ textarea:focus{
     }
 
         #record_first{
-           margin-left:370px;
+           margin-left:410px;
             margin-right:20px;
         }
 
@@ -195,8 +196,9 @@ textarea:focus{
         z-index:1;
     }
 
-    button:hover{
+    #edit:hover{
         cursor:pointer;
+        background-color: #c4ae91;
     }
 
 
