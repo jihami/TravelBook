@@ -7,6 +7,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/travel.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./js/travel.js"></script>
     <script>
         sessionStorage.getItem("email")
         sessionStorage.getItem("name")
@@ -61,13 +64,11 @@
 
             <div id="list">
                 <div class="place">
-                    <img src="../img/nepal/flag.png" style="width:95px; margin-left:50px;" onclick="location.href='travel_nepal.html'">
+                    <img src="../img/nepal/flag.png" class="flag" style="width:95px; margin-left:50px;" onclick="location.href='travel_nepal.html'">
 
                     <p class="place_title">
                         네팔
-                        <img src="../img/favorite_add.png" style="width:20px; height:20px;
-                                                                  float:left; margin-left:10px;
-                                                                  position:absolute; box-shadow:none;">
+                        <img src="../img/favorite_add.png" id="nepal" class="favorite_on" onclick="favorite_on('nepal')">
                     </p>
 
                     <hr>
@@ -75,13 +76,11 @@
                 </div>
 
                 <div class="place">
-                    <img src="../img/taiwan/flag.png" onclick="location.href='travel_taiwan.html'">
+                    <img src="../img/taiwan/flag.png" class="flag" onclick="location.href='travel_taiwan.html'">
 
                     <p class="place_title">
                         대만
-                        <img src="../img/favorite_add.png" style="width:20px; height:20px;
-                                                                  float:left; margin-left:10px;
-                                                                  position:absolute; box-shadow:none;">
+                        <img src="../img/favorite_add.png" id="taiwan" class="favorite_on" onclick="favorite_on('taiwan')">
                     </p>
 
                     <hr>
@@ -89,13 +88,11 @@
                 </div>
 
                 <div class="place">
-                    <img src="../img/korea/flag.png" onclick="location.href='travel_korea.html'">
+                    <img src="../img/korea/flag.png" class="flag" onclick="location.href='travel_korea.html'">
 
                     <p class="place_title">
                         대한민국
-                        <img src="../img/favorite_add.png" style="width:20px; height:20px;
-                                                                  float:left; margin-left:10px;
-                                                                  position:absolute; box-shadow:none;">
+                        <img src="../img/favorite_add.png" id="korea" class="favorite_on" onclick="favorite_on('korea')">
                     </p>
 
                     <hr>
@@ -103,13 +100,11 @@
                 </div>
 
                 <div class="place">
-                    <img src="../img/laos/flag.png" onclick="location.href='travel_laos.html'">
+                    <img src="../img/laos/flag.png" class="flag" onclick="location.href='travel_laos.html'">
 
                     <p class="place_title">
                         라오스
-                        <img src="../img/favorite_add.png" style="width:20px; height:20px;
-                                                                  float:left; margin-left:10px;
-                                                                  position:absolute; box-shadow:none;">
+                        <img src="../img/favorite_add.png" id="laos" class="favorite_on" onclick="favorite_on('laos')">
                     </p>
 
                     <hr>
@@ -117,13 +112,11 @@
                 </div>
 
                 <div class="place">
-                    <img src="../img/singapore/flag.png" onclick="location.href='travel_singapore.html'">
+                    <img src="../img/singapore/flag.png" class="flag" onclick="location.href='travel_singapore.html'">
 
                     <p class="place_title">
                         싱가포르
-                        <img src="../img/favorite_add.png" style="width:20px; height:20px;
-                                                                  float:left; margin-left:10px;
-                                                                  position:absolute; box-shadow:none;">
+                        <img src="../img/favorite_add.png" id="singapore" class="favorite_on" onclick="favorite_on('singapore')">
                     </p>
 
                     <hr>
@@ -131,13 +124,11 @@
                 </div>
 
                 <div class="place">
-                    <img src="../img/japan/flag.png" onclick="location.href='travel_japan.html'">
+                    <img src="../img/japan/flag.png" class="flag" onclick="location.href='travel_japan.html'">
 
                     <p class="place_title">
                         일본
-                        <img src="../img/favorite_add.png" style="width:20px; height:20px;
-                                                                  float:left; margin-left:10px;
-                                                                  position:absolute; box-shadow:none;">
+                        <img src="../img/favorite_add.png" id="japan" class="favorite_on" onclick="favorite_on('japan')">
                     </p>
 
                     <hr>
@@ -145,13 +136,11 @@
                 </div>
 
                 <div class="place">
-                    <img src="../img/thailand/flag.png" onclick="location.href='travel_thailand.html'">
+                    <img src="../img/thailand/flag.png" class="flag" onclick="location.href='travel_thailand.html'">
 
                     <p class="place_title">
                         태국
-                        <img src="../img/favorite_add.png" style="width:20px; height:20px;
-                                                                  float:left; margin-left:10px;
-                                                                  position:absolute; box-shadow:none;">
+                        <img src="../img/favorite_add.png" id="thailand" class="favorite_on" onclick="favorite_on('thailand')">
                     </p>
 
                     <hr>

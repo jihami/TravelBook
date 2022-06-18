@@ -7,6 +7,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/travel.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./js/travel.js"></script>
     <script>
         sessionStorage.getItem("email")
         sessionStorage.getItem("name")
@@ -61,13 +64,11 @@
 
             <div id="list">
                 <div class="place">
-                    <img src="../img/newZealand/flag.png" style="height:90px;" onclick="location.href='travel_newZealand.html'">
+                    <img src="../img/newZealand/flag.png" class="flag" style="height:90px;" onclick="location.href='travel_newZealand.html'">
 
                     <p class="place_title">
                         뉴질랜드
-                        <img src="../img/favorite_add.png" style="width:20px; height:20px;
-                                                                  float:left; margin-left:10px;
-                                                                  position:absolute; box-shadow:none;">
+                        <img src="../img/favorite_add.png" id="newZealand" class="favorite_on" onclick="favorite_on('newZealand')">
                     </p>
 
                     <hr>
@@ -75,13 +76,11 @@
                 </div>
 
                 <div class="place">
-                    <img src="../img/australia/flag.png" style="height:90px;" onclick="location.href='travel_australia.html'">
+                    <img src="../img/australia/flag.png" class="flag" style="height:90px;" onclick="location.href='travel_australia.html'">
 
                     <p class="place_title">
                         호주
-                        <img src="../img/favorite_add.png" style="width:20px; height:20px;
-                                                                  float:left; margin-left:10px;
-                                                                  position:absolute; box-shadow:none;">
+                        <img src="../img/favorite_add.png" id="australia" class="favorite_on" onclick="favorite_on('australia')">
                     </p>
 
                     <hr>

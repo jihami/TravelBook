@@ -7,6 +7,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/travel.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./js/travel.js"></script>
     <script>
         sessionStorage.getItem("email")
         sessionStorage.getItem("name")
@@ -61,13 +64,11 @@
 
             <div id="list">
                 <div class="place">
-                    <img src="../img/mexico/flag.png" onclick="location.href='travel_mexico.html'">
+                    <img src="../img/mexico/flag.png" class="flag" onclick="location.href='travel_mexico.html'">
 
                     <p class="place_title">
                         멕시코
-                        <img src="../img/favorite_add.png" style="width:20px; height:20px;
-                                                                  float:left; margin-left:10px;
-                                                                  position:absolute; box-shadow:none;">
+                        <img src="../img/favorite_add.png" id="mexico" class="favorite_on" onclick="favorite_on('mexico')">
                     </p>
 
                     <hr>
@@ -75,13 +76,11 @@
                 </div>
 
                 <div class="place">
-                    <img src="../img/usa/flag.png" onclick="location.href='travel_usa.html'">
+                    <img src="../img/USA/flag.png" class="flag" onclick="location.href='travel_usa.html'">
 
                     <p class="place_title">
                         미국
-                        <img src="../img/favorite_add.png" style="width:20px; height:20px;
-                                                                  float:left; margin-left:10px;
-                                                                  position:absolute; box-shadow:none;">
+                        <img src="../img/favorite_add.png" id="usa" class="favorite_on" onclick="favorite_on('usa')">
                     </p>
 
                     <hr>
@@ -89,13 +88,11 @@
                 </div>
 
                 <div class="place">
-                    <img src="../img/canada/flag.png" onclick="location.href='travel_canada.html'">
+                    <img src="../img/canada/flag.png" class="flag" onclick="location.href='travel_canada.html'">
 
                     <p class="place_title">
                         캐나다
-                        <img src="../img/favorite_add.png" style="width:20px; height:20px;
-                                                                  float:left; margin-left:10px;
-                                                                  position:absolute; box-shadow:none;">
+                        <img src="../img/favorite_add.png" id="canada" class="favorite_on" onclick="favorite_on('canada')">
                     </p>
 
                     <hr>
@@ -103,13 +100,11 @@
                 </div>
 
                 <div class="place">
-                    <img src="../img/cuba/flag.png" onclick="location.href='travel_cuba.html'">
+                    <img src="../img/cuba/flag.png" class="flag" onclick="location.href='travel_cuba.html'">
 
                     <p class="place_title">
                         쿠바
-                        <img src="../img/favorite_add.png" style="width:20px; height:20px;
-                                                                  float:left; margin-left:10px;
-                                                                  position:absolute; box-shadow:none;">
+                        <img src="../img/favorite_add.png" id="cuba" class="favorite_on" onclick="favorite_on('cuba')">
                     </p>
 
                     <hr>

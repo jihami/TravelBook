@@ -126,7 +126,7 @@ body{
                 margin-bottom:20px;
                 margin-right:10%;
             }
-                .place img{
+                .flag{
                     width:172px;
                     height:110px;
                     box-shadow:1px 2px 5px 1px #989898;
@@ -142,6 +142,16 @@ body{
                     text-align:center;
                     line-height:20px;
                 }
+
+                    .favorite_on{
+                        width:20px;
+                        height:20px;
+                        float:left;
+                        margin-left:10px;
+                        position:absolute;
+                        box-shadow:none;
+                        filter:opacity(50%)
+                    }
 
                 .place_info{
                     width:100%;
