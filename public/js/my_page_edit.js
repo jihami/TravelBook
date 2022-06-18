@@ -58,7 +58,7 @@ async function save(){
                alert("저장 완료!");
                sessionStorage.setItem("nickName", nickName);
                sessionStorage.setItem("info", info);
-               location.href = "index.html";
+               document.getElementById('login').innerHTML = nickName
            }
        }
 
