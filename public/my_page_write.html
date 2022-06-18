@@ -7,7 +7,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/my_page_write.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/fb.js"></script>
     <script>
         sessionStorage.getItem("email")
         sessionStorage.getItem("name")
@@ -23,20 +29,19 @@
         <div id="head_menu">
             <ul>
                 <li>
-                    <a href="my_page.html" style="color:black;">My page</a>
-                    <hr style="background-color:black;">
+                    <a href="my_page.html">My page</a>
+                    <hr>
                 </li>
                 <li>
                     <a href="travel_page.html">Travel</a>
                     <hr>
                 </li>
-
                 <li style="width:100px;">
-                    <img src="../img/user.png" alt="userIcon">
+                    <img id="userIcon" src="../img/user.png" alt="userIcon">
                 </li>
-
                 <li>
-                    <a href="my_page.html" id="user" style="text-align:left; line-height:95px; margin-left:10px;">여행하지함</a>
+                    <a href="#" style="text-align:left; line-height:95px; margin-left:10px; position:relative;" id="login"  onclick="login()">Login</a>
+                    <a href="#" style="text-align:left; line-height:95px; margin-left:-90px; position:absolute; display:none;" id="logout" onclick="logout()">Logout</a>
                 </li>
             </ul>
         </div>
@@ -83,9 +88,12 @@
 <!--                </a>-->
 
                 <a href="#" class="menu_item" id="photo">
-                    <img src="../img/write_photo.png" alt="img">
+                    <img src="../img/write_photo.png" id="imgIcon" alt="img" onclick="$($('#uploadImg')).click();">
                     <p>사진</p>
+                    <input type="file" id="uploadImg" style="display: none" onchange="readURL(this);">
                 </a>
+
+<!--                <input type="file" onchange="readURL(this);">-->
 
                 <hr style="margin-top:87px;">
             </div>
@@ -122,7 +130,9 @@
                         </form>
                         <img src="../img/write_background.png" class="write_background" alt="img">
                     </div>
-<!--                    <div id="add_page">-->
+                    <img id="preview">
+
+                    <!--                    <div id="add_page">-->
 <!--                        <a href="#">-->
 <!--                            <img src="../img/add_page.png" alt="img">-->
 <!--                        </a>-->

@@ -81,6 +81,9 @@ input:focus{
                     float:right;
                     margin-top:25px;
                 }
+                #userIcon{
+                    border-radius: 100%;
+                }
 
 #main{
     width:100%;
@@ -179,8 +182,16 @@ input:focus{
             }
 
             #photo{
+                /*background-color: #039be5;*/
+                width: 50px;
                 margin-left:25px;
             }
+            #photo img{
+                margin-top: 15px;
+                width: 50px;
+                height: 50px;
+            }
+
 
             .menu_item img{
                 width:30px;
@@ -208,6 +219,7 @@ input:focus{
                 float:left;
                 margin-top:90px;
                 position:relative;
+                text-align: center;
             }
                 .contents_writing{
                     width:700px;
@@ -215,6 +227,7 @@ input:focus{
                     position:relative;
                 }
                     .contents_writing form{
+                        margin-top: 20px;
                         position:absolute;
                         z-index:1;
                     }
@@ -234,22 +247,22 @@ input:focus{
                             outline:none;
                         }
 
-
                     .write_background{
+                        margin-top: 15px;
                         width:700px;
                         height:400px;
                         float:left;
-                        position:absolute;
                         filter:drop-shadow(0px 5px 4px #ccc7ba);
                     }
-
-                #add_page{
-                    width:280px;
-                    height:180px;
-                    float:left;
-                    margin-top:216px;
-                    margin-left:35px;
+                #preview{
+                    border: none;
+                    width: 300px;
+                    height: 300px;
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                    display: none;
                 }
+
         #write_hr{
             margin-top: 10px;
         }
@@ -345,10 +358,10 @@ input:focus{
                 }
 
     #menu{
+        margin-top: 100px;
         width:100%;
         height:40%;
         float:left;
-        position:relative;
         }
         #menu > div{
             width:280px;
@@ -356,7 +369,6 @@ input:focus{
             float:left;
             margin-top:100px;
             margin-right:20px;
-            position:relative;
             background-color:#F7F0DF;
             box-shadow:1px 2px 5px 1px #ccc7ba;
         }
