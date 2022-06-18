@@ -6,7 +6,7 @@ function categoryChange(continent) {
     var oceania = ["뉴질랜드", "호주"];
     var africa = ["마다가스카르", "모로코", "케냐"];
     var target = document.getElementById("country");
-    var con = continent.value
+    var con = continent.value;
     if(con === "europe") {
        var d = europe;
     } else if(con === "north_america") {
@@ -26,7 +26,9 @@ function categoryChange(continent) {
         opt.value = d[x];
         opt.innerHTML = d[x];
         target.appendChild(opt);
-
-        console.log($("#continent opt:selected").val());
     }
+
+    console.log($("select[id=country] option:selected").text());
+    var l = document.getElementById("country").value;
+    console.log(l)
 }

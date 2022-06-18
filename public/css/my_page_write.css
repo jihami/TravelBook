@@ -178,7 +178,7 @@ input:focus{
                 margin-right:80px;
             }
 
-            #book{
+            #photo{
                 margin-left:25px;
             }
 
@@ -199,7 +199,6 @@ input:focus{
 
         #write_contents{
             width:100%;
-            height:1000px;
             float:left;
             position:relative;
         }
@@ -210,13 +209,12 @@ input:focus{
                 margin-top:90px;
                 position:relative;
             }
-                #contents_writing{
+                .contents_writing{
                     width:700px;
                     height:400px;
-                    float:left;
                     position:relative;
                 }
-                    #contents_writing form{
+                    .contents_writing form{
                         position:absolute;
                         z-index:1;
                     }
@@ -224,6 +222,7 @@ input:focus{
                             width:275px;
                             height:340px;
                             float:left;
+                            margin-left:15px;
                             margin-top:30px;
                             font-size:10pt;
                             resize:none;
@@ -235,15 +234,8 @@ input:focus{
                             outline:none;
                         }
 
-                        #record_write_left{
-                            margin-left:15px;
-                        }
 
-                        #record_write_right{
-                            margin-left:15px;
-                        }
-
-                    #write_background{
+                    .write_background{
                         width:700px;
                         height:400px;
                         float:left;
@@ -258,7 +250,9 @@ input:focus{
                     margin-top:216px;
                     margin-left:35px;
                 }
-
+        #write_hr{
+            margin-top: 10px;
+        }
         #write_bottom{
             width:100%;
             height:52%;
@@ -282,8 +276,8 @@ input:focus{
             }
 
             #start_date{
-                margin-left:17%;
-                margin-right:5%;
+                margin-left:20%;
+                margin-right:10px;
             }
 
                 #write_bottom p {
@@ -308,24 +302,6 @@ input:focus{
                     box-shadow:0 2px 5px 1px #b6b5a9;
                 }
 
-                .month{
-                    width:90px;
-                    height:35px;
-                    float:left;
-                    margin-right:15px;
-                    border:none;
-                    background-color:#E1D5BF;
-                    box-shadow:0 2px 5px 1px #b6b5a9;
-                }
-
-                .day{
-                    width:90px;
-                    height:35px;
-                    float:left;
-                    border:none;
-                    background-color:#E1D5BF;
-                    box-shadow:0 2px 5px 1px #b6b5a9;
-                }
 
                 input:focus{
                     outline:none;
@@ -360,13 +336,11 @@ input:focus{
                 }
 
                 #privacy{
-                    appearance:none;
                     width:20px;
                     height:20px;
                     float:left;
                     margin-top:8px;
                     border:none;
-                    border-radius:50px;
                     background-color:#E1D5BF;
                 }
 
