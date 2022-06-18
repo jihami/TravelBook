@@ -98,12 +98,12 @@
                              float:left; margin-top:30px;
                              margin-left:30px;
                              background-color:#000000;"></div>
-                            <label><textarea type="text" name="record_write_left" class="input_record" placeholder="여행 기록을 작성해보세요"></textarea></label>
+                            <label><textarea type="text" name="record_write_left" id="text1" class="input_record" placeholder="여행 기록을 작성해보세요"></textarea></label>
                             <div style="width:1px; height:17px;
                              float:left; margin-top:30px;
                              margin-left:40px;
                              background-color:#000000;"></div>
-                            <label><textarea type="text" name="record_write_right" class="input_record" placeholder="여행 기록을 작성해보세요"></textarea></label>
+                            <label><textarea type="text" name="record_write_right" id="text2" class="input_record" placeholder="여행 기록을 작성해보세요"></textarea></label>
                         </form>
                         <img src="../img/write_background.png" class="write_background" alt="img">
                     </div>
@@ -113,12 +113,12 @@
                              float:left; margin-top:30px;
                              margin-left:30px;
                              background-color:#000000;"></div>
-                            <label><textarea type="text" name="record_write_left" class="input_record" placeholder="여행 기록을 작성해보세요"></textarea></label>
+                            <label><textarea type="text" name="record_write_left" id="text3" class="input_record" placeholder="여행 기록을 작성해보세요"></textarea></label>
                             <div style="width:1px; height:17px;
                              float:left; margin-top:30px;
                              margin-left:40px;
                              background-color:#000000;"></div>
-                            <label><textarea type="text" name="record_write_right" class="input_record" placeholder="여행 기록을 작성해보세요"></textarea></label>
+                            <label><textarea type="text" name="record_write_right" id="text4" class="input_record" placeholder="여행 기록을 작성해보세요"></textarea></label>
                         </form>
                         <img src="../img/write_background.png" class="write_background" alt="img">
                     </div>
@@ -135,16 +135,16 @@
                 <div id="write_bottom">
                     <div id="start_date">
                         <p>여행 시작일</p>
-                        <label for="start_year"><input type="text" id="start_year" class="year" name="start_year" placeholder="2022.08.25"></label>
+                        <label for="start_day"><input type="text" id="start_day" class="day" name="start_year" placeholder="2022.08.25"></label>
                     </div>
 
                     <div id="end_date">
                         <p>여행 최종일</p>
-                        <label for="end_year"><input type="text" id="end_year" class="year" name="end_year" placeholder="2022.08.25"></label>
+                        <label for="end_day"><input type="text" id="end_day" class="day" name="end_year" placeholder="2022.08.25"></label>
                     </div>
 
                     <div id="save_diary">
-                        <button>등록</button>
+                        <button onclick="submit()">등록</button>
                         <p>privacy</p>
                         <label for="privacy"><input type="checkbox" id="privacy" name="privacy" value="privacy"></label>
                     </div>
