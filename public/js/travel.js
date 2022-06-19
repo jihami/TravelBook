@@ -19,3 +19,11 @@ function favorite_on(country){
         click_chk = 0
     }
 }
+
+$(function(){
+    $('.country').on('mouseover', function(){
+        $('.country > img').css({
+            opacity:'20%'
+        })
+    })
+})

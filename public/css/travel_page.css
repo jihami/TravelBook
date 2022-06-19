@@ -133,6 +133,13 @@ body{
             box-shadow:1px 1px 6px 1px rgba(0, 0, 0, 0.25);
             cursor:pointer;
         }
+
+            .country > img{
+                width:180px;
+                height:435px;
+                position:absolute;
+            }
+
             .country a{
                 width:130px;
                 height:15px;
@@ -165,7 +172,16 @@ body{
         #europe:hover{
             width:188px;
             height:455px;
-            box-shadow:8px 8px 10px 1px rgba(0, 95, 199, 0.18);
+            box-shadow:8px 8px 10px 1px rgba(0, 120, 250, 0.29);
+        }
+
+        #europe:hover #europe_map{
+            width:188px;
+            height:455px;
+        }
+
+        #europe:hover #europe_link{
+            margin-top:425px;
         }
 
         #north_america:hover{
@@ -174,10 +190,28 @@ body{
             box-shadow:8px 8px 10px 1px rgba(255, 0, 0, 0.18);
         }
 
+        #north_america:hover #north_america_map{
+            width:188px;
+            height:455px;
+        }
+
+        #north_america:hover #north_america_link{
+            margin-top:425px;
+        }
+
         #south_america:hover{
             width:188px;
             height:455px;
             box-shadow:8px 8px 10px 1px rgba(255, 0, 0, 0.18);
+        }
+
+        #south_america:hover #south_america_map{
+            width:188px;
+            height:455px;
+        }
+
+        #south_america:hover #south_america_link{
+            margin-top:425px;
         }
 
         #asia:hover{
@@ -186,16 +220,43 @@ body{
             box-shadow:8px 8px 10px 1px rgba(255, 234, 0, 0.18);
         }
 
+        #asia:hover #asia_map{
+            width:188px;
+            height:455px;
+        }
+
+        #asia:hover #asia_link{
+            margin-top:425px;
+        }
+
         #oceania:hover{
             width:188px;
             height:455px;
             box-shadow:8px 8px 10px 1px rgba(11, 93, 0, 0.18);
         }
 
+        #oceania:hover #oceania_map{
+            width:188px;
+            height:455px;
+        }
+
+        #oceania:hover #oceania_link{
+            margin-top:425px;
+        }
+
         #africa:hover{
             width:188px;
             height:455px;
             box-shadow:8px 8px 10px 1px rgba(0, 0, 0, 0.18);
+        }
+
+        #africa:hover #africa_map{
+            width:188px;
+            height:455px;
+        }
+
+        #africa:hover #africa_link{
+            margin-top:425px;
         }
 
 #footer{
