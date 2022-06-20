@@ -87,8 +87,13 @@
 <!--                    <p>책</p>-->
 <!--                </a>-->
 
-                <a href="#" class="menu_item" id="photo">
-                    <img src="../img/write_photo.png" id="imgIcon" alt="img" onclick="$($('#uploadImg')).click();">
+                <a href="#" class="menu_item" class="photo">
+                    <img src="../img/write_photo.png" class="imgIcon" alt="img" onclick="$($('.uploadImg')).click();">
+                    <p>사진</p>
+                    <input type="file" class="uploadImg" style="display: none" onchange="readURL(this);">
+                </a>
+                <a href="#" class="menu_item" class="photo">
+                    <img src="../img/write_photo.png" class="imgIcon" alt="img" onclick="$($('.uploadImg')).click();">
                     <p>사진</p>
                     <input type="file" id="uploadImg" style="display: none" onchange="readURL(this);">
                 </a>
@@ -130,7 +135,10 @@
                         </form>
                         <img src="../img/write_background.png" class="write_background" alt="img">
                     </div>
-                    <img id="preview">
+                    <img id="preview1">
+                    <img id="preview2">
+                    <img id="preview3">
+                    <img id="preview4">
 
                     <!--                    <div id="add_page">-->
 <!--                        <a href="#">-->

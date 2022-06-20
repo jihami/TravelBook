@@ -33,14 +33,14 @@ function categoryChange(continent) {
 }
 function readURL(input) {
     if (input.files && input.files[0]) {
-        $($('#preview')).show()
+        $($('#preview1')).show()
         var reader = new FileReader();
         reader.onload = function(e) {
-            document.getElementById('preview').src = e.target.result;
+            document.getElementById('preview1').src = e.target.result;
         };
         reader.readAsDataURL(input.files[0]);
     } else {
-        document.getElementById('preview').src = "";
+        document.getElementById('preview1').src = "";
     }
 }
 function submit(){
