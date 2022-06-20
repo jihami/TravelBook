@@ -31,8 +31,9 @@ function categoryChange(continent) {
 
     console.log($("select[id=country] option:selected").text());
 }
-function readURL(input) {
+function readURL1(input) {
     if (input.files && input.files[0]) {
+        $($('#add_photo1')).hide()
         $($('#preview1')).show()
         var reader = new FileReader();
         reader.onload = function(e) {
@@ -41,6 +42,45 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
     } else {
         document.getElementById('preview1').src = "";
+    }
+}
+function readURL2(input) {
+    if (input.files && input.files[0]) {
+        $($('#add_photo2')).hide()
+        $($('#preview2')).show()
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('preview2').src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        document.getElementById('preview2').src = "";
+    }
+}
+function readURL3(input) {
+    if (input.files && input.files[0]) {
+        $($('#add_photo3')).hide()
+        $($('#preview3')).show()
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('preview3').src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        document.getElementById('preview3').src = "";
+    }
+}
+function readURL4(input) {
+    if (input.files && input.files[0]) {
+        $($('#add_photo4')).hide()
+        $($('#preview4')).show()
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('preview4').src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        document.getElementById('preview4').src = "";
     }
 }
 function submit(){

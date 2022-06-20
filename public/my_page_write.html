@@ -8,7 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/my_page_write.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/fb.js"></script>
+    <script src="js/my_page_write.js"></script>
     <script>
         sessionStorage.getItem("email")
         sessionStorage.getItem("name")
@@ -116,8 +123,13 @@
                     <img src="../img/write_background.png" class="write_background" alt="img">
                 </div>
                 <div class="add_photo">
-                        <img id="add_photo1" src="../img/add_page.png" alt="img">
-                        <img id="add_photo2" src="../img/add_page.png" alt="img">
+                    <img id="add_photo1" src="../img/add_page.png" alt="img"  onclick="$($('.uploadImg1')).click();">
+                    <input type="file" class="uploadImg1" style="display: none" onchange="readURL1(this);">
+                    <img class="preview" id="preview1" style="display: none; max-width: 800px; max-height: 400px; margin-top: 30px; margin-left: 10px" alt="img" src="">
+                    <br/>
+                    <img id="add_photo2" src="../img/add_page.png" alt="img"  onclick="$($('#uploadImg2')).click();">
+                    <input type="file" id="uploadImg2" style="display: none" onchange="readURL2(this);">
+                    <img class="preview" id="preview2" style="display: none; max-width: 800px; max-height: 400px; margin-left: 10px" alt="img" src="">
                 </div>
                 <div class="contents_writing">
                     <form>
@@ -135,8 +147,13 @@
                     <img src="../img/write_background.png" class="write_background" alt="img">
                 </div>
                 <div class="add_photo">
-                        <img id="add_photo3" src="../img/add_page.png" alt="img">
-                        <img id="add_photo4" src="../img/add_page.png" alt="img">
+                    <img id="add_photo3" src="../img/add_page.png" alt="img"  onclick="$($('.uploadImg3')).click();">
+                    <input type="file" class="uploadImg3" style="display: none" onchange="readURL3(this);">
+                    <img class="preview" id="preview3" style="display: none; max-width: 800px; max-height: 400px; margin-top: 30px; margin-left: 10px" alt="img" src="">
+                    <br/>
+                    <img id="add_photo4" src="../img/add_page.png" alt="img"  onclick="$($('#uploadImg4')).click();">
+                    <input type="file" id="uploadImg4" style="display: none" onchange="readURL4(this);">
+                    <img class="preview" id="preview4" style="display: none; max-width: 800px; max-height: 400px; margin-left: 10px" alt="img" src="">
                 </div>
             </div>
 
