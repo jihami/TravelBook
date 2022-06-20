@@ -219,12 +219,12 @@ input:focus{
                 float:left;
                 margin-top:90px;
                 position:relative;
-                text-align: center;
             }
                 .contents_writing{
                     width:700px;
                     height:400px;
                     position:relative;
+                    float: left;
                 }
                     .contents_writing form{
                         margin-top: 20px;
@@ -254,6 +254,22 @@ input:focus{
                         float:left;
                         filter:drop-shadow(0px 5px 4px #ccc7ba);
                     }
+                    #add_photo1{
+                        margin-top: 40px;
+                        margin-left: 10px;
+
+                    }
+                    #add_photo2{
+                        margin-left: 10px;
+                    }
+                    #add_photo3{
+                        margin-top: 40px;
+                        margin-left: 10px;
+                    }
+                    #add_photo4{
+                        margin-left: 10px;
+                    }
+
                 #preview1{
                     border: none;
                     width: 300px;
@@ -293,6 +309,11 @@ input:focus{
                 margin-right:10px;
             }
 
+            #start_date{
+                margin-left:20%;
+                margin-right:10px;
+            }
+
                 #write_bottom p {
                     float:left;
                     margin-right:15px;
@@ -305,7 +326,7 @@ input:focus{
                     padding-left:10px;
                 }
 
-                .day{
+                .year{
                     width:120px;
                     height:35px;
                     float:left;

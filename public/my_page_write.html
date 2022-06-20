@@ -8,13 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/my_page_write.css">
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="js/fb.js"></script>
     <script>
         sessionStorage.getItem("email")
         sessionStorage.getItem("name")
@@ -22,217 +16,214 @@
     <script src="js/my_page_write.js"></script>
 </head>
 <body>
-    <div id="head">
-        <div id="logo">
-            <a href="index.html"><img src="../img/logo.png" alt="logo"></a>
-        </div>
-
-        <div id="head_menu">
-            <ul>
-                <li>
-                    <a href="my_page.html">My page</a>
-                    <hr>
-                </li>
-                <li>
-                    <a href="travel_page.html">Travel</a>
-                    <hr>
-                </li>
-                <li style="width:100px;">
-                    <img id="userIcon" src="../img/user.png" alt="userIcon">
-                </li>
-                <li>
-                    <a href="#" style="text-align:left; line-height:95px; margin-left:10px; position:relative;" id="login"  onclick="login()">Login</a>
-                    <a href="#" style="text-align:left; line-height:95px; margin-left:-90px; position:absolute; display:none;" id="logout" onclick="logout()">Logout</a>
-                </li>
-            </ul>
-        </div>
+<div id="head">
+    <div id="logo">
+        <a href="index.html"><img src="../img/logo.png" alt="logo"></a>
     </div>
 
-    <div style="width:100%; height:42px;
+    <div id="head_menu">
+        <ul>
+            <li>
+                <a href="my_page.html" style="color:black;">My page</a>
+                <hr style="background-color:black;">
+            </li>
+            <li>
+                <a href="travel_page.html">Travel</a>
+                <hr>
+            </li>
+
+            <li style="width:100px;">
+                <img src="../img/user.png" alt="userIcon">
+            </li>
+
+            <li>
+                <a href="my_page.html" id="user" style="text-align:left; line-height:95px; margin-left:10px;">여행하지함</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div style="width:100%; height:42px;
                     background-color:rgba(51, 63, 50, 0.48);">
-        <p style="width:220px; height:42px;
+    <p style="width:220px; height:42px;
                       float:left; margin-left:19%;
                       color:#333; font-size:11pt;
                       text-align:center; line-height:42px;">
-            <a href="index.html">main</a> > <a href="my_page.html">My page</a> > <a href="my_page_write.html">글쓰기</a>
-        </p>
-    </div>
+        <a href="index.html">main</a> > <a href="my_page.html">My page</a> > <a href="my_page_write.html">글쓰기</a>
+    </p>
+</div>
 
-    <div id="main">
-        <div id="contents">
-            <div id="title">
-                <p>여행 기록하기</p>
-            </div>
+<div id="main">
+    <div id="contents">
+        <div id="title">
+            <p>여행 기록하기</p>
+        </div>
 
-            <div id="write_title">
-                <label for="input_title"><input type="text" name="write_title" id="input_title" placeholder="책의 제목을 입력해주세요"></label>
-            </div>
-            <div id="select_Change">
-                <label for="continent"><select id="continent" onchange="categoryChange(this)">
-                    <option>대륙 선택</option>
-                    <option value="europe" >유럽</option>
-                    <option value="asia">아시아</option>
-                    <option value="north_america" >북미</option>
-                    <option value="america" >남미</option>
-                    <option value="africa" >아프리카</option>
-                    <option value="oceania" >오세아니아</option>
-                </select></label>
-                <label for="country"><select id="country">
-                    <option>나라 선택</option>
-                </select></label>
-            </div>
+        <div id="write_title">
+            <label for="input_title"><input type="text" name="write_title" id="input_title" placeholder="책의 제목을 입력해주세요"></label>
+        </div>
+        <div id="select_Change">
+            <label for="continent">
+                <select id="continent" onchange="categoryChange(this)">
+                <option>대륙 선택</option>
+                <option value="europe" value2="d">유럽</option>
+                <option value="asia" value2="d">아시아</option>
+                <option value="north_america" value2="d">북미</option>
+                <option value="america" value2="d">남미</option>
+                <option value="africa" value2="d">아프리카</option>
+                <option value="oceania" value2="d">오세아니아</option>
+            </select>
+            </label>
+            <label for="country"><select id="country">
+                <option>나라 선택</option>
+            </select></label>
+        </div>
 
-            <div id="write_menu">
-<!--                <a href="#" class="menu_item" id="book">-->
-<!--                    <img src="../img/write_book.png" alt="img">-->
-<!--                    <p>책</p>-->
-<!--                </a>-->
+<!--        <div id="write_menu">-->
+<!--            <a href="#" class="menu_item" id="book">-->
+<!--                <img src="../img/write_book.png" alt="img">-->
+<!--                <p>책</p>-->
+<!--            </a>-->
 
-                <a href="#" class="menu_item" class="photo">
-                    <img src="../img/write_photo.png" class="imgIcon" alt="img" onclick="$($('.uploadImg')).click();">
-                    <p>사진</p>
-                    <input type="file" class="uploadImg" style="display: none" onchange="readURL(this);">
-                </a>
-                <a href="#" class="menu_item" class="photo">
-                    <img src="../img/write_photo.png" class="imgIcon" alt="img" onclick="$($('.uploadImg')).click();">
-                    <p>사진</p>
-                    <input type="file" id="uploadImg" style="display: none" onchange="readURL(this);">
-                </a>
+<!--            <a href="#" class="menu_item" id="photo">-->
+<!--                <img src="../img/write_photo.png" alt="img">-->
+<!--                <p>사진</p>-->
+<!--            </a>-->
 
-<!--                <input type="file" onchange="readURL(this);">-->
+<!--            <a href="#" class="menu_item" id="writing">-->
+<!--                <img src="../img/write_writing.png" alt="img">-->
+<!--                <p>글</p>-->
+<!--            </a>-->
 
-                <hr style="margin-top:87px;">
-            </div>
+<!--            <hr style="margin-top:87px;">-->
+<!--        </div>-->
 
-            <div id="write_contents">
-                <div id="write_top">
-                    <div class="contents_writing">
-                        <form>
-                            <div style="width:1px; height:17px;
+        <div id="write_contents">
+            <div id="write_top">
+                <div class="contents_writing">
+                    <form>
+                        <div style="width:1px; height:17px;
                              float:left; margin-top:30px;
                              margin-left:30px;
                              background-color:#000000;"></div>
-                            <label><textarea type="text" name="record_write_left" id="text1" class="input_record" placeholder="여행 기록을 작성해보세요"></textarea></label>
-                            <div style="width:1px; height:17px;
+                        <label for="record_write1"><textarea type="text" name="record_write_left" class="input_record" id="record_write1" placeholder="여행 기록을 작성해보세요"></textarea></label>
+                        <div style="width:1px; height:17px;
                              float:left; margin-top:30px;
                              margin-left:40px;
                              background-color:#000000;"></div>
-                            <label><textarea type="text" name="record_write_right" id="text2" class="input_record" placeholder="여행 기록을 작성해보세요"></textarea></label>
-                        </form>
-                        <img src="../img/write_background.png" class="write_background" alt="img">
-                    </div>
-                    <div class="contents_writing">
-                        <form>
-                            <div style="width:1px; height:17px;
+                        <label for="record_write2"><textarea type="text" name="record_write_right" class="input_record" id="record_write2" placeholder="여행 기록을 작성해보세요"></textarea></label>
+                    </form>
+                    <img src="../img/write_background.png" class="write_background" alt="img">
+                </div>
+                <div class="add_photo">
+                        <img id="add_photo1" src="../img/add_page.png" alt="img">
+                        <img id="add_photo2" src="../img/add_page.png" alt="img">
+                </div>
+                <div class="contents_writing">
+                    <form>
+                        <div style="width:1px; height:17px;
                              float:left; margin-top:30px;
                              margin-left:30px;
                              background-color:#000000;"></div>
-                            <label><textarea type="text" name="record_write_left" id="text3" class="input_record" placeholder="여행 기록을 작성해보세요"></textarea></label>
-                            <div style="width:1px; height:17px;
+                        <label for="record_write3"><textarea type="text" name="record_write_left" class="input_record" id="record_write3" placeholder="여행 기록을 작성해보세요"></textarea></label>
+                        <div style="width:1px; height:17px;
                              float:left; margin-top:30px;
                              margin-left:40px;
                              background-color:#000000;"></div>
-                            <label><textarea type="text" name="record_write_right" id="text4" class="input_record" placeholder="여행 기록을 작성해보세요"></textarea></label>
-                        </form>
-                        <img src="../img/write_background.png" class="write_background" alt="img">
-                    </div>
-                    <img id="preview1">
-                    <img id="preview2">
-                    <img id="preview3">
-                    <img id="preview4">
-
-                    <!--                    <div id="add_page">-->
-<!--                        <a href="#">-->
-<!--                            <img src="../img/add_page.png" alt="img">-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                    <div id="add"></div>-->
+                        <label for="record_write4"><textarea type="text" name="record_write_right" class="input_record" id="record_write4" placeholder="여행 기록을 작성해보세요"></textarea></label>
+                    </form>
+                    <img src="../img/write_background.png" class="write_background" alt="img">
                 </div>
-
-                <hr style="margin-top: 100px">
-
-                <div id="write_bottom">
-                    <div id="start_date">
-                        <p>여행 시작일</p>
-                        <label for="start_day"><input type="text" id="start_day" class="day" name="start_year" placeholder="2022.08.25"></label>
-                    </div>
-
-                    <div id="end_date">
-                        <p>여행 최종일</p>
-                        <label for="end_day"><input type="text" id="end_day" class="day" name="end_year" placeholder="2022.08.25"></label>
-                    </div>
-
-                    <div id="save_diary">
-                        <button onclick="submit()">등록</button>
-                        <p>privacy</p>
-                        <label for="privacy"><input type="checkbox" id="privacy" name="privacy" value="privacy"></label>
-                    </div>
+                <div class="add_photo">
+                        <img id="add_photo3" src="../img/add_page.png" alt="img">
+                        <img id="add_photo4" src="../img/add_page.png" alt="img">
                 </div>
             </div>
-        </div>
 
-        <hr style="width:1180px">
 
-        <div id="menu">
-            <div id="write" style="background-color:#E1D5BF;">
-                <a href="my_page_write.html">
-                    <p class="title">글쓰기</p>
-                    <img src="../img/arrow2.png" alt="img">
-                </a>
-            </div>
+            <hr>
 
-            <div id="record">
-                <a href="record.html">
-                    <p class="title">기록보기</p>
-                    <img src="../img/arrow2.png" alt="img">
-                </a>
-            </div>
+            <div id="write_bottom">
+                <div id="start_date">
+                    <p>여행 시작일</p>
+                    <label for="start_day"><input type="text" id="start_day" class="year" name="start_year" placeholder="2022.08.25"></label>
+                </div>
 
-            <div id="like">
-                <a href="my_page_favorite.html">
-                    <p class="title">찜행지</p>
-                    <img src="../img/arrow2.png" alt="img">
-                </a>
-            </div>
+                <div id="end_date">
+                    <p>여행 최종일</p>
+                    <label for="end_day"><input type="text" id="end_day" class="year" name="end_year" placeholder="2022.09.25"></label>
+                </div>
 
-            <div id="profile_edit">
-                <a href="my_page_edit.html">
-                    <p class="title">프로필수정</p>
-                    <img src="../img/arrow2.png" alt="img">
-                </a>
+                <div id="save_diary">
+                    <button>등록</button>
+                    <p>privacy</p>
+                    <label for="privacy"><input type="checkbox" id="privacy" name="privacy" value="privacy"></label>
+                </div>
             </div>
         </div>
     </div>
 
-    <div id="footer">
-        <div id="footer_left">
-            <img src="../img/logo.png">
+    <hr style="width:1180px">
 
-            <p>
-                서울시 관악구 호암로 546 미림여자정보과학고등학교<br>
-                대표전화 02-872-4072   대외협력부 02-888-8350   진로체험문의 070-5099-8318
-
-            <table>
-                <tr>
-                    <td class="position">DEVELOPER</td>
-                    <td class="by">&nbsp;|&nbsp;3404 김지함&nbsp;&nbsp;3410 양가영</td>
-                </tr>
-
-                <tr>
-                    <td class="position">DESIGNER</td>
-                    <td class="by">&nbsp;|&nbsp;2604 김소리&nbsp;&nbsp;2613 이유리</td>
-                </tr>
-            </table>
-            </p>
+    <div id="menu">
+        <div id="write" style="background-color:#E1D5BF;">
+            <a href="my_page_write.html">
+                <p class="title">글쓰기</p>
+                <img src="../img/arrow2.png" alt="img">
+            </a>
         </div>
 
-        <div id="footer_right">
-            <div id="sns">
-                <img src="../img/facebook.png">
-                <img src="../img/mirim.png" onclick="location.href='https://www.e-mirim.hs.kr/main.do'">
-                <img src="../img/council.png" onclick="location.href='https://www.facebook.com/24mirimcouncil/'" style="width:50px; margin-top:3px; margin-left:18px;">
-            </div>
+        <div id="record">
+            <a href="record.html">
+                <p class="title">기록보기</p>
+                <img src="../img/arrow2.png" alt="img">
+            </a>
+        </div>
+
+        <div id="like">
+            <a href="my_page_favorite.html">
+                <p class="title">찜행지</p>
+                <img src="../img/arrow2.png" alt="img">
+            </a>
+        </div>
+
+        <div id="profile_edit">
+            <a href="my_page_edit.html">
+                <p class="title">프로필수정</p>
+                <img src="../img/arrow2.png" alt="img">
+            </a>
         </div>
     </div>
+</div>
+
+<div id="footer">
+    <div id="footer_left">
+        <img src="../img/logo.png" alt="logo">
+
+        <p>
+            서울시 관악구 호암로 546 미림여자정보과학고등학교<br>
+            대표전화 02-872-4072   대외협력부 02-888-8350   진로체험문의 070-5099-8318
+
+        <table>
+            <tr>
+                <td class="position">DEVELOPER</td>
+                <td class="by">&nbsp;|&nbsp;3404 김지함&nbsp;&nbsp;3410 양가영</td>
+            </tr>
+
+            <tr>
+                <td class="position">DESIGNER</td>
+                <td class="by">&nbsp;|&nbsp;2604 김소리&nbsp;&nbsp;2613 이유리</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="footer_right">
+        <div id="sns">
+            <img src="../img/facebook.png" alt="facebookIcon">
+            <img src="../img/mirim.png" onclick="location.href='https://www.e-mirim.hs.kr/main.do'" alt="mirimIcon">
+            <img src="../img/council.png" onclick="location.href='https://www.facebook.com/24mirimcouncil/'" style="width:50px; margin-top:3px; margin-left:18px;" alt="icon">
+        </div>
+    </div>
+</div>
 </body>
 </html>
