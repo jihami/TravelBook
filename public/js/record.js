@@ -9,23 +9,29 @@ const storage = firebase.storage();
 nickName = sessionStorage.getItem("nickName")
 
 db.collection(nickName).get().then((data) => {
-    console.log(data.size)
-    console.log(data)
+    // console.log(data.size)
+    // console.log(data)
     if (data.size < 1) {
         // location.href = "login_info.html";
         document.getElementById('list').innerHTML = "기록이 없습니다."
     }else {
         data.forEach((doc) => {
             id = doc.id
-            console.log(id)
-            console.log(doc.data())
-            let themp = `<div class="place" id="${doc.id}" onclick="recordP(this.id)">
+            // console.log(id)
+            // console.log(doc.data())
+            let themp = `<a><div class="place" id="${doc.id}" onclick="di = recordP(this.id)" >
                 <img src="../img/diary.png">
                 <p class="place_title">${doc.data().title} / ${doc.data().country}</p>
                 <hr>
                 <p class="place_count">${doc.data().startDay} ~ ${doc.data().endDay}</p>
-                </div>`
+                </div></a>`
             $("#list").append(themp)
         })
     }
 })
+function recordP(id){
+    sessionStorage.removeItem("DocId");
+    sessionStorage.setItem("DocId", id);
+    location.href = "record_page.html"
+    return id
+}

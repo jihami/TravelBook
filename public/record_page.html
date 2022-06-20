@@ -8,6 +8,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/record_page.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/fb.js"></script>
+    <script src="js/record.js"></script>
+    <script src="js/record_page.js"></script>
     <script>
         sessionStorage.getItem("email")
         sessionStorage.getItem("name")
@@ -31,39 +40,41 @@
                 </li>
 
                 <li style="width:100px;">
-                    <img src="../img/user.png">
+                    <img id="userIcon" src="../img/user.png">
                 </li>
 
                 <li>
-                    <a href="my_page.html" id="user" style="text-align:left; line-height:95px; margin-left:10px;">여행하지함</a>
+                    <a href="#" style="text-align:left; line-height:95px; margin-left:10px; position:relative;" id="login"  onclick="login()">Login</a>
+                    <a href="#" style="text-align:left; line-height:95px; margin-left:-90px; position:absolute; display:none;" id="logout" onclick="logout()">Logout</a>
                 </li>
             </ul>
         </div>
     </div>
-
     <div style="width:100%; height:42px;
                     background-color:rgba(51, 63, 50, 0.48);">
         <p style="width:240px; height:42px;
                       float:left; margin-left:19%;
                       color:black; font-size:11pt;
-                      text-align:center; line-height:42px;">main > My page > 기록보기</p>
+                      text-align:center; line-height:42px;">
+            <a href="index.html">main</a> > <a href="my_page.html">My page</a> > <a href="record.html">기록보기</a>
+
+        </p>
     </div>
 
     <div id="main">
         <div id="title">
             <div></div>
-            <p>France</p>
+            <p id="con">나라 이름</p>
         </div>
 
         <div id="date">
-            <p>2018.03.06~2018.03.09</p>
+            <p id="day">기간</p>
         </div>
 
         <div class="record" id="first">
-            <textarea class="left"></textarea>
-            <textarea class="right"></textarea>
+            <textarea class="left" id="text1" disabled>dd</textarea>
+            <textarea class="right" id="text2" disabled></textarea>
             <img src="../img/write_background.png" class="record_background" id="record_first">
-
             <div style="width:300px; height:410px;
                         float:left; margin-top:20px;">
                 <div style="width:300px; height:200px; float:left; position:relative;">
@@ -72,7 +83,7 @@
                                 margin-left:5px; border:2px solid black;
                                 position:absolute; z-index:-1;">
                     </div>
-                    <img src="../img/write_france/france1.png" style="width:280px; height:180px; margin-bottom:20px;">
+                    <img src="" id="img1" style="width:280px; height:180px; margin-bottom:20px;" alt="img1">
                 </div>
 
                 <div style="width:300px; height:200px; float:left;">
@@ -82,15 +93,15 @@
                                 position:absolute; z-index:-1;">
                     </div>
 
-                    <img src="../img/write_france/france2.png" style="width:280px; height:180px; margin-bottom:28px;">
+                    <img src="" id="img2" style="width:280px; height:180px; margin-bottom:28px;" alt="img2">
                 </div>
             </div>
 
-            <img src="../img/record_line2.png" style="float:left; margin-top:30px; margin-left:50px;">
+            <img src="../img/record_line2.png" style="float:left; margin-top:30px; margin-left:50px;" alt="img">
         </div>
 
         <div class="record" id="second">
-            <img src="../img/record_line2.png" style="float:left; margin-top:50px; margin-left:420px; margin-right:45px; position:relative;">
+            <img src="../img/record_line2.png" style="float:left; margin-top:50px; margin-left:420px; margin-right:45px; position:relative;" alt="img">
 
             <div style="width:300px; height:410px;
                         float:left; margin-top:20px;">
@@ -100,7 +111,7 @@
                                 margin-left:10px; border:2px solid black;
                                 position:absolute; z-index:-1;">
                     </div>
-                    <img src="../img/write_france/france1.png" style="width:280px; height:180px; margin-bottom:20px;">
+                    <img src="" id="img3" style="width:280px; height:180px; margin-bottom:20px;" alt="img3">
                 </div>
 
                 <div style="width:300px; height:200px; float:left;">
@@ -110,10 +121,10 @@
                                 position:absolute; z-index:-1;">
                     </div>
 
-                    <textarea class="left"></textarea>
-                    <textarea class="right"></textarea>
+                    <textarea class="left" id="text3" disabled></textarea>
+                    <textarea class="right" id="text4" disabled></textarea>
 
-                    <img src="../img/write_france/france2.png" style="width:280px; height:180px; margin-bottom:28px;">
+                    <img src="" id="img4" style="width:280px; height:180px; margin-bottom:28px;" alt="img4">
                 </div>
             </div>
 
@@ -121,7 +132,7 @@
 
         </div>
 
-        <button type="button" id="edit">수정 </button>
+<!--        <button type="button" id="edit">수정 </button>-->
 
         <div style="width:1180px; height:1801px;
                     float:left; left:50%;
@@ -160,5 +171,27 @@
             </div>
         </div>
     </div>
+<script>
+    id = sessionStorage.getItem("DocId")
+    console.log(id)
+    db.collection(nickName).doc(id).get().then(function(da) {
+        if (da.exists) {
+            dt = da.data()
+            console.log(dt)
+            document.getElementById('con').innerHTML = dt.title+" - "+dt.country;
+            document.getElementById('day').innerHTML = dt.startDay + " ~ " + dt.endDay;
+            document.getElementById("text1").innerHTML = dt.text1
+            document.getElementById("text2").innerHTML = dt.text2
+            document.getElementById("text3").innerHTML = dt.text3
+            document.getElementById("text4").innerHTML = dt.text4
+            document.getElementById("img1").src = dt.Img1
+            document.getElementById("img2").src = dt.Img2
+            document.getElementById("img3").src = dt.Img3
+            document.getElementById("img4").src = dt.Img4
+        }
+    })
+
+
+</script>
 </body>
 </html>
