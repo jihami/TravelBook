@@ -146,6 +146,24 @@ function submit(){
                 db.collection(country).add({"title":title, "name":nickName, "text1":text1, "text2":text2,"text3":text3, "text4":text4,"Img1":img1URl,"Img2":img2URl,"Img3":img3URl,"Img4":img4URl, "starDay":starDay, "endDay":endDay, "privacy":"false"}); // 내용을 덮어씀
                 // 내가 볼 데이터
                 db.collection(nickName).add({"title":title, "country":country, "text1":text1, "text2":text2,"text3":text3, "text4":text4,"Img1":img1URl,"Img2":img2URl,"Img3":img3URl,"Img4":img4URl, "starDay":starDay, "endDay":endDay, "privacy":"false"}); // 내용을 덮어씀
+                alert("등록 완료!")
+                document.getElementById("input_title").value = "";
+                document.getElementById("record_write1").value = "";
+                document.getElementById("record_write2").value = "";
+                document.getElementById("record_write3").value = "";
+                document.getElementById("record_write4").value = "";
+                document.getElementById("start_day").value = "";
+                document.getElementById("end_day").value = "";
+                $("input:checkbox[id='privacy']").prop("checked", false);
+                document.getElementById("country").value = "";
+                $($('#add_photo1')).show()
+                $($('#preview1')).hide()
+                $($('#add_photo2')).show()
+                $($('#preview2')).hide()
+                $($('#add_photo3')).show()
+                $($('#preview3')).hide()
+                $($('#add_photo4')).show()
+                $($('#preview4')).hide()
             }
         }else {
             if (confirm("비공개로 기록 등록할까요?") === true){
@@ -170,26 +188,27 @@ function submit(){
                 let upload4 = route4.put(file4)
                 //비공개로 디비저장
                 db.collection(nickName).add({"title":title, "country":country, "text1":text1, "text2":text2,"text3":text3, "text4":text4,"Img1":img1URl,"Img2":img2URl,"Img3":img3URl,"Img4":img4URl, "starDay":starDay, "endDay":endDay, "privacy":"true"}); // 내용을 덮어씀
+                alert("등록 완료!")
+                document.getElementById("input_title").value = "";
+                document.getElementById("record_write1").value = "";
+                document.getElementById("record_write2").value = "";
+                document.getElementById("record_write3").value = "";
+                document.getElementById("record_write4").value = "";
+                document.getElementById("start_day").value = "";
+                document.getElementById("end_day").value = "";
+                $("input:checkbox[id='privacy']").prop("checked", false);
+                document.getElementById("country").value = "";
+                $($('#add_photo1')).show()
+                $($('#preview1')).hide()
+                $($('#add_photo2')).show()
+                $($('#preview2')).hide()
+                $($('#add_photo3')).show()
+                $($('#preview3')).hide()
+                $($('#add_photo4')).show()
+                $($('#preview4')).hide()
             }
         }
     }
-    alert("등록 완료!")
-    document.getElementById("input_title").value = "";
-    document.getElementById("record_write1").value = "";
-    document.getElementById("record_write2").value = "";
-    document.getElementById("record_write3").value = "";
-    document.getElementById("record_write4").value = "";
-    document.getElementById("start_day").value = "";
-    document.getElementById("end_day").value = "";
-    $("input:checkbox[id='privacy']").prop("checked", false);
-    document.getElementById("country").value = "";
-    $($('#add_photo1')).show()
-    $($('#preview1')).hide()
-    $($('#add_photo2')).show()
-    $($('#preview2')).hide()
-    $($('#add_photo3')).show()
-    $($('#preview3')).hide()
-    $($('#add_photo4')).show()
-    $($('#preview4')).hide()
+
 
 }
