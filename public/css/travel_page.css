@@ -75,6 +75,9 @@ body{
                     float:right;
                     margin-top:25px;
                 }
+                #userIcon{
+                    border-radius: 100%;
+                }
 
 #main{
     width:100%;
