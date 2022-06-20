@@ -29,7 +29,7 @@ function categoryChange(continent) {
         target.appendChild(opt);
     }
 
-    console.log($("select[id=country] option:selected").text());
+    // console.log($("select[id=country] option:selected").text());
 }
 function readURL1(input) {
     if (input.files && input.files[0]) {
@@ -83,9 +83,13 @@ function readURL4(input) {
         document.getElementById('preview4').src = "";
     }
 }
-function submit(){
+function sleep(ms) {
+    const wakeUpTime = Date.now() + ms;
+    while (Date.now() < wakeUpTime) {}
+}
+async function submit() {
 
-    if(len === 0){
+    if (len === 0) {
         alert("로그인하세요.")
         location.href = "index.html"
     }
@@ -107,99 +111,85 @@ function submit(){
     let country = document.getElementById("country").value;
     if (title === "") {
         alert("제목을 입력해 주세요.")
-    }else if (country === "나라 선택"){
+    } else if (country === "나라 선택") {
         alert("나라를 선택해 주세요.")
-    }else if (text1 === "" && text2 === "" && text3 === ""  && text4 === "" ){
+    } else if (text1 === "" && text2 === "" && text3 === "" && text4 === "") {
         alert("내용을 입력해주세요.")
-    }else if(startDay === ""){
+    } else if (startDay === "") {
         alert("여행 시작일을 입력해주세요.")
-    }else if(endDay === "") {
+    } else if (endDay === "") {
         alert("여행 종료일을 입력해주세요.")
-    }else if(file1 === undefined || file2 === undefined || file3 === undefined || file4 === undefined){
+    } else if (file1 === undefined || file2 === undefined || file3 === undefined || file4 === undefined) {
         alert("이미지를 모두 등록해 주세요.")
-    }else {
+    } else {
         if (privacy.checked === false) {
-            if (confirm("공개로 기록 등록할까요?") === true){
-                console.log("공개로 디비저장")
+            if (confirm("공개로 기록 등록할까요?") === true) {
                 let storageRef1 = storage.ref();
-                let img1URl = 'image/'+nickName+'/'+country+'/public/'+startDay+'~'+endDay+'/img1';
+                let img1URl = 'image/' + nickName + '/' + country + '/public/' + startDay + '~' + endDay + '/img1';
                 let route1 = storageRef1.child(img1URl);
                 let upload1 = route1.put(file1)
-                upload1.on( 'state_changed',
-                    // 변화시 동작하는 함수
-                    null,
-                    //에러시 동작하는 함수
-                    (error) => {
-                        console.error('실패사유는', error);
-                    },
-                    // 성공시 동작하는 함수
-                    () => {
-                        upload1.snapshot.ref.getDownloadURL().then((url1) => {
-                            console.log('업로드된 경로는', url1);
-                        });
-                    }
-                );
 
                 let storageRef2 = storage.ref();
-                let img2URl = 'image/'+nickName+'/'+country+'/public/'+startDay+'~'+endDay+'/img2';
+                let img2URl = 'image/' + nickName + '/' + country + '/public/' + startDay + '~' + endDay + '/img2';
                 let route2 = storageRef2.child(img2URl);
                 let upload2 = route2.put(file2)
-                upload2.on( 'state_changed',
-                    // 변화시 동작하는 함수
-                    null,
-                    //에러시 동작하는 함수
-                    (error) => {
-                        console.error('실패사유는', error);
-                    },
-                    // 성공시 동작하는 함수
-                    () => {
-                        upload2.snapshot.ref.getDownloadURL().then((url2) => {
-                            console.log('업로드된 경로는', url2);
-                        });
-                    }
-                );
 
                 let storageRef3 = storage.ref();
-                let img3URl = 'image/'+nickName+'/'+country+'/public/'+startDay+'~'+endDay+'/'+'/img3';
+                let img3URl = 'image/' + nickName + '/' + country + '/public/' + startDay + '~' + endDay + '/' + '/img3';
                 let route3 = storageRef3.child(img3URl);
-                let upload3 = route3.put(file3)
-                upload3.on( 'state_changed',
-                    // 변화시 동작하는 함수
-                    null,
-                    //에러시 동작하는 함수
-                    (error) => {
-                        console.error('실패사유는', error);
-                    },
-                    // 성공시 동작하는 함수
-                    () => {
-                        upload2.snapshot.ref.getDownloadURL().then((url3) => {
-                            console.log('업로드된 경로는', url3);
-                        });
-                    }
-                );
+                let upload3 = route3.put(file3);
+
+
                 let storageRef4 = storage.ref();
-                let img4URl = 'image/'+nickName+'/'+country+'/public/'+startDay+'~'+endDay+'/'+'/img4';
+                let img4URl = 'image/' + nickName + '/' + country + '/public/' + startDay + '~' + endDay + '/' + '/img4';
                 let route4 = storageRef4.child(img4URl);
                 let upload4 = route4.put(file4)
-                upload4.on( 'state_changed',
-                    // 변화시 동작하는 함수
-                    null,
-                    //에러시 동작하는 함수
-                    (error) => {
-                        console.error('실패사유는', error);
-                    },
-                    // 성공시 동작하는 함수
-                    () => {
-                        upload4.snapshot.ref.getDownloadURL().then((url4) => {
-                            console.log('업로드된 경로는', url4);
+                sleep(1000);
+                await upload1.snapshot.ref.getDownloadURL().then((url1) => {
+                    console.log(url1)
+                    upload2.snapshot.ref.getDownloadURL().then((url2) => {
+                        upload3.snapshot.ref.getDownloadURL().then((url3) => {
+                            upload4.snapshot.ref.getDownloadURL().then((url4) => {
+                                // console.log(url1 + " " + url2)
+                                // console.log(url3 + "" + url4)
+                                // 공개에 저장될 데이터
+                                db.collection(country).add({
+                                    "title": title,
+                                    "name": nickName,
+                                    "text1": text1,
+                                    "text2": text2,
+                                    "text3": text3,
+                                    "text4": text4,
+                                    "Img1": url1,
+                                    "Img2": url2,
+                                    "Img3": url3,
+                                    "Img4": url4,
+                                    "startDay": startDay,
+                                    "endDay": endDay,
+                                    "privacy": "false"
+                                }); // 내용을 덮어씀
+                                // 내가 볼 데이터
+                                db.collection(nickName).add({
+                                    "title": title,
+                                    "country": country,
+                                    "text1": text1,
+                                    "text2": text2,
+                                    "text3": text3,
+                                    "text4": text4,
+                                    "Img1": url1,
+                                    "Img2": url2,
+                                    "Img3": url3,
+                                    "Img4": url4,
+                                    "startDay": startDay,
+                                    "endDay": endDay,
+                                    "privacy": "false"
+                                }); // 내용을 덮어씀
+
+                            });
                         });
-                    }
-                );
-                //공개로 디비저장
-                //공개 데이터
-                db.collection(country).add({"title":title, "name":nickName, "text1":text1, "text2":text2,"text3":text3, "text4":text4,"Img1":img1URl,"Img2":img2URl,"Img3":img3URl,"Img4":img4URl, "startDay":startDay, "endDay":endDay, "privacy":"false"}); // 내용을 덮어씀
-                // 내가 볼 데이터
-                db.collection(nickName).add({"title":title, "country":country, "text1":text1, "text2":text2,"text3":text3, "text4":text4,"Img1":img1URl,"Img2":img2URl,"Img3":img3URl,"Img4":img4URl, "startDay":startDay, "endDay":endDay, "privacy":"false"}); // 내용을 덮어씀
+                    });
+                });
+
                 alert("등록 완료!")
                 document.getElementById("input_title").value = "";
                 document.getElementById("record_write1").value = "";
@@ -219,85 +209,59 @@ function submit(){
                 $($('#add_photo4')).show()
                 $($('#preview4')).hide()
             }
-        }else {
-            if (confirm("비공개로 기록 등록할까요?") === true){
+        } else {
+            if (confirm("비공개로 기록 등록할까요?") === true) {
                 let storageRef1 = storage.ref();
-                let img1URl = 'image/'+nickName+'/'+country+'/public/'+startDay+'~'+endDay+'/img1';
+                let img1URl = 'image/' + nickName + '/' + country + '/public/' + startDay + '~' + endDay + '/img1';
                 let route1 = storageRef1.child(img1URl);
                 let upload1 = route1.put(file1)
-                upload1.on( 'state_changed',
-                    // 변화시 동작하는 함수
-                    null,
-                    //에러시 동작하는 함수
-                    (error) => {
-                        console.error('실패사유는', error);
-                    },
-                    // 성공시 동작하는 함수
-                    () => {
-                        upload1.snapshot.ref.getDownloadURL().then((url1) => {
-                            console.log(URL1)
-                            console.log('업로드된 경로는', url1);
-                        });
-                    }
-                );
 
                 let storageRef2 = storage.ref();
-                let img2URl = 'image/'+nickName+'/'+country+'/public/'+startDay+'~'+endDay+'/img2';
+                let img2URl = 'image/' + nickName + '/' + country + '/public/' + startDay + '~' + endDay + '/img2';
                 let route2 = storageRef2.child(img2URl);
                 let upload2 = route2.put(file2)
-                upload2.on( 'state_changed',
-                    // 변화시 동작하는 함수
-                    null,
-                    //에러시 동작하는 함수
-                    (error) => {
-                        console.error('실패사유는', error);
-                    },
-                    // 성공시 동작하는 함수
-                    () => {
-                        upload2.snapshot.ref.getDownloadURL().then((url2) => {
-                            console.log('업로드된 경로는', url2);
-                        });
-                    }
-                );
+
                 let storageRef3 = storage.ref();
-                let img3URl = 'image/'+nickName+'/'+country+'/public/'+startDay+'~'+endDay+'/'+'/img3';
+                let img3URl = 'image/' + nickName + '/' + country + '/public/' + startDay + '~' + endDay + '/' + '/img3';
                 let route3 = storageRef3.child(img3URl);
                 let upload3 = route3.put(file3);
-                upload3.on( 'state_changed',
-                    // 변화시 동작하는 함수
-                    null,
-                    //에러시 동작하는 함수
-                    (error) => {
-                        console.error('실패사유는', error);
-                    },
-                    // 성공시 동작하는 함수
-                    () => {
-                        upload2.snapshot.ref.getDownloadURL().then((url3) => {
-                            console.log('업로드된 경로는', url3);
-                        });
-                    }
-                );
+
+
                 let storageRef4 = storage.ref();
-                let img4URl = 'image/'+nickName+'/'+country+'/public/'+startDay+'~'+endDay+'/'+'/img4';
+                let img4URl = 'image/' + nickName + '/' + country + '/public/' + startDay + '~' + endDay + '/' + '/img4';
                 let route4 = storageRef4.child(img4URl);
                 let upload4 = route4.put(file4)
-                upload4.on( 'state_changed',
-                    // 변화시 동작하는 함수
-                    null,
-                    //에러시 동작하는 함수
-                    (error) => {
-                        console.error('실패사유는', error);
-                    },
-                    // 성공시 동작하는 함수
-                    () => {
-                        upload4.snapshot.ref.getDownloadURL().then((url4) => {
-                            console.log('업로드된 경로는', url4);
+                sleep(1000);
+                await upload1.snapshot.ref.getDownloadURL().then((url1) => {
+                    console.log(url1)
+                    upload2.snapshot.ref.getDownloadURL().then((url2) => {
+                        upload3.snapshot.ref.getDownloadURL().then((url3) => {
+                            upload4.snapshot.ref.getDownloadURL().then((url4) => {
+                                // console.log(url1 + " " + url2)
+                                // console.log(url3 + "" + url4)
+                                //비공개로 디비저장
+                                db.collection(nickName).add({
+                                    "title": title,
+                                    "country": country,
+                                    "text1": text1,
+                                    "text2": text2,
+                                    "text3": text3,
+                                    "text4": text4,
+                                    "Img1": url1,
+                                    "Img2": url2,
+                                    "Img3": url3,
+                                    "Img4": url4,
+                                    "startDay": startDay,
+                                    "endDay": endDay,
+                                    "privacy": "true"
+                                }); // 내용을 덮어씀
+                            });
                         });
-                    }
-                );
-                //비공개로 디비저장
-                // db.collection(nickName).add({"d":json3(url3)}); // 내용을 덮어씀
-                // db.collection(nickName).add({"title":title, "country":country, "text1":text1, "text2":text2,"text3":text3, "text4":text4,"Img1":URL1,"Img2":URL2,"Img3":URL3,"Img4":URL4, "startDay":startDay, "endDay":endDay, "privacy":"true"}); // 내용을 덮어씀
+                    });
+                });
+                // console.log(upload4.snapshot.ref.getDownloadURL().json())
+                // console.log(upload4.snapshot.ref.getDownloadURL().PromiseResult)
+
                 alert("등록 완료!")
                 document.getElementById("input_title").value = "";
                 document.getElementById("record_write1").value = "";
