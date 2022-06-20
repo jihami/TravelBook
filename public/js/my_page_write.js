@@ -1,6 +1,6 @@
 // 세션이 있다면 로그인 상태 유지
 $(function (){
-    if(len == 0){
+    if(len === 0){
         alert("로그인하세요.")
         location.href = "index.html"
     }
@@ -35,7 +35,7 @@ function readURL1(input) {
     if (input.files && input.files[0]) {
         $($('#add_photo1')).hide()
         $($('#preview1')).show()
-        var reader = new FileReader();
+        let reader = new FileReader();
         reader.onload = function(e) {
             document.getElementById('preview1').src = e.target.result;
         };
@@ -48,7 +48,7 @@ function readURL2(input) {
     if (input.files && input.files[0]) {
         $($('#add_photo2')).hide()
         $($('#preview2')).show()
-        var reader = new FileReader();
+        let reader = new FileReader();
         reader.onload = function(e) {
             document.getElementById('preview2').src = e.target.result;
         };
@@ -61,7 +61,7 @@ function readURL3(input) {
     if (input.files && input.files[0]) {
         $($('#add_photo3')).hide()
         $($('#preview3')).show()
-        var reader = new FileReader();
+        let reader = new FileReader();
         reader.onload = function(e) {
             document.getElementById('preview3').src = e.target.result;
         };
@@ -74,7 +74,7 @@ function readURL4(input) {
     if (input.files && input.files[0]) {
         $($('#add_photo4')).hide()
         $($('#preview4')).show()
-        var reader = new FileReader();
+        let reader = new FileReader();
         reader.onload = function(e) {
             document.getElementById('preview4').src = e.target.result;
         };
@@ -84,31 +84,27 @@ function readURL4(input) {
     }
 }
 function submit(){
-    const storage = firebase.storage();
 
-
-
-
-    // var file = document.querySelector('')
-    // var storageRef = storage.ref();
-    // var route = storageRef.child('image/'+'파일명');
-    // var upload = route.put(업도르파일)
-    if(len == 0){
+    if(len === 0){
         alert("로그인하세요.")
         location.href = "index.html"
     }
-    nickName = sessionStorage.getItem("nickName")
-    email = sessionStorage.getItem("email")
-    let title = document.getElementById("input_title").value
-    let text1 = document.getElementById("text1").value
-    let text2 = document.getElementById("text2").value
-    let text3 = document.getElementById("text3").value
-    let text4 = document.getElementById("text4").value
-    let starDay = document.getElementById("start_day").value
-    let endDay = document.getElementById("end_day").value
-    let privacy = document.getElementById("privacy")
-    let country = document.getElementById("country").value;
+    const storage = firebase.storage();
+    let file1 = document.querySelector('#uploadImg1').files[0];
+    let file2 = document.querySelector('#uploadImg2').files[0];
+    let file3 = document.querySelector('#uploadImg3').files[0];
+    let file4 = document.querySelector('#uploadImg4').files[0];
 
+    let nickName = sessionStorage.getItem("nickName");
+    let title = document.getElementById("input_title").value;
+    let text1 = document.getElementById("record_write1").value;
+    let text2 = document.getElementById("record_write2").value;
+    let text3 = document.getElementById("record_write3").value;
+    let text4 = document.getElementById("record_write4").value;
+    let starDay = document.getElementById("start_day").value;
+    let endDay = document.getElementById("end_day").value;
+    let privacy = document.getElementById("privacy");
+    let country = document.getElementById("country").value;
     if (title === "") {
         alert("제목을 입력해 주세요.")
     }else if (country === "나라 선택"){
@@ -119,24 +115,81 @@ function submit(){
         alert("여행 시작일을 입력해주세요.")
     }else if(endDay === "") {
         alert("여행 종료일을 입력해주세요.")
+    }else if(file1 === undefined || file2 === undefined || file3 === undefined || file4 === undefined){
+        alert("이미지를 모두 등록해 주세요.")
     }else {
         if (privacy.checked === false) {
             if (confirm("공개로 기록 등록할까요?") === true){
                 console.log("공개로 디비저장")
+                let storageRef1 = storage.ref();
+                let img1URl = 'image/'+nickName+'/'+country+'/public/'+starDay+'~'+endDay+'/img1';
+                let route1 = storageRef1.child(img1URl);
+                let upload1 = route1.put(file1)
+
+                let storageRef2 = storage.ref();
+                let img2URl = 'image/'+nickName+'/'+country+'/public/'+starDay+'~'+endDay+'/img2';
+                let route2 = storageRef2.child(img2URl);
+                let upload2 = route2.put(file2)
+
+                let storageRef3 = storage.ref();
+                let img3URl = 'image/'+nickName+'/'+country+'/public/'+starDay+'~'+endDay+'/'+'/img3';
+                let route3 = storageRef3.child(img3URl);
+                let upload3 = route3.put(file3)
+
+                let storageRef4 = storage.ref();
+                let img4URl = 'image/'+nickName+'/'+country+'/public/'+starDay+'~'+endDay+'/'+'/img4';
+                let route4 = storageRef4.child(img4URl);
+                let upload4 = route4.put(file4)
+                console.log(upload4)
                 //공개로 디비저장
-                // db.collection(country).add({"title":title, "name":nickName, "country":country, "text1":text1, "text2":text2,"text3":text3, "text4":text4, "starDay":starDay, "endDay":endDay, "privacy":"false"}); // 내용을 덮어씀
+                //공개 데이터
+                db.collection(country).add({"title":title, "name":nickName, "text1":text1, "text2":text2,"text3":text3, "text4":text4,"Img1":img1URl,"Img2":img2URl,"Img3":img3URl,"Img4":img4URl, "starDay":starDay, "endDay":endDay, "privacy":"false"}); // 내용을 덮어씀
+                // 내가 볼 데이터
+                db.collection(name).add({"title":title, "country":country, "text1":text1, "text2":text2,"text3":text3, "text4":text4,"Img1":img1URl,"Img2":img2URl,"Img3":img3URl,"Img4":img4URl, "starDay":starDay, "endDay":endDay, "privacy":"false"}); // 내용을 덮어씀
             }
         }else {
             if (confirm("비공개로 기록 등록할까요?") === true){
-                console.log("Dd")
-                //비공개로 디비저장
-                // db.collection(email).doc(title).add({"country":country,"text1":text1,"text2":text2,"text3":text3,"text4":text4,"starDay":starDay,"endDay":endDay,"privacy":"true"}); // 내용을 하나더 만듦
+                let storageRef1 = storage.ref();
+                let img1URl = 'image/'+nickName+'/'+country+'/public/'+starDay+'~'+endDay+'/img1';
+                let route1 = storageRef1.child(img1URl);
+                let upload1 = route1.put(file1)
 
+                let storageRef2 = storage.ref();
+                let img2URl = 'image/'+nickName+'/'+country+'/public/'+starDay+'~'+endDay+'/img2';
+                let route2 = storageRef2.child(img2URl);
+                let upload2 = route2.put(file2)
+
+                let storageRef3 = storage.ref();
+                let img3URl = 'image/'+nickName+'/'+country+'/public/'+starDay+'~'+endDay+'/'+'/img3';
+                let route3 = storageRef3.child(img3URl);
+                let upload3 = route3.put(file3)
+
+                let storageRef4 = storage.ref();
+                let img4URl = 'image/'+nickName+'/'+country+'/public/'+starDay+'~'+endDay+'/'+'/img4';
+                let route4 = storageRef4.child(img4URl);
+                let upload4 = route4.put(file4)
+                //비공개로 디비저장
+                db.collection(name).add({"title":title, "country":country, "text1":text1, "text2":text2,"text3":text3, "text4":text4,"Img1":img1URl,"Img2":img2URl,"Img3":img3URl,"Img4":img4URl, "starDay":starDay, "endDay":endDay, "privacy":"true"}); // 내용을 덮어씀
             }
         }
     }
-    console.log(title, text4,text3,text2,text2,starDay)
-
-    // db.collection(email).doc(email).set({"name":name,"email":email, "photoURL":photoURL}); // 내용을 덮어씀
+    alert("등록 완료!")
+    document.getElementById("input_title").value = "";
+    document.getElementById("record_write1").value = "";
+    document.getElementById("record_write2").value = "";
+    document.getElementById("record_write3").value = "";
+    document.getElementById("record_write4").value = "";
+    document.getElementById("start_day").value = "";
+    document.getElementById("end_day").value = "";
+    $("input:checkbox[id='privacy']").prop("checked", false);
+    document.getElementById("country").value = "";
+    $($('#add_photo1')).show()
+    $($('#preview1')).hide()
+    $($('#add_photo2')).show()
+    $($('#preview2')).hide()
+    $($('#add_photo3')).show()
+    $($('#preview3')).hide()
+    $($('#add_photo4')).show()
+    $($('#preview4')).hide()
 
 }

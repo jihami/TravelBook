@@ -40,11 +40,12 @@
             </li>
 
             <li style="width:100px;">
-                <img src="../img/user.png" alt="userIcon">
+                <img id="userIcon" src="../img/user.png" alt="userIcon">
             </li>
 
             <li>
-                <a href="my_page.html" id="user" style="text-align:left; line-height:95px; margin-left:10px;">여행하지함</a>
+                <a href="#" style="text-align:left; line-height:95px; margin-left:10px; position:relative;" id="login"  onclick="login()">Login</a>
+                <a href="#" style="text-align:left; line-height:95px; margin-left:-90px; position:absolute; display:none;" id="logout" onclick="logout()">Logout</a>
             </li>
         </ul>
     </div>
@@ -123,13 +124,13 @@
                     <img src="../img/write_background.png" class="write_background" alt="img">
                 </div>
                 <div class="add_photo">
-                    <img id="add_photo1" src="../img/add_page.png" alt="img"  onclick="$($('.uploadImg1')).click();">
-                    <input type="file" class="uploadImg1" style="display: none" onchange="readURL1(this);">
-                    <img class="preview" id="preview1" style="display: none; max-width: 800px; max-height: 400px; margin-top: 30px; margin-left: 10px" alt="img" src="">
+                    <img id="add_photo1" src="../img/add_page.png" alt="img"  onclick="$($('#uploadImg1')).click();">
+                    <input type="file" id="uploadImg1" style="display: none" onchange="readURL1(this);">
+                    <img class="preview" id="preview1" style="display: none; max-width: 400px; max-height: 400px; margin-top: 30px; margin-left: 10px" alt="img" src="">
                     <br/>
                     <img id="add_photo2" src="../img/add_page.png" alt="img"  onclick="$($('#uploadImg2')).click();">
                     <input type="file" id="uploadImg2" style="display: none" onchange="readURL2(this);">
-                    <img class="preview" id="preview2" style="display: none; max-width: 800px; max-height: 400px; margin-left: 10px" alt="img" src="">
+                    <img class="preview" id="preview2" style="display: none; max-width: 400px; max-height: 400px; margin-left: 10px" alt="img" src="">
                 </div>
                 <div class="contents_writing">
                     <form>
@@ -147,13 +148,13 @@
                     <img src="../img/write_background.png" class="write_background" alt="img">
                 </div>
                 <div class="add_photo">
-                    <img id="add_photo3" src="../img/add_page.png" alt="img"  onclick="$($('.uploadImg3')).click();">
-                    <input type="file" class="uploadImg3" style="display: none" onchange="readURL3(this);">
-                    <img class="preview" id="preview3" style="display: none; max-width: 800px; max-height: 400px; margin-top: 30px; margin-left: 10px" alt="img" src="">
+                    <img id="add_photo3" src="../img/add_page.png" alt="img"  onclick="$($('#uploadImg3')).click();">
+                    <input type="file" id="uploadImg3" style="display: none" onchange="readURL3(this);">
+                    <img class="preview" id="preview3" style="display: none; max-width: 400px; max-height: 400px; margin-top: 30px; margin-left: 10px" alt="img" src="">
                     <br/>
                     <img id="add_photo4" src="../img/add_page.png" alt="img"  onclick="$($('#uploadImg4')).click();">
                     <input type="file" id="uploadImg4" style="display: none" onchange="readURL4(this);">
-                    <img class="preview" id="preview4" style="display: none; max-width: 800px; max-height: 400px; margin-left: 10px" alt="img" src="">
+                    <img class="preview" id="preview4" style="display: none; max-width: 400px; max-height: 400px; margin-left: 10px" alt="img" src="">
                 </div>
             </div>
 
@@ -172,7 +173,7 @@
                 </div>
 
                 <div id="save_diary">
-                    <button>등록</button>
+                    <button onclick="submit()">등록</button>
                     <p>privacy</p>
                     <label for="privacy"><input type="checkbox" id="privacy" name="privacy" value="privacy"></label>
                 </div>
