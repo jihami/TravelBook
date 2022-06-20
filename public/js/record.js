@@ -1,10 +1,10 @@
 // 세션이 있다면 로그인 상태 유지
-// $(function (){
-//     if(len === 0){
-//         alert("로그인하세요.")
-//         location.href = "index.html"
-//     }
-// })
+$(function (){
+    if(len === 0){
+        alert("로그인하세요.")
+        location.href = "index.html"
+    }
+})
 const storage = firebase.storage();
 nickName = sessionStorage.getItem("nickName")
 
