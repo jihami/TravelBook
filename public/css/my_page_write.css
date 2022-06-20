@@ -269,6 +269,12 @@ input:focus{
                     #add_photo4{
                         margin-left: 10px;
                     }
+                    .preview{
+                        display: none;
+                        max-width: 400px;
+                        max-height: 300px;
+                        margin-left: 10px
+                    }
 
 
         #write_hr{
