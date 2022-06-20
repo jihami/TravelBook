@@ -8,6 +8,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/record.css">
+    <link rel="stylesheet" href="css/my_page_write.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/fb.js"></script>
+    <script src="js/record.js"></script>
     <script>
         sessionStorage.getItem("email")
         sessionStorage.getItem("name")
@@ -31,11 +40,12 @@
                 </li>
 
                 <li style="width:100px;">
-                    <img src="../img/user.png">
+                    <img id="userIcon" src="../img/user.png">
                 </li>
 
                 <li>
-                    <a href="my_page.html" id="user" style="text-align:left; line-height:95px; margin-left:10px;">여행하지함</a>
+                    <a href="#" style="text-align:left; line-height:95px; margin-left:10px; position:relative;" id="login"  onclick="login()">Login</a>
+                    <a href="#" style="text-align:left; line-height:95px; margin-left:-90px; position:absolute; display:none;" id="logout" onclick="logout()">Logout</a>
                 </li>
             </ul>
         </div>
@@ -46,7 +56,9 @@
         <p style="width:220px; height:42px;
                       float:left; margin-left:19%;
                       color:#333; font-size:11pt;
-                      text-align:center; line-height:42px;">main > My page > 기록보기</p>
+                      text-align:center; line-height:42px;">
+            <a href="index.html">main</a> > <a href="my_page.html">My page</a> > <a href="record.html">기록보기</a>
+        </p>
     </div>
 
     <div id="main">
@@ -60,38 +72,38 @@
 
             </div>
 
-            <div id="list">
-                <div class="place">
-                    <img src="../img/diary.png" onclick="location.href='record_page.html'">
+            <div id="list" style="text-align: center">
+<!--                <div class="place">-->
+<!--                    <img src="../img/diary.png" onclick="location.href='record_page.html'">-->
 
-                    <p class="place_title">프랑스</p>
-                    <hr>
-                    <p class="place_count">2022.06.13</p>
-                </div>
+<!--                    <p class="place_title">프랑스</p>-->
+<!--                    <hr>-->
+<!--                    <p class="place_count">2022.06.13</p>-->
+<!--                </div>-->
 
-                <div class="place">
-                    <img src="../img/diary.png" onclick="location.href='record_page.html'">
+<!--                <div class="place">-->
+<!--                    <img src="../img/diary.png" onclick="location.href='record_page.html'">-->
 
-                    <p class="place_title">미국</p>
-                    <hr>
-                    <p class="place_count">2020.01.05</p>
-                </div>
+<!--                    <p class="place_title">미국</p>-->
+<!--                    <hr>-->
+<!--                    <p class="place_count">2020.01.05</p>-->
+<!--                </div>-->
 
-                <div class="place">
-                    <img src="../img/diary.png" onclick="location.href='record_page.html'">
+<!--                <div class="place">-->
+<!--                    <img src="../img/diary.png" onclick="location.href='record_page.html'">-->
 
-                    <p class="place_title">대한민국</p>
-                    <hr>
-                    <p class="place_count">2019.09.25</p>
-                </div>
+<!--                    <p class="place_title">대한민국</p>-->
+<!--                    <hr>-->
+<!--                    <p class="place_count">2019.09.25</p>-->
+<!--                </div>-->
 
-                <div class="place">
-                    <img src="../img/diary.png" onclick="location.href='record_page.html'">
+<!--                <div class="place">-->
+<!--                    <img src="../img/diary.png" onclick="location.href='record_page.html'">-->
 
-                    <p class="place_title">스페인</p>
-                    <hr>
-                    <p class="place_count">2018.11.30</p>
-                </div>
+<!--                    <p class="place_title">스페인</p>-->
+<!--                    <hr>-->
+<!--                    <p class="place_count">2018.11.30</p>-->
+<!--                </div>-->
             </div>
         </div>
 
