@@ -10,13 +10,16 @@ nickName = sessionStorage.getItem("nickName")
 
 db.collection(nickName).get().then((data) => {
     console.log(data.size)
+    console.log(data)
     if (data.size < 1) {
         // location.href = "login_info.html";
         document.getElementById('list').innerHTML = "기록이 없습니다."
     }else {
         data.forEach((doc) => {
+            id = doc.id
+            console.log(id)
             console.log(doc.data())
-            let themp = `<div class="place">
+            let themp = `<div class="place" id="${doc.id}" onclick="recordP(this.id)">
                 <img src="../img/diary.png">
                 <p class="place_title">${doc.data().title} / ${doc.data().country}</p>
                 <hr>
@@ -26,18 +29,3 @@ db.collection(nickName).get().then((data) => {
         })
     }
 })
-
-// let storageReg = storage.getReferenceForUrl('gs://trip-8b70a.appspot.com/image/여행하지난/캐나다/public/2019.09.02~2019.09.17/img1')
-// // let htts= storage.st
-// console.log(storageReg)
-
-// var storage = firebase.storage();
-// var pathReference = storage.ref('images/stars.jpg');
-
-// Create a reference from a Google Cloud Storage URI
-// var gsReference = storage.refFromURL('gs://trip-8b70a.appspot.com/image/여행하지난/캐나다/public/2019.09.02~2019.09.17/img1');
-// console.log(gsReference)
-
-// const storageRef = storage.ref();
-// const imgLocation = storageRef.child('image/여행하지난/캐나다/public/2019.09.02~2019.09.17/img1')
-
