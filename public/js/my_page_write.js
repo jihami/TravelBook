@@ -144,7 +144,7 @@ async function submit() {
                 let img4URl = 'image/' + nickName + '/' + country + '/public/' + startDay + '~' + endDay + '/' + '/img4';
                 let route4 = storageRef4.child(img4URl);
                 let upload4 = route4.put(file4)
-                sleep(1000);
+                sleep(2000);
                 await upload1.snapshot.ref.getDownloadURL().then((url1) => {
                     console.log(url1)
                     upload2.snapshot.ref.getDownloadURL().then((url2) => {
@@ -231,7 +231,7 @@ async function submit() {
                 let img4URl = 'image/' + nickName + '/' + country + '/public/' + startDay + '~' + endDay + '/' + '/img4';
                 let route4 = storageRef4.child(img4URl);
                 let upload4 = route4.put(file4)
-                sleep(1000);
+                sleep(2000);
                 await upload1.snapshot.ref.getDownloadURL().then((url1) => {
                     console.log(url1)
                     upload2.snapshot.ref.getDownloadURL().then((url2) => {
