@@ -145,7 +145,7 @@ function submit(){
                 //공개 데이터
                 db.collection(country).add({"title":title, "name":nickName, "text1":text1, "text2":text2,"text3":text3, "text4":text4,"Img1":img1URl,"Img2":img2URl,"Img3":img3URl,"Img4":img4URl, "starDay":starDay, "endDay":endDay, "privacy":"false"}); // 내용을 덮어씀
                 // 내가 볼 데이터
-                db.collection(name).add({"title":title, "country":country, "text1":text1, "text2":text2,"text3":text3, "text4":text4,"Img1":img1URl,"Img2":img2URl,"Img3":img3URl,"Img4":img4URl, "starDay":starDay, "endDay":endDay, "privacy":"false"}); // 내용을 덮어씀
+                db.collection(nickName).add({"title":title, "country":country, "text1":text1, "text2":text2,"text3":text3, "text4":text4,"Img1":img1URl,"Img2":img2URl,"Img3":img3URl,"Img4":img4URl, "starDay":starDay, "endDay":endDay, "privacy":"false"}); // 내용을 덮어씀
             }
         }else {
             if (confirm("비공개로 기록 등록할까요?") === true){
@@ -169,7 +169,7 @@ function submit(){
                 let route4 = storageRef4.child(img4URl);
                 let upload4 = route4.put(file4)
                 //비공개로 디비저장
-                db.collection(name).add({"title":title, "country":country, "text1":text1, "text2":text2,"text3":text3, "text4":text4,"Img1":img1URl,"Img2":img2URl,"Img3":img3URl,"Img4":img4URl, "starDay":starDay, "endDay":endDay, "privacy":"true"}); // 내용을 덮어씀
+                db.collection(nickName).add({"title":title, "country":country, "text1":text1, "text2":text2,"text3":text3, "text4":text4,"Img1":img1URl,"Img2":img2URl,"Img3":img3URl,"Img4":img4URl, "starDay":starDay, "endDay":endDay, "privacy":"true"}); // 내용을 덮어씀
             }
         }
     }
