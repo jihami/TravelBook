@@ -1,4 +1,5 @@
-// 세션이 있다면 로그인 상태 유지
+nickName = sessionStorage.getItem("nickName")
+email = sessionStorage.getItem("email")
 // 세션이 있다면 로그인 상태 유지
 $(function (){
     len = sessionStorage.length
@@ -18,50 +19,51 @@ $(function (){
             $("#login").removeAttr("onclick");
             $("#login").attr("onclick","location.href = 'my_page.html'")
         }
-    }else {
-        alert("로그인하세요.")
-        location.href = "index.html"
     }
 })
 
-const storage = firebase.storage();
-nickName = sessionStorage.getItem("nickName")
-
-db.collection(nickName).get().then((data) => {
-    // console.log(data.size)
-    // console.log(data)
-    if (data.size < 1) {
-        // location.href = "login_info.html";
-        document.getElementById('list').innerHTML = "기록이 없습니다."
-    }else {
-        data.forEach((doc) => {
-            id = doc.id
-            // console.log(id)
-            // console.log(doc.data())
-            let themp = `<a><div class="place" id="${doc.id}" onclick="recordP(this.id)" >
-                <img src="../img/diary.png">
-                <p class="place_title">${doc.data().title} / ${doc.data().country}</p>
-                <hr>
-                <p class="place_count">${doc.data().startDay} ~ ${doc.data().endDay}</p>
-                </div></a>`
-            $("#list").append(themp)
-        })
-    }
-})
-function recordP(id){
+function set(country){
+    db.collection(country).get().then((data) => {
+        if (data.size < 1) {
+            // location.href = "login_info.html";
+            document.getElementById('record_list').innerHTML = "기록이 없습니다."
+        }else {
+            data.forEach((doc) => {
+                docId = doc.id
+                con = country
+                console.log(docId)
+                console.log(con)
+                console.log(doc.data())
+                let themp = `<div class="record">
+                    <img src="../img/diary.png" onclick="recordP(docId, con)">
+                    <p>${doc.data().title} / ${doc.data().name}</p>
+                    <hr style="height:1px; background-color:black;">
+                    <p>${doc.data().startDay} ~ ${doc.data().endDay}</p>
+                </div>`
+                $("#record_list").append(themp)
+            })
+        }
+    })
+}
+function recordP(id,country){
     sessionStorage.removeItem("DocId");
-    sessionStorage.removeItem("country");
     sessionStorage.setItem("DocId", id);
-    location.href = "record_page.html"
-    return id
+
+    sessionStorage.removeItem("country");
+    sessionStorage.setItem("country", country);
+
+    location.href = "record_page_public.html"
+    console.log(id,country)
+    return id,country
 }
 id = sessionStorage.getItem("DocId")
+con = sessionStorage.getItem("country")
 console.log(id)
-db.collection(nickName).doc(id).get().then(function(da) {
+db.collection(con).doc(id).get().then(function(da) {
     if (da.exists) {
         dt = da.data()
         console.log(dt)
-        document.getElementById('con').innerHTML = dt.title+" - "+dt.country;
+        document.getElementById('con').innerHTML = dt.title+" - "+dt.name;
         document.getElementById('day').innerHTML = dt.startDay + " ~ " + dt.endDay;
         document.getElementById("text1").innerHTML = dt.text1
         document.getElementById("text2").innerHTML = dt.text2
