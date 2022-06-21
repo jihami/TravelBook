@@ -2,11 +2,11 @@ nickName = sessionStorage.getItem("nickName")
 email = sessionStorage.getItem("email")
 // 세션이 있다면 로그인 상태 유지
 $(function (){
-    len = sessionStorage.length
-    photoURL = sessionStorage.getItem("photoURL")
-    nickName = sessionStorage.getItem("nickName")
-    email = sessionStorage.getItem("email")
-    info = sessionStorage.getItem("info")
+    let len = sessionStorage.length
+    let photoURL = sessionStorage.getItem("photoURL")
+    let nickName = sessionStorage.getItem("nickName")
+    let email = sessionStorage.getItem("email")
+    let info = sessionStorage.getItem("info")
     if(len !== 0){ //로그인 되어 있으면
         if(nickName == null){
             location.href = "login_info.html";
@@ -16,8 +16,8 @@ $(function (){
             $(function(){
                 $('#logout').show();
             })
-            $("#login").removeAttr("onclick");
-            $("#login").attr("onclick","location.href = 'my_page.html'")
+            $('#login').removeAttr("onclick");
+            $('#login').attr("onclick","location.href = 'my_page.html'")
         }
     }else {
         alert("로그인하세요.")
@@ -31,7 +31,7 @@ db.collection(nickName+"찜행지").get().then((data) => {
         data.forEach((doc) => {
             // console.log(id)
             console.log(doc.data().country)
-            country = doc.data().country
+            let country = doc.data().country
             $(`#${country}`).hide()
         })
     }
@@ -52,9 +52,70 @@ function favorite_on(country, name){
 }
 
 $(function(){
-    $('.country').on('mouseover', function(){
-        $('.country > img').css({
+    $('.country > img').css({
+        opacity:'20%'
+    })
+    $('#europe').on('mouseover', function(){
+        $('#europe > img').css({
+            opacity:''
+        })
+    })
+    $('#europe').on('mouseout', function(){
+        $('#europe > img').css({
             opacity:'20%'
         })
     })
+    $('#north_america').on('mouseover', function(){
+        $('#north_america > img').css({
+            opacity:''
+        })
+    })
+    $('#north_america').on('mouseout', function(){
+        $('#north_america > img').css({
+            opacity:'20%'
+        })
+    })
+    $('#south_america').on('mouseover', function(){
+        $('#south_america > img').css({
+            opacity:''
+        })
+    })
+    $('#south_america').on('mouseout', function(){
+        $('#south_america > img').css({
+            opacity:'20%'
+        })
+    })
+    $('#asia').on('mouseover', function(){
+        $('#asia > img').css({
+            opacity:''
+        })
+    })
+    $('#asia').on('mouseout', function(){
+        $('#asia > img').css({
+            opacity:'20%'
+        })
+    })
+    $('#oceania').on('mouseover', function(){
+        $('#oceania > img').css({
+            opacity:''
+        })
+    })
+    $('#oceania').on('mouseout', function(){
+        $('#oceania > img').css({
+            opacity:'20%'
+        })
+    })
+    $('#africa').on('mouseover', function(){
+        $('#africa > img').css({
+            opacity:''
+        })
+    })
+    $('#africa').on('mouseout', function(){
+        $('#africa > img').css({
+            opacity:'20%'
+        })
+    })
+
+
+
 })
