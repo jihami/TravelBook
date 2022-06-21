@@ -15,120 +15,119 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="js/fb.js"></script>
-    <script src="js/travel.js"></script>
     <script>
         sessionStorage.getItem("email")
         sessionStorage.getItem("name")
     </script>
 </head>
 <body>
-    <div id="head">
-        <div id="logo">
-            <a href="index.html"><img src="../img/logo.png" alt="logo"></a>
-        </div>
-
-        <div id="head_menu">
-            <ul>
-                <li>
-                    <a href="my_page.html">My page</a>
-                    <hr>
-                </li>
-                <li>
-                    <a href="travel_page.html" style="color:black">Travel</a>
-                    <hr style="background-color:black">
-                </li>
-                <li style="width:100px;">
-                    <img id="userIcon" src="../img/user.png" alt="userIcon">
-                </li>
-
-                <li>
-                    <a href="#" style="text-align:left; line-height:95px; margin-left:10px; position:relative;" id="login"  onclick="login()">Login</a>
-                    <a href="#" style="text-align:left; line-height:95px; margin-left:-90px; position:absolute; display:none;" id="logout" onclick="logout()">Logout</a>
-                </li>
-            </ul>
-        </div>
+<div id="head">
+    <div id="logo">
+        <a href="index.html"><img src="../img/logo.png" alt="logo"></a>
     </div>
 
-    <div id="main">
-        <div id="title">
-            <p>travel</p>
-            <hr>
-        </div>
+    <div id="head_menu">
+        <ul>
+            <li>
+                <a href="my_page.html">My page</a>
+                <hr>
+            </li>
+            <li>
+                <a href="travel_page.html" style="color:black">Travel</a>
+                <hr style="background-color:black">
+            </li>
+            <li style="width:100px;">
+                <img id="userIcon" src="../img/user.png" alt="userIcon">
+            </li>
 
-        <div id="map">
-            <div class="country" id="europe" onclick="location.href='travel_europe.html'">
-                <img src="../img/europe.png" id="europe_map" alt="img">
-                <a href="#" id="europe_link">
-                    <p>유럽</p>
-                    <img src="../img/arrow3.png" alt="img">
-                </a>
-            </div>
-            <div class="country" id="north_america" onclick="location.href='travel_north_america.html'">
-                <img src="../img/north_america.png" id="north_america_map" alt="img">
-                <a href="#" id="north_america_link">
-                    <p>북아메리카</p>
-                    <img src="../img/arrow3.png" alt="img">
-                </a>
-            </div>
-            <div class="country" id="south_america" onclick="location.href='travel_south_america.html'">
-                <img src="../img/south_america.png" id="south_america_map" alt="img">
-                <a href="#" id="south_america_link">
-                    <p>남아메리카</p>
-                    <img src="../img/arrow3.png" alt="img">
-                </a>
-            </div>
-            <div class="country" id="asia" onclick="location.href='travel_asia.html'">
-                <img src="../img/asia.png" id="asia_map" alt="img">
-                <a href="#" id="asia_link">
-                    <p>아시아</p>
-                    <img src="../img/arrow3.png" alt="img">
-                </a>
-            </div>
-            <div class="country" id="oceania" onclick="location.href='travel_oceania.html'">
-                <img src="../img/oceania.png" id="oceania_map" alt="img">
-                <a href="#" id="oceania_link">
-                    <p>오세아니아</p>
-                    <img src="../img/arrow3.png" alt="img">
-                </a>
-            </div>
-            <div class="country" id="africa" onclick="location.href='travel_africa.html'">
-                <img src="../img/africa.png" id="africa_map" alt="img">
-                <a href="#" id="africa_link">
-                    <p>아프리카</p>
-                    <img src="../img/arrow3.png" alt="img">
-                </a>
-            </div>
-        </div>
+            <li>
+                <a href="#" style="text-align:left; line-height:95px; margin-left:10px; position:relative;" id="login"  onclick="login()">Login</a>
+                <a href="#" style="text-align:left; line-height:95px; margin-left:-90px; position:absolute; display:none;" id="logout" onclick="logout()">Logout</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="main">
+    <div id="title">
+        <p>travel</p>
+        <hr>
     </div>
 
-    <div id="footer">
-        <div id="footer_left">
-            <img src="../img/logo.png" alt="img">
-
-            <p>
-                서울시 관악구 호암로 546 미림여자정보과학고등학교<br>
-                대표전화 02-872-4072   대외협력부 02-888-8350   진로체험문의 070-5099-8318
-
-            <table>
-                <tr>
-                    <td class="position">DEVELOPER</td>
-                    <td class="by">&nbsp;|&nbsp;3404 김지함&nbsp;&nbsp;3410 양가영</td>
-                </tr>
-
-                <tr>
-                    <td class="position">DESIGNER</td>
-                    <td class="by">&nbsp;|&nbsp;2604 김소리&nbsp;&nbsp;2613 이유리</td>
-                </tr>
-            </table>
+    <div id="map">
+        <div class="country" id="europe" onclick="location.href='travel_europe.html'">
+            <img src="../img/europe.png" id="europe_map" alt="img">
+            <a href="#" id="europe_link">
+                <p>유럽</p>
+                <img src="../img/arrow3.png" alt="img">
+            </a>
         </div>
-
-        <div id="footer_right">
-            <div id="sns">
-                <img src="../img/facebook.png" alt="img">
-                <img src="../img/mirim.png" onclick="location.href='https://www.e-mirim.hs.kr/main.do'" alt="img">
-                <img src="../img/council.png" onclick="location.href='https://www.facebook.com/24mirimcouncil/'" style="width:50px; margin-top:3px; margin-left:18px;" alt="img">
-            </div>
+        <div class="country" id="north_america" onclick="location.href='travel_north_america.html'">
+            <img src="../img/north_america.png" id="north_america_map" alt="img">
+            <a href="#" id="north_america_link">
+                <p>북아메리카</p>
+                <img src="../img/arrow3.png" alt="img">
+            </a>
+        </div>
+        <div class="country" id="south_america" onclick="location.href='travel_south_america.html'">
+            <img src="../img/south_america.png" id="south_america_map" alt="img">
+            <a href="#" id="south_america_link">
+                <p>남아메리카</p>
+                <img src="../img/arrow3.png" alt="img">
+            </a>
+        </div>
+        <div class="country" id="asia" onclick="location.href='travel_asia.html'">
+            <img src="../img/asia.png" id="asia_map" alt="img">
+            <a href="#" id="asia_link">
+                <p>아시아</p>
+                <img src="../img/arrow3.png" alt="img">
+            </a>
+        </div>
+        <div class="country" id="oceania" onclick="location.href='travel_oceania.html'">
+            <img src="../img/oceania.png" id="oceania_map" alt="img">
+            <a href="#" id="oceania_link">
+                <p>오세아니아</p>
+                <img src="../img/arrow3.png" alt="img">
+            </a>
+        </div>
+        <div class="country" id="africa" onclick="location.href='travel_africa.html'">
+            <img src="../img/africa.png" id="africa_map" alt="img">
+            <a href="#" id="africa_link">
+                <p>아프리카</p>
+                <img src="../img/arrow3.png" alt="img">
+            </a>
         </div>
     </div>
+</div>
+
+<div id="footer">
+    <div id="footer_left">
+        <img src="../img/logo.png" alt="img">
+
+        <p>
+            서울시 관악구 호암로 546 미림여자정보과학고등학교<br>
+            대표전화 02-872-4072   대외협력부 02-888-8350   진로체험문의 070-5099-8318
+
+        <table>
+            <tr>
+                <td class="position">DEVELOPER</td>
+                <td class="by">&nbsp;|&nbsp;3404 김지함&nbsp;&nbsp;3410 양가영</td>
+            </tr>
+
+            <tr>
+                <td class="position">DESIGNER</td>
+                <td class="by">&nbsp;|&nbsp;2604 김소리&nbsp;&nbsp;2613 이유리</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="footer_right">
+        <div id="sns">
+            <img src="../img/facebook.png" alt="img">
+            <img src="../img/mirim.png" onclick="location.href='https://www.e-mirim.hs.kr/main.do'" alt="img">
+            <img src="../img/council.png" onclick="location.href='https://www.facebook.com/24mirimcouncil/'" style="width:50px; margin-top:3px; margin-left:18px;" alt="img">
+        </div>
+    </div>
+</div>
 </body>
 </html>
