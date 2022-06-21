@@ -1,5 +1,4 @@
 // 세션이 있다면 로그인 상태 유지
-// 세션이 있다면 로그인 상태 유지
 $(function (){
     len = sessionStorage.length
     photoURL = sessionStorage.getItem("photoURL")
@@ -34,24 +33,39 @@ $(function(){
     })
 })
 nickName = sessionStorage.getItem("nickName")
-
-db.collection(nickName+"찜행지").get().then((data) => {
-    // console.log(data.size)
-    // console.log(data)
-    if (data.size < 1) {
-        // location.href = "login_info.html";
-        document.getElementById('list').innerHTML = "기록이 없습니다."
-    }else {
-        data.forEach((doc) => {
-            country = doc.data().country
-            countryk = doc.data().countryk
-            console.log(country)
-            console.log(doc.data())
-            let themp = `<a href="travel_${country}.html"><div class="place">
+set()
+function set(){
+    db.collection(nickName+"찜행지").get().then((data) => {
+        // console.log(data.size)
+        // console.log(data)
+        if (data.size < 1) {
+            document.getElementById("list").innerHTML = "<div id=\"none\" style=\"font-size:20px; text-align: center\">기록이 없습니다.</div>";
+        }else {
+            data.forEach((doc) => {
+                country = doc.data().country
+                countryk = doc.data().countryk
+                docId = doc.id
+                // console.log(country)
+                // console.log(doc.id)
+                // console.log(doc.data())
+                let themp = `<div class="place">
+                    <a href="travel_${country}.html">
                     <img src="../img/${country}/flag.png" alt="img" style="width:172px; height:110px;">
-                    <p class="place_title">${countryk}</p>
-                </div></a>`
-            $("#list").append(themp)
-        })
+                    <hr>
+                    <p class="place_title">${countryk}</p></a>
+                    <button type="button" id="del" name="${doc.id}" onclick="del(this.name)">삭제</button>
+                </div>`
+                $("#list").append(themp)
+            })
+        }
+    })
+}
+async function del(id){
+    console.log(id)
+    if(confirm("정말 삭제하시겠습니까?")==true){
+        await db.collection(nickName+"찜행지").doc(id).delete();
+        alert("삭제 완료!");
+        location.reload()
     }
-})
+
+}
