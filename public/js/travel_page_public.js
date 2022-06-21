@@ -34,7 +34,7 @@ function setCon(country){
                 // console.log(con)
                 // console.log(doc.data())
                 let themp = `<div class="record">
-                    <img src="../img/diary.png" onclick="recordP(docId, con)">
+                    <img src="../img/diary.png" id="${doc.id}" onclick="recordP(this.id,con)">
                     <p>${doc.data().title} / ${doc.data().name}</p>
                     <hr style="height:1px; background-color:black;">
                     <p>${doc.data().startDay} ~ ${doc.data().endDay}</p>
@@ -48,6 +48,7 @@ function setCon(country){
     })
 }
 function recordP(id,country){
+    console.log(id,country)
     sessionStorage.removeItem("DocId");
     sessionStorage.setItem("DocId", id);
 

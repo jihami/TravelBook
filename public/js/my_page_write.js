@@ -143,23 +143,23 @@ async function submit() {
         if (privacy.checked === false) {
             if (confirm("공개로 기록 등록할까요?") === true) {
                 let storageRef1 = storage.ref();
-                let img1URl = 'image/' + nickName + '/' + country + '/public/' + startDay + '~' + endDay + '/img1';
+                let img1URl = 'image/' + nickName + '/' + country + '/privacy/' + startDay + '~' + endDay + '/img1';
                 let route1 = storageRef1.child(img1URl);
                 let upload1 = route1.put(file1)
 
                 let storageRef2 = storage.ref();
-                let img2URl = 'image/' + nickName + '/' + country + '/public/' + startDay + '~' + endDay + '/img2';
+                let img2URl = 'image/' + nickName + '/' + country + '/privacy/' + startDay + '~' + endDay + '/img2';
                 let route2 = storageRef2.child(img2URl);
                 let upload2 = route2.put(file2)
 
                 let storageRef3 = storage.ref();
-                let img3URl = 'image/' + nickName + '/' + country + '/public/' + startDay + '~' + endDay + '/' + '/img3';
+                let img3URl = 'image/' + nickName + '/' + country + '/privacy/' + startDay + '~' + endDay + '/' + '/img3';
                 let route3 = storageRef3.child(img3URl);
                 let upload3 = route3.put(file3);
 
 
                 let storageRef4 = storage.ref();
-                let img4URl = 'image/' + nickName + '/' + country + '/public/' + startDay + '~' + endDay + '/' + '/img4';
+                let img4URl = 'image/' + nickName + '/' + country + '/privacy/' + startDay + '~' + endDay + '/' + '/img4';
                 let route4 = storageRef4.child(img4URl);
                 let upload4 = route4.put(file4)
                 sleep(2000);
