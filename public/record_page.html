@@ -13,7 +13,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="js/fb.js"></script>
     <script src="js/record_page.js"></script>
     <script>
@@ -24,7 +24,7 @@
 <body>
     <div id="head">
         <div id="logo">
-            <a href="index.html"><img src="../img/logo.png"></a>
+            <a href="index.html"><img src="../img/logo.png" alt="logo"></a>
         </div>
 
         <div id="head_menu">
@@ -39,7 +39,7 @@
                 </li>
 
                 <li style="width:100px;">
-                    <img id="userIcon" src="../img/user.png">
+                    <img id="userIcon" src="../img/user.png" alt="img">
                 </li>
 
                 <li>
@@ -71,9 +71,9 @@
         </div>
 
         <div class="record" id="first">
-            <textarea class="left" id="text1" disabled>dd</textarea>
-            <textarea class="right" id="text2" disabled></textarea>
-            <img src="../img/write_background.png" class="record_background" id="record_first">
+            <label for="text1"><textarea class="left" id="text1" disabled></textarea></label>
+            <label for="text2"><textarea class="right" id="text2" disabled></textarea></label>
+            <img src="../img/write_background.png" class="record_background" id="record_first" alt="img">
             <div style="width:300px; height:410px;
                         float:left; margin-top:20px;">
                 <div style="width:300px; height:200px; float:left; position:relative;">
@@ -120,14 +120,14 @@
                                 position:absolute; z-index:-1;">
                     </div>
 
-                    <textarea class="left" id="text3" disabled></textarea>
-                    <textarea class="right" id="text4" disabled></textarea>
+                    <label for="text3"><textarea class="left" id="text3" disabled></textarea></label>
+                    <label for="text4"><textarea class="right" id="text4" disabled></textarea></label>
 
-                    <img src="" id="img4" style="width:280px; height:180px; margin-bottom:28px;" alt="img4">
+                    <img src="" id="img4" style="width:280px; height:180px; margin-bottom:28px;" alt="img4" >
                 </div>
             </div>
 
-            <img src="../img/write_background.png" class="record_background" id="record_second">
+            <img src="../img/write_background.png" class="record_background" id="record_second" alt="img">
 
         </div>
 
@@ -142,7 +142,7 @@
 
     <div id="footer">
         <div id="footer_left">
-            <img src="../img/logo.png">
+            <img src="../img/logo.png" alt="img">
 
             <p>
                 서울시 관악구 호암로 546 미림여자정보과학고등학교<br>
@@ -159,14 +159,13 @@
                     <td class="by">&nbsp;|&nbsp;2604 김소리&nbsp;&nbsp;2613 이유리</td>
                 </tr>
             </table>
-            </p>
         </div>
 
         <div id="footer_right">
             <div id="sns">
-                <img src="../img/facebook.png">
-                <img src="../img/mirim.png" onclick="location.href='https://www.e-mirim.hs.kr/main.do'">
-                <img src="../img/council.png" onclick="location.href='https://www.facebook.com/24mirimcouncil/'" style="width:50px; margin-top:3px; margin-left:18px;">
+                <img src="../img/facebook.png" alt="img">
+                <img src="../img/mirim.png" onclick="location.href='https://www.e-mirim.hs.kr/main.do'" alt="img">
+                <img src="../img/council.png" onclick="location.href='https://www.facebook.com/24mirimcouncil/'" style="width:50px; margin-top:3px; margin-left:18px;" alt="img">
             </div>
         </div>
     </div>
