@@ -8,6 +8,8 @@ $(function (){
         if(nickName == null){
             location.href = "login_info.html";
         }else{
+            document.getElementById("userIcon").src = photoURL;
+            document.getElementById('login').innerHTML = nickName;
             document.getElementById("profile_img").src = photoURL;
             document.getElementById('nickname').value = nickName;
             document.getElementById('info').value = info;

@@ -1,10 +1,27 @@
 // 세션이 있다면 로그인 상태 유지
+// 세션이 있다면 로그인 상태 유지
 $(function (){
-    if(len === 0){
+    len = sessionStorage.length
+    photoURL = sessionStorage.getItem("photoURL")
+    nickName = sessionStorage.getItem("nickName")
+    email = sessionStorage.getItem("email")
+    info = sessionStorage.getItem("info")
+    if(len !== 0){ //로그인 되어 있으면
+        if(nickName == null){
+            location.href = "login_info.html";
+        }else{
+            document.getElementById("userIcon").src = photoURL;
+            document.getElementById('login').innerHTML = nickName;
+            $(function(){
+                $('#logout').show();
+            })
+        }
+    }else {
         alert("로그인하세요.")
         location.href = "index.html"
     }
 })
+
 const storage = firebase.storage();
 nickName = sessionStorage.getItem("nickName")
 
