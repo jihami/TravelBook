@@ -1,8 +1,8 @@
-nickName = sessionStorage.getItem("nickName")
-email = sessionStorage.getItem("email")
+let nickName = sessionStorage.getItem("nickName")
+let email = sessionStorage.getItem("email")
+let len = sessionStorage.length
 // 세션이 있다면 로그인 상태 유지
 $(function (){
-    let len = sessionStorage.length
     let photoURL = sessionStorage.getItem("photoURL")
     let nickName = sessionStorage.getItem("nickName")
     let email = sessionStorage.getItem("email")
@@ -19,9 +19,6 @@ $(function (){
             $('#login').removeAttr("onclick");
             $('#login').attr("onclick","location.href = 'my_page.html'")
         }
-    }else {
-        alert("로그인하세요.")
-        location.href = "index.html"
     }
 })
 db.collection(nickName+"찜행지").get().then((data) => {
