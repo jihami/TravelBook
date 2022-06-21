@@ -4,6 +4,8 @@ $(function (){
         alert("로그인하세요.")
         location.href = "index.html"
     }
+    $("#login").removeAttr("onclick");
+    $("#login").attr("onclick","location.href = 'my_page.html'")
 })
 nickName = sessionStorage.getItem("nickName")
 function sleep(ms) {

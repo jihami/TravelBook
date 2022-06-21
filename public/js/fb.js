@@ -52,7 +52,8 @@ function login(){
                         }
                     }
                 })
-
+                $("#login").removeAttr("onclick");
+                $("#login").attr("onclick","location.href = 'my_page.html'")
             }
         });
     })
@@ -75,6 +76,7 @@ function logout() {
         sessionStorage.removeItem("photoURL");
         sessionStorage.removeItem("nickName");
         sessionStorage.removeItem("info");
+        sessionStorage.removeItem("DocId");
     })
 
 }

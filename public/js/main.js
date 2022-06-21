@@ -12,6 +12,8 @@ $(function (){
             $(function(){
                 $('#logout').show();
             })
+            $("#login").removeAttr("onclick");
+            $("#login").attr("onclick","location.href = 'my_page.html'")
         }
     }
 })
