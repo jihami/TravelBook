@@ -171,9 +171,25 @@
     </div>
 </div>
 <script>
-
-
-
+    id = sessionStorage.getItem("DocId")
+    con = sessionStorage.getItem("country")
+    console.log(id)
+    db.collection(con).doc(id).get().then(function(da) {
+        if (da.exists) {
+            dt = da.data()
+            console.log(dt)
+            document.getElementById('con').innerHTML = dt.title+" - "+dt.name;
+            document.getElementById('day').innerHTML = dt.startDay + " ~ " + dt.endDay;
+            document.getElementById("text1").innerHTML = dt.text1
+            document.getElementById("text2").innerHTML = dt.text2
+            document.getElementById("text3").innerHTML = dt.text3
+            document.getElementById("text4").innerHTML = dt.text4
+            document.getElementById("img1").src = dt.Img1
+            document.getElementById("img2").src = dt.Img2
+            document.getElementById("img3").src = dt.Img3
+            document.getElementById("img4").src = dt.Img4
+        }
+    })
 </script>
 </body>
 </html>
