@@ -88,7 +88,7 @@ textarea:focus{
             }
 #main{
     width:100%;
-    height:5780px;
+    height:4580px;
     float:left;
     position:relative;
     background-color:#FFFAE9;
@@ -389,61 +389,48 @@ textarea:focus{
                     font-size:10pt;
                 }
 
-    #favorite_add{
-        width:200px;
-        height:30px;
-        float:left;
-        margin-top:195px;
-        margin-left:1520px;
-        position:relative;
-    }
-
-        #favorite_add p {
-            width:140px;
-            height:30px;
-            float:left;
-            font-size:15pt;
-            text-align:center;
-            line-height:30px;
-            position:relative;
-        }
-
-        #favorite_add img{
-            width:30px;
-            height:30px;
-            float:left;
-        }
-
     #peru_record{
         width:100%;
-        height:1285px;
+        height:700px;
         float:left;
+        margin-top:200px;
         position:relative;
         z-index:1;
     }
 
         #peru_record > p{
-            width:374px;
+            width:100%;
             height:20px;
             float:left;
-            left:50%;
             color:#344031;
             font-size:15pt;
             font-weight:bold;
             text-align:center;
             line-height:20px;
             position:relative;
-            transform:translate(-50%);
         }
 
         #record_list{
-            width:1200px;
-            height:718px;
+            width:1300px;
+            height:335px;
             float:left;
             top:15%;
-            left:31%;
+            left:53%;
             position:relative;
+            overflow-y:auto;
             transform:translate(-50%);
+        }
+
+        #record_list::-webkit-scrollbar{
+            width:5px;
+            border-radius:5px;
+            background-color:#9DA092;
+        }
+
+        #record_list::-webkit-scrollbar-thumb{
+            width:5px;
+            border-radius:5px;
+            background-color:#333f32;
         }
 
             .record{
@@ -468,27 +455,9 @@ textarea:focus{
                     line-height:20px;
                 }
 
-        #record_slide_btn{
-            width:80px;
-            height:13px;
-            float:left;
-            margin-top:960px;
-            margin-left:-600px;
-            position:relative;
-            transform:translate(-50%);
-        }
-            #record_slide_btn div{
-                width:13px;
-                height:13px;
-                float:left;
-                margin:0 5px 5px 0;
-                border-radius:10px;
-                background-color:#9DA092;
-            }
-
     #peru_tip{
         width:100%;
-        height:1630px;
+        height:1000px;
         float:left;
         position:relative;
     }
@@ -520,29 +489,6 @@ textarea:focus{
                 position:relative;
                 transform:translate(-50%);
             }
-                #search{
-                    width:100%;
-                    height:55px;
-                    float:left;
-                    margin-bottom:30px;
-                    position:relative;
-                    background-color:#333f32;
-                }
-                    #tip_search{
-                        width:880px;
-                        height:20px;
-                        float:left;
-                        margin-top:19px;
-                        margin-left:30px;
-                        color:white;
-                        font-size:11pt;
-                        border:none;
-                        background-color:transparent;
-                    }
-
-                    #tip_search::placeholder{
-                        color:#ffffff;
-                    }
 
                 #write{
                     width:100%;
@@ -585,19 +531,32 @@ textarea:focus{
 
         #tip_bottom{
             width:100%;
-            height:1233px;
+            height:500px;
             float:left;
             position:relative;
         }
 
             #tip_list{
-                width:980px;
-                height:855px;
+                width:1100px;
+                height:100%;
                 float:left;
-                left:50%;
+                left:50.5%;
                 margin-top:40px;
                 position:relative;
+                overflow-y:auto;
                 transform:translate(-50%);
+            }
+
+            #tip_list::-webkit-scrollbar{
+                width:5px;
+                border-radius:5px;
+                background-color:#9DA092;
+            }
+
+            #tip_list::-webkit-scrollbar-thumb{
+                width:5px;
+                border-radius:5px;
+                background-color:#333f32;
             }
 
                 .tip{
@@ -632,24 +591,6 @@ textarea:focus{
                         text-align:left;
                         position:absolute;
                     }
-
-            #tip_slide_btn{
-                width:80px;
-                height:13px;
-                float:left;
-                margin-top:960px;
-                left:-2%;
-                position:relative;
-                transform:translate(-50%);
-            }
-                #tip_slide_btn div{
-                    width:13px;
-                    height:13px;
-                    float:left;
-                    margin:0 5px 5px 0;
-                    border-radius:10px;
-                    background-color:#9DA092;
-                }
 
 #footer{
     width:100%;
