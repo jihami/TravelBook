@@ -108,58 +108,64 @@
 
         <div id="write_contents">
             <div id="write_top">
-                <div class="contents_writing">
-                    <form>
-                        <div style="width:1px; height:17px;
-                             float:left; margin-top:30px;
-                             margin-left:30px;
-                             background-color:#000000;"></div>
-                        <label for="record_write1"><textarea type="text" name="record_write_left" class="input_record" id="record_write1" placeholder="여행 기록을 작성해보세요"></textarea></label>
-                        <div style="width:1px; height:17px;
-                             float:left; margin-top:30px;
-                             margin-left:40px;
-                             background-color:#000000;"></div>
-                        <label for="record_write2"><textarea type="text" name="record_write_right" class="input_record" id="record_write2" placeholder="여행 기록을 작성해보세요"></textarea></label>
-                    </form>
-                    <img src="../img/write_background.png" class="write_background" alt="img">
+                <div id="content_top" class="content">
+                    <div class="contents_writing">
+                        <form>
+                            <div style="width:1px; height:17px;
+                                 float:left; margin-top:30px;
+                                 margin-left:30px;
+                                 background-color:#000000;"></div>
+                            <label for="record_write1"><textarea type="text" name="record_write_left" class="input_record" id="record_write1" placeholder="여행 기록을 작성해보세요"></textarea></label>
+                            <div style="width:1px; height:17px;
+                                 float:left; margin-top:30px;
+                                 margin-left:40px;
+                                 background-color:#000000;"></div>
+                            <label for="record_write2"><textarea type="text" name="record_write_right" class="input_record" id="record_write2" placeholder="여행 기록을 작성해보세요"></textarea></label>
+                        </form>
+                        <img src="../img/write_background.png" class="write_background" alt="img">
+                    </div>
+
+                    <div class="add_photo">
+                        <img id="add_photo1" src="../img/add_page.png" alt="img"  onclick="$($('#uploadImg1')).click();">
+                        <input type="file" id="uploadImg1" style="display: none" onchange="readURL1(this);">
+                        <img class="preview" id="preview1" style="margin-top: 30px;" alt="img" src="">
+                        <br/>
+                        <img id="add_photo2" src="../img/add_page.png" alt="img"  onclick="$($('#uploadImg2')).click();">
+                        <input type="file" id="uploadImg2" style="display: none" onchange="readURL2(this);">
+                        <img class="preview" id="preview2" alt="img" src="">
+                    </div>
                 </div>
-                <div class="add_photo">
-                    <img id="add_photo1" src="../img/add_page.png" alt="img"  onclick="$($('#uploadImg1')).click();">
-                    <input type="file" id="uploadImg1" style="display: none" onchange="readURL1(this);">
-                    <img class="preview" id="preview1" style="margin-top: 30px;" alt="img" src="">
-                    <br/>
-                    <img id="add_photo2" src="../img/add_page.png" alt="img"  onclick="$($('#uploadImg2')).click();">
-                    <input type="file" id="uploadImg2" style="display: none" onchange="readURL2(this);">
-                    <img class="preview" id="preview2" alt="img" src="">
-                </div>
-                <div class="contents_writing">
-                    <form>
-                        <div style="width:1px; height:17px;
-                             float:left; margin-top:30px;
-                             margin-left:30px;
-                             background-color:#000000;"></div>
-                        <label for="record_write3"><textarea type="text" name="record_write_left" class="input_record" id="record_write3" placeholder="여행 기록을 작성해보세요"></textarea></label>
-                        <div style="width:1px; height:17px;
-                             float:left; margin-top:30px;
-                             margin-left:40px;
-                             background-color:#000000;"></div>
-                        <label for="record_write4"><textarea type="text" name="record_write_right" class="input_record" id="record_write4" placeholder="여행 기록을 작성해보세요"></textarea></label>
-                    </form>
-                    <img src="../img/write_background.png" class="write_background" alt="img">
-                </div>
-                <div class="add_photo">
-                    <img id="add_photo3" src="../img/add_page.png" alt="img"  onclick="$($('#uploadImg3')).click();">
-                    <input type="file" id="uploadImg3" style="display: none" onchange="readURL3(this);">
-                    <img class="preview" id="preview3" style="margin-top: 30px;" alt="img" src="">
-                    <br/>
-                    <img id="add_photo4" src="../img/add_page.png" alt="img"  onclick="$($('#uploadImg4')).click();">
-                    <input type="file" id="uploadImg4" style="display: none" onchange="readURL4(this);">
-                    <img class="preview" id="preview4" alt="img" src="">
+
+                <div id="content_bottom" class="content">
+                    <div class="add_photo">
+                        <img id="add_photo3" src="../img/add_page.png" alt="img"  onclick="$($('#uploadImg3')).click();">
+                        <input type="file" id="uploadImg3" style="display: none" onchange="readURL3(this);">
+                        <img class="preview" id="preview3" style="margin-top: 30px;" alt="img" src="">
+                        <br/>
+                        <img id="add_photo4" src="../img/add_page.png" alt="img"  onclick="$($('#uploadImg4')).click();">
+                        <input type="file" id="uploadImg4" style="display: none" onchange="readURL4(this);">
+                        <img class="preview" id="preview4" alt="img" src="">
+                    </div>
+
+                    <div class="contents_writing">
+                        <form>
+                            <div style="width:1px; height:17px;
+                                 float:left; margin-top:30px;
+                                 margin-left:30px;
+                                 background-color:#000000;"></div>
+                            <label for="record_write3"><textarea type="text" name="record_write_left" class="input_record" id="record_write3" placeholder="여행 기록을 작성해보세요"></textarea></label>
+                            <div style="width:1px; height:17px;
+                                 float:left; margin-top:30px;
+                                 margin-left:40px;
+                                 background-color:#000000;"></div>
+                            <label for="record_write4"><textarea type="text" name="record_write_right" class="input_record" id="record_write4" placeholder="여행 기록을 작성해보세요"></textarea></label>
+                        </form>
+                        <img src="../img/write_background.png" class="write_background" alt="img">
+                    </div>
                 </div>
             </div>
 
-
-            <hr>
+            <hr style="margin-top:1000px; position:relative">
 
             <div id="write_bottom">
                 <div id="start_date">

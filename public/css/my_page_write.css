@@ -156,10 +156,12 @@ input:focus{
             text-align: center;
         }
             select{
+                color:#FFFAE9;
                 border: none;
                 background-color: #333f32;
             }
             option{
+                color:#333f32;
                 background: #fff9ee;
             }
 
@@ -220,6 +222,15 @@ input:focus{
                 margin-top:90px;
                 position:relative;
             }
+
+                .content{
+                    width:1020px;
+                    height:480px;
+                    float:left;
+                    left:50%;
+                    position:relative;
+                    transform:translate(-50%);
+                }
                 .contents_writing{
                     width:700px;
                     height:400px;
@@ -248,38 +259,42 @@ input:focus{
                         }
 
                     .write_background{
-                        margin-top: 15px;
                         width:700px;
                         height:400px;
                         float:left;
+                        margin-top: 15px;
                         filter:drop-shadow(0px 5px 4px #ccc7ba);
                     }
-                    #add_photo1{
-                        margin-top: 40px;
-                        margin-left: 10px;
 
-                    }
-                    #add_photo2{
-                        margin-left: 10px;
-                    }
-                    #add_photo3{
-                        margin-top: 40px;
-                        margin-left: 10px;
-                    }
-                    #add_photo4{
-                        margin-left: 10px;
-                    }
-                    .preview{
-                        display: none;
-                        max-width: 400px;
-                        max-height: 300px;
-                        margin-left: 10px
+                    .add_photo{
+                        width:280px;
+                        height:400px;
+                        float:left;
+                        margin-left:20px;
+                        margin-right:20px;
                     }
 
+                        #add_photo1{
+                            margin-top: 40px;
+                        }
+
+                        #add_photo3{
+                            margin-top: 40px;
+                        }
+
+                        .preview{
+                            width:280px;
+                            height:180px;
+                            float:left;
+                            margin-bottom:10px;
+                            display:none;
+                            object-fit:cover;
+                        }
 
         #write_hr{
             margin-top: 10px;
         }
+
         #write_bottom{
             width:100%;
             height:52%;
@@ -377,11 +392,11 @@ input:focus{
                 }
 
     #menu{
-        margin-top: 100px;
         width:100%;
-        height:40%;
+        height:20%;
         float:left;
-        }
+        margin-top: 100px;
+    }
         #menu > div{
             width:280px;
             height:72px;
