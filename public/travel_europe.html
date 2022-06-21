@@ -9,7 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/travel.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/fb.js"></script>
     <script src="./js/travel.js"></script>
     <script>
         sessionStorage.getItem("email")
@@ -19,7 +25,7 @@
 <body>
     <div id="head">
         <div id="logo">
-            <a href="index.html"><img src="../img/logo.png"></a>
+            <a href="index.html"><img src="../img/logo.png" alt="logo"></a>
         </div>
 
         <div id="head_menu">
@@ -34,11 +40,12 @@
                 </li>
 
                 <li style="width:100px;">
-                    <img src="../img/user.png">
+                    <img id="userIcon" src="../img/user.png" alt="userIcon">
                 </li>
 
                 <li>
-                    <a href="my_page.html" id="user" style="text-align:left; line-height:95px; margin-left:10px;">여행하지함</a>
+                    <a href="#" style="text-align:left; line-height:95px; margin-left:10px; position:relative;" id="login"  onclick="login()">Login</a>
+                    <a href="#" style="text-align:left; line-height:95px; margin-left:-90px; position:absolute; display:none;" id="logout" onclick="logout()">Logout</a>
                 </li>
             </ul>
         </div>
@@ -49,7 +56,9 @@
         <p style="width:220px; height:42px;
                       float:left; margin-left:19%;
                       color:#333; font-size:11pt;
-                      text-align:center; line-height:42px;">Travel > 유럽</p>
+                      text-align:center; line-height:42px;">
+            <a href="travel_page.html">Travel</a>  > <a href="travel_europe.html">유럽</a>
+        </p>
     </div>
 
     <div id="main">
@@ -65,11 +74,11 @@
 
             <div id="list">
                 <div class="place">
-                    <img src="../img/greece/flag.png" class="flag" onclick="location.href='travel_greece.html'">
+                    <img src="../img/greece/flag.png" class="flag" onclick="location.href='travel_greece.html'" alt="img">
 
                     <p class="place_title">
                         그리스
-                        <img src="../img/favorite_add.png" id="greece" class="favorite_on" onclick="favorite_on('greece')">
+                        <img src="../img/favorite_add.png" id="greece" class="favorite_on" onclick="favorite_on(this.id, '그리스')" alt="img">
                     </p>
 
                     <hr>
@@ -77,11 +86,11 @@
                 </div>
 
                 <div class="place">
-                    <img src="../img/denmark/flag.png" class="flag" onclick="location.href='travel_denmark.html'">
+                    <img src="../img/denmark/flag.png" class="flag" onclick="location.href='travel_denmark.html'" alt="img">
 
                     <p class="place_title">
                         덴마크
-                        <img src="../img/favorite_add.png" id="denmark" class="favorite_on" onclick="favorite_on('denmark')">
+                        <img src="../img/favorite_add.png" id="denmark" class="favorite_on" onclick="favorite_on(this.id, '덴마크')" alt="img">
                     </p>
 
                     <hr>
@@ -89,11 +98,11 @@
                 </div>
 
                 <div class="place">
-                    <img src="../img/spain/flag.png" class="flag" onclick="location.href='travel_spain.html'">
+                    <img src="../img/spain/flag.png" class="flag" onclick="location.href='travel_spain.html'" alt="img">
 
                     <p class="place_title">
                         스페인
-                        <img src="../img/favorite_add.png" id="spain" class="favorite_on" onclick="favorite_on('spain')">
+                        <img src="../img/favorite_add.png" id="spain" class="favorite_on" onclick="favorite_on(this.id, '스페인')" alt="img">
                     </p>
 
                     <hr>
@@ -101,11 +110,11 @@
                 </div>
 
                 <div class="place">
-                    <img src="../img/iceland/flag.png" class="flag" onclick="location.href='travel_iceland.html'">
+                    <img src="../img/iceland/flag.png" class="flag" onclick="location.href='travel_iceland.html'" alt="img">
 
                     <p class="place_title">
                         아이슬란드
-                        <img src="../img/favorite_add.png" id="iceland" class="favorite_on" onclick="favorite_on('iceland')">
+                        <img src="../img/favorite_add.png" id="iceland" class="favorite_on" onclick="favorite_on(this.id, '아이슬란드')" alt="img">
                     </p>
 
                     <hr>
@@ -113,11 +122,11 @@
                 </div>
 
                 <div class="place">
-                    <img src="../img/unitedKingdom/flag.png" class="flag" onclick="location.href='travel_unitedKingdom.html'">
+                    <img src="../img/unitedKingdom/flag.png" class="flag" onclick="location.href='travel_unitedKingdom.html'" alt="img">
 
                     <p class="place_title">
                         영국
-                        <img src="../img/favorite_add.png" id="uk" class="favorite_on" onclick="favorite_on('uk')">
+                        <img src="../img/favorite_add.png" id="uk" class="favorite_on" onclick="favorite_on(this.id, '영국')" alt="img">
                     </p>
 
                     <hr>
@@ -125,11 +134,11 @@
                 </div>
 
                 <div class="place">
-                    <img src="../img/italy/flag.png" class="flag" onclick="location.href='travel_italy.html'">
+                    <img src="../img/italy/flag.png" class="flag" onclick="location.href='travel_italy.html'" alt="img">
 
                     <p class="place_title">
                         이탈리아
-                        <img src="../img/favorite_add.png" id="italy" class="favorite_on" onclick="favorite_on('italy')">
+                        <img src="../img/favorite_add.png" id="italy" class="favorite_on" onclick="favorite_on(this.id, '이탈리아')" alt="img">
                     </p>
 
                     <hr>
@@ -137,11 +146,11 @@
                 </div>
 
                 <div class="place">
-                    <img src="../img/france/flag.png" class="flag" onclick="location.href='travel_france.html'">
+                    <img src="../img/france/flag.png" class="flag" onclick="location.href='travel_france.html'" alt="img">
 
                     <p class="place_title">
                         프랑스
-                        <img src="../img/favorite_add.png" id="france" class="favorite_on" onclick="favorite_on('france')">
+                        <img src="../img/favorite_add.png" id="france" class="favorite_on" onclick="favorite_on(this.id, '프랑스')" alt="img">
                     </p>
 
                     <hr>
@@ -149,11 +158,11 @@
                 </div>
 
                 <div class="place">
-                    <img src="../img/hungary/flag.png" class="flag" onclick="location.href='travel_hungary.html'">
+                    <img src="../img/hungary/flag.png" class="flag" onclick="location.href='travel_hungary.html'" alt="img">
 
                     <p class="place_title">
                         헝가리
-                        <img src="../img/favorite_add.png" id="hungary" class="favorite_on" onclick="favorite_on('hungary')">
+                        <img src="../img/favorite_add.png" id="hungary" class="favorite_on" onclick="favorite_on(this.id, '헝가리')" alt="img">
                     </p>
 
                     <hr>
@@ -165,7 +174,7 @@
 
     <div id="footer">
         <div id="footer_left">
-            <img src="../img/logo.png">
+            <img src="../img/logo.png" alt="img">
 
             <p>
                 서울시 관악구 호암로 546 미림여자정보과학고등학교<br>
@@ -182,14 +191,13 @@
                     <td class="by">&nbsp;|&nbsp;2604 김소리&nbsp;&nbsp;2613 이유리</td>
                 </tr>
             </table>
-            </p>
         </div>
 
         <div id="footer_right">
             <div id="sns">
-                <img src="../img/facebook.png">
-                <img src="../img/mirim.png" onclick="location.href='https://www.e-mirim.hs.kr/main.do'">
-                <img src="../img/council.png" onclick="location.href='https://www.facebook.com/24mirimcouncil/'" style="width:50px; margin-top:3px; margin-left:18px;">
+                <img src="../img/facebook.png" alt="img">
+                <img src="../img/mirim.png" onclick="location.href='https://www.e-mirim.hs.kr/main.do'" alt="img">
+                <img src="../img/council.png" onclick="location.href='https://www.facebook.com/24mirimcouncil/'" style="width:50px; margin-top:3px; margin-left:18px;" alt="img">
             </div>
         </div>
     </div>

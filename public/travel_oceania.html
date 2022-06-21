@@ -16,7 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="js/fb.js"></script>
-    <script src="./js/travel.js"></script>
+    <script src="js/travel.js"></script>
     <script>
         sessionStorage.getItem("email")
         sessionStorage.getItem("name")
@@ -56,7 +56,8 @@
         <p style="width:220px; height:42px;
                       float:left; margin-left:19%;
                       color:#333; font-size:11pt;
-                      text-align:center; line-height:42px;">Travel > 오세아니아</p>
+                      text-align:center; line-height:42px;">
+            <a href="travel_page.html">Travel</a>  > <a href="travel_africa.html">오세아니아</a></p>
     </div>
 
     <div id="main">
@@ -76,7 +77,7 @@
 
                     <p class="place_title">
                         뉴질랜드
-                        <img src="../img/favorite_add.png" id="newZealand" class="favorite_on" onclick="favorite_on('newZealand')" alt="img">
+                        <img src="../img/favorite_add.png" id="newZealand" class="favorite_on" onclick="favorite_on(this.id, '뉴질랜드')" alt="img">
                     </p>
 
                     <hr>
@@ -88,7 +89,7 @@
 
                     <p class="place_title">
                         호주
-                        <img src="../img/favorite_add.png" id="australia" class="favorite_on" onclick="favorite_on('australia')" alt="img">
+                        <img src="../img/favorite_add.png" id="australia" class="favorite_on" onclick="favorite_on(this.id, '호주')" alt="img">
                     </p>
 
                     <hr>
