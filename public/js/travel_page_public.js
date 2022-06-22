@@ -8,7 +8,7 @@ $(function (){
     nickName = sessionStorage.getItem("nickName")
     email = sessionStorage.getItem("email")
     info = sessionStorage.getItem("info")
-    if(email != null){ //로그인 되어 있으면
+    if(email != ""){ //로그인 되어 있으면
         if(nickName == null){
             location.href = "login_info.html";
         }else{
@@ -20,6 +20,8 @@ $(function (){
             $("#login").removeAttr("onclick");
             $("#login").attr("onclick","location.href = 'my_page.html'")
         }
+    }else{
+        console.log("logout")
     }
 })
 
