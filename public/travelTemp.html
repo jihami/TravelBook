@@ -16,7 +16,6 @@
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="js/fb.js"></script>
     <script src="js/travel_page_public.js"></script>
-    <script src="js/setCountry.js"></script>
     <script>
         sessionStorage.getItem("email")
         sessionStorage.getItem("name")
@@ -65,7 +64,7 @@
 <div id="main">
     <div id="title">
         <div></div>
-        <img src="img/greece/greece.png">
+
     </div>
 
     <div id="greece_info">
@@ -76,7 +75,7 @@
             <div id="flag">
                 <p>국기</p>
 
-                <img src="img/greece/flag.png">
+                <img id="fl">
 
                 <div></div>
             </div>
@@ -163,8 +162,7 @@
             </div>
 
             <div id="athens_img">
-                <img src="img/greece/athens1.png" style="margin-bottom:28px;">
-                <img src="img/greece/athens2.png">
+
             </div>
         </div>
 
@@ -174,7 +172,6 @@
         </div>
 
         <div class="city" id="santorini">
-
             <img src="img/write_background.png" class="write_background" id="write_santorini">
 
             <div id="santorini_l">
@@ -223,11 +220,11 @@
 
             <div id="record_list">
                 <div style="text-align:center; font-size: 30px; margin-left: -100px">기록이 없습니다.</div>
-<!--                <div class="record">-->
-<!--                    <img src="../img/diary.png">-->
-<!--                    <hr style="height:1px; background-color:black;">-->
-<!--                    <p>2022.4.12</p>-->
-<!--                </div>-->
+                <!--                <div class="record">-->
+                <!--                    <img src="../img/diary.png">-->
+                <!--                    <hr style="height:1px; background-color:black;">-->
+                <!--                    <p>2022.4.12</p>-->
+                <!--                </div>-->
             </div>
         </div>
 
@@ -252,46 +249,46 @@
             <div id="tip_bottom">
                 <div id="tip_list">
                     <div style="text-align:center; font-size: 30px">팁이 없습니다.</div>
-<!--                    <div class="tip">-->
-<!--                        <p class="user_id">유리심장</p>-->
-<!--                        <img src="../img/tip_input.pn">-->
-<!--                        <p class="tip_subject">가이드 설명을 들으면서 여행하면 더욱 재미있는 여행이 될 수 있어요. 특히 박물관은 가이드 필수!</p>-->
-<!--                    </div>-->
+                    <!--                    <div class="tip">-->
+                    <!--                        <p class="user_id">유리심장</p>-->
+                    <!--                        <img src="../img/tip_input.pn">-->
+                    <!--                        <p class="tip_subject">가이드 설명을 들으면서 여행하면 더욱 재미있는 여행이 될 수 있어요. 특히 박물관은 가이드 필수!</p>-->
+                    <!--                    </div>-->
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-    <div id="footer">
-        <div id="footer_left">
-            <img src="img/logo.png">
+<div id="footer">
+    <div id="footer_left">
+        <img src="img/logo.png">
 
-            <p>
-                서울시 관악구 호암로 546 미림여자정보과학고등학교<br>
-                대표전화 02-872-4072   대외협력부 02-888-8350   진로체험문의 070-5099-8318
+        <p>
+            서울시 관악구 호암로 546 미림여자정보과학고등학교<br>
+            대표전화 02-872-4072   대외협력부 02-888-8350   진로체험문의 070-5099-8318
 
-            <table>
-                <tr>
-                    <td class="position">DEVELOPER</td>
-                    <td class="by">&nbsp;|&nbsp;3404 김지함&nbsp;&nbsp;3410 양가영</td>
-                </tr>
+        <table>
+            <tr>
+                <td class="position">DEVELOPER</td>
+                <td class="by">&nbsp;|&nbsp;3404 김지함&nbsp;&nbsp;3410 양가영</td>
+            </tr>
 
-                <tr>
-                    <td class="position">DESIGNER</td>
-                    <td class="by">&nbsp;|&nbsp;2604 김소리&nbsp;&nbsp;2613 이유리</td>
-                </tr>
-            </table>
-            </p>
-        </div>
+            <tr>
+                <td class="position">DESIGNER</td>
+                <td class="by">&nbsp;|&nbsp;2604 김소리&nbsp;&nbsp;2613 이유리</td>
+            </tr>
+        </table>
+        </p>
+    </div>
 
-        <div id="footer_right">
-            <div id="sns">
-                <img src="img/facebook.png">
-                <img src="img/mirim.png" onclick="location.href='https://www.e-mirim.hs.kr/main.do'">
-                <img src="img/council.png" onclick="location.href='https://www.facebook.com/24mirimcouncil/'" style="width:50px; margin-top:3px; margin-left:18px;">
-            </div>
+    <div id="footer_right">
+        <div id="sns">
+            <img src="img/facebook.png">
+            <img src="img/mirim.png" onclick="location.href='https://www.e-mirim.hs.kr/main.do'">
+            <img src="img/council.png" onclick="location.href='https://www.facebook.com/24mirimcouncil/'" style="width:50px; margin-top:3px; margin-left:18px;">
         </div>
     </div>
+</div>
 </body>
 </html>

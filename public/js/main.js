@@ -3,9 +3,11 @@ $(function (){
     len = sessionStorage.length
     nickName = sessionStorage.getItem("nickName")
     photoURL = sessionStorage.getItem("photoURL")
-    if(email !== null){ //로그인 되어 있으면
+    email = sessionStorage.getItem("email")
+    if(email !== ""){ //로그인 되어 있으면
         if(nickName == null){
-            location.href = "login_info.html";
+            console.log("u")
+            // location.href = "login_info.html";
         }else{
             document.getElementById('login').innerHTML = nickName
             document.getElementById("userIcon").src = photoURL;
@@ -15,6 +17,8 @@ $(function (){
             $("#login").removeAttr("onclick");
             $("#login").attr("onclick","location.href = 'my_page.html'")
         }
+    }else{
+        console.log("logout")
     }
 })
 $(function(){

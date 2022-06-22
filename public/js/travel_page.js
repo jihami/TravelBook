@@ -33,7 +33,7 @@ db.collection(nickName+"찜행지").get().then((data) => {
         })
     }
 })
-function favorite_on(country, name){
+function favorite_on(country, name){ //로그인이 안되어 있으면 로그인 하라고 하기
     $(function (){
         if(len === 0){
             alert("로그인하세요.")
@@ -45,7 +45,6 @@ function favorite_on(country, name){
             }
         }
     })
-
 }
 
 $(function(){
