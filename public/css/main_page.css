@@ -268,7 +268,7 @@ button{
                     height:70px;
                     float:left;
                     margin-top:-25px;
-                    margin-left:95.5%;
+                    margin-left:75.5%;
                     color:#D3C3AA;
                     font-size:50pt;
                     font-family:'Abhaya Libre', serif;
@@ -366,7 +366,7 @@ button{
                 height:400px;
                 float:left;
                 margin-top:377px;
-                margin-left:481px;
+                margin-left:26%;
                 position:absolute;
                 background-color:#deceaa;
             }
@@ -383,8 +383,6 @@ button{
                 width:180px;
                 height:35px;
                 float:left;
-                margin-top:80px;
-                margin-left:-180px;
                 color:#333f32;
                 font-size:25pt;
                 font-family:'Abhaya Libre', serif;
@@ -396,7 +394,8 @@ button{
                 width:1000px;
                 height:220px;
                 float:left;
-                margin-top:20px;
+                margin-top:60px;
+                margin-left:-180px;
                 color:#333f32;
                 font-size:11pt;
                 position:relative;
@@ -410,11 +409,11 @@ button{
         }
 
             #night_view div{
-                width:1500px;
+                width:1150px;
                 height:98px;
                 float:left;
-                margin-top:255px;
-                margin-left:870px;
+                margin-top:320px;
+                margin-left:55%;
                 position:absolute;
                 background-color:#deceaa;
             }
@@ -438,7 +437,7 @@ button{
         }
 
             #building p{
-                margin-left:21%;
+                margin-left:21.5%;
             }
 
             .build{
