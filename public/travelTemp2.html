@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Denmark</title>
+    <title>여행지</title>
     <link rel="icon" href="img/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -161,7 +161,7 @@
                 <form>
                     <div id="write">
                         <label for="tip_write"><textarea type="text" name="tip_write" id="tip_write" placeholder="자신만의 여행 팁을 적어주세요"></textarea></label>
-                        <button id="tip_upload" type="button" onclick="submitTip('conR')">등록</button>
+                        <button id="tip_upload" type="button" onclick="submitTip(con)">등록</button>
                     </div>
                 </form>
             </div>
@@ -231,6 +231,7 @@
             document.getElementById("img4").src = nepal.img4;
             document.getElementById("city2_l").innerHTML = nepal.fifth;
             document.getElementById("city2_r").innerHTML = nepal.sixth;
+            con = '네팔';
             setTip('네팔')
             setCon('네팔')
         }else if(conR === "taiwan"){
@@ -249,6 +250,7 @@
             document.getElementById("img4").src = taiwan.img4;
             document.getElementById("city2_l").innerHTML = taiwan.fifth;
             document.getElementById("city2_r").innerHTML = taiwan.sixth;
+            con = '대만';
             setTip('대만')
             setCon('대만')
         }else if(conR === "korea"){
@@ -267,6 +269,7 @@
             document.getElementById("img4").src = korea.img4;
             document.getElementById("city2_l").innerHTML = korea.fifth;
             document.getElementById("city2_r").innerHTML = korea.sixth;
+            con = '대한민국';
             setTip('대한민국')
             setCon('대한민국')
         }else if(conR === "laos"){
@@ -285,6 +288,7 @@
             document.getElementById("img4").src = laos.img4;
             document.getElementById("city2_l").innerHTML = laos.fifth;
             document.getElementById("city2_r").innerHTML = laos.sixth;
+            con = '라오스';
             setTip('라오스')
             setCon('라오스')
         }else if(conR === "singapore"){
@@ -303,6 +307,7 @@
             document.getElementById("img4").src = singapore.img4;
             document.getElementById("city2_l").innerHTML = singapore.fifth;
             document.getElementById("city2_r").innerHTML = singapore.sixth;
+            con = '싱가포르';
             setTip('싱가포르')
             setCon('싱가포르')
         }else if(conR === "japan"){
@@ -321,6 +326,7 @@
             document.getElementById("img4").src = japan.img4;
             document.getElementById("city2_l").innerHTML = japan.fifth;
             document.getElementById("city2_r").innerHTML = japan.sixth;
+            con = '일본';
             setTip('일본')
             setCon('일본')
         }else if(conR === "thailand"){
@@ -339,6 +345,7 @@
             document.getElementById("img4").src = thailand.img4;
             document.getElementById("city2_l").innerHTML = thailand.fifth;
             document.getElementById("city2_r").innerHTML = thailand.sixth;
+            con = '태국';
             setTip('태국')
             setCon('태국')
         }else if(conR === "newZealand"){
@@ -357,6 +364,7 @@
             document.getElementById("img4").src = newZealand.img4;
             document.getElementById("city2_l").innerHTML = newZealand.fifth;
             document.getElementById("city2_r").innerHTML = newZealand.sixth;
+            con = '뉴질랜드';
             setTip('뉴질랜드')
             setCon('뉴질랜드')
         }else if(conR === "australia"){
@@ -375,6 +383,7 @@
             document.getElementById("img4").src = australia.img4;
             document.getElementById("city2_l").innerHTML = australia.fifth;
             document.getElementById("city2_r").innerHTML = australia.sixth;
+            con = '호주';
             setTip('호주')
             setCon('호주')
         }else if(conR === "madagascar"){
@@ -393,6 +402,7 @@
             document.getElementById("img4").src = madagascar.img4;
             document.getElementById("city2_l").innerHTML = madagascar.fifth;
             document.getElementById("city2_r").innerHTML = madagascar.sixth;
+            con = '마다가스카르';
             setTip('마다가스카르')
             setCon('마다가스카르')
         }else if(conR === "morocco"){
@@ -411,6 +421,7 @@
             document.getElementById("img4").src = morocco.img4;
             document.getElementById("city2_l").innerHTML = morocco.fifth;
             document.getElementById("city2_r").innerHTML = morocco.sixth;
+            con = '모로코';
             setTip('모로코')
             setCon('모로코')
         }else if(conR === "kenya"){
@@ -429,6 +440,7 @@
             document.getElementById("img4").src = kenya.img4;
             document.getElementById("city2_l").innerHTML = kenya.fifth;
             document.getElementById("city2_r").innerHTML = kenya.sixth;
+            con = '케냐';
             setTip('케냐')
             setCon('케냐')
         }

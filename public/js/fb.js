@@ -21,7 +21,6 @@ function login(){
         $(function(){
             $('#logout').show();
         })
-
         // 세션에 email 사용하여 저장
         sessionStorage.setItem("email", user.email);
         sessionStorage.setItem("name", user.displayName);
@@ -29,6 +28,7 @@ function login(){
         const email = user.email;
         const name = user.displayName;
         const photoURL = user.photoURL;
+        console.log(photoURL)
         // db.collection(email).doc(email).add({"name":name,"email":email, info : 0}); // 내용을 하나더 만듦
         db.collection(email).doc(email).set({"name":name,"email":email, "photoURL":photoURL}); // 내용을 덮어씀
         db.collection(email).get().then(doc => {
@@ -40,7 +40,7 @@ function login(){
                 dbDoc.get().then(function(querySnapshot) {
                     if (querySnapshot.exists) {
                         for(let doc in querySnapshot.data()){
-                            console.log( `key : ${doc}, value : ${querySnapshot.data()[doc]}` )
+                            // console.log( `key : ${doc}, value : ${querySnapshot.data()[doc]}` )
                             nickName = querySnapshot.data().nickName
                             info = querySnapshot.data().info
                             sessionStorage.setItem("nickName", nickName);
@@ -63,7 +63,7 @@ function logout() {
     firebase.auth().signOut().then(() => {
         // Sign-out successful.
         document.getElementById("login").innerHTML = "Login"
-        document.getElementById("userIcon").src = "../img/user.png";
+        document.getElementById("userIcon").src = "img/user.png";
 
         // 로그아웃 시 버튼 숨기기
         $(function(){

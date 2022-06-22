@@ -67,14 +67,19 @@ function submitTip(con){
     if (len < 4){ //로그아웃이면
         alert("로그인하세요")
     }else {
+        console.log(con)
         let tip = document.getElementById("tip_write").value;
         let photoURL = sessionStorage.getItem("photoURL")
         let info = sessionStorage.getItem("info")
         let name = sessionStorage.getItem("nickName")
-        db.collection(con + "TIP").add({"name": name, "info": info, "photoURL": photoURL, 'tip': tip});
-        document.getElementById("tip_write").value = "";
-        alert("저장 완료!");
-        setTip(con);
+        if (tip === ""){
+            alert("내용을 입력해 주세요.")
+        }else {
+            db.collection(con + "TIP").add({"name": name, "info": info, "photoURL": photoURL, 'tip': tip});
+            document.getElementById("tip_write").value = "";
+            alert("저장 완료!");
+            setTip(con);
+        }
     }
 }
 function setTip(country) {

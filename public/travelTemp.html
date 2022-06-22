@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Denmark</title>
+    <title>여행지</title>
     <link rel="icon" href="img/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -161,7 +161,7 @@
                 <form>
                     <div id="write">
                         <label for="tip_write"><textarea type="text" name="tip_write" id="tip_write" placeholder="자신만의 여행 팁을 적어주세요"></textarea></label>
-                        <button id="tip_upload" type="button" onclick="submitTip('conR')">등록</button>
+                        <button id="tip_upload" type="button" onclick="submitTip(con)">등록</button>
                     </div>
                 </form>
             </div>
@@ -231,6 +231,7 @@
             document.getElementById("img4").src = greece.img4;
             document.getElementById("city2_l").innerHTML = greece.fifth;
             document.getElementById("city2_r").innerHTML = greece.sixth;
+            con = "그리스";
             setTip('그리스')
             setCon('그리스')
         }else if (conR === "denmark"){
@@ -249,6 +250,7 @@
             document.getElementById("img4").src = denmark.img4;
             document.getElementById("city2_l").innerHTML = denmark.fifth;
             document.getElementById("city2_r").innerHTML = denmark.sixth;
+            con = "덴마크";
             setTip('덴마크')
             setCon('덴마크')
         }else if (conR === "spain"){
@@ -267,6 +269,7 @@
             document.getElementById("img4").src = spain.img4;
             document.getElementById("city2_l").innerHTML = spain.fifth;
             document.getElementById("city2_r").innerHTML = spain.sixth;
+            con = '스페인';
             setTip('스페인')
             setCon('스페인')
         }else if (conR === "iceland"){
@@ -285,6 +288,7 @@
             document.getElementById("img4").src = iceland.img4;
             document.getElementById("city2_l").innerHTML = iceland.fifth;
             document.getElementById("city2_r").innerHTML = iceland.sixth;
+            con = '아이슬란드';
             setTip('아이슬란드')
             setCon('아이슬란드')
         }else if (conR === "unitedKingdom"){
@@ -303,6 +307,7 @@
             document.getElementById("img4").src = unitedKingdom.img4;
             document.getElementById("city2_l").innerHTML = unitedKingdom.fifth;
             document.getElementById("city2_r").innerHTML = unitedKingdom.sixth;
+            con = '영국';
             setTip('영국')
             setCon('영국')
         }else if (conR === "italy"){
@@ -321,6 +326,7 @@
             document.getElementById("img4").src = italy.img4;
             document.getElementById("city2_l").innerHTML = italy.fifth;
             document.getElementById("city2_r").innerHTML = italy.sixth;
+            con = '이탈리아';
             setTip('이탈리아')
             setCon('이탈리아')
         }else if (conR === "france"){
@@ -339,6 +345,7 @@
             document.getElementById("img4").src = france.img4;
             document.getElementById("city2_l").innerHTML = france.fifth;
             document.getElementById("city2_r").innerHTML = france.sixth;
+            con = '프랑스';
             setTip('프랑스')
             setCon('프랑스')
         }else if (conR === "hungary"){
@@ -357,6 +364,7 @@
             document.getElementById("img4").src = hungary.img4;
             document.getElementById("city2_l").innerHTML = hungary.fifth;
             document.getElementById("city2_r").innerHTML = hungary.sixth;
+            con = '헝가리';
             setTip('헝가리')
             setCon('헝가리')
         }else if (conR === "mexico"){
@@ -375,6 +383,7 @@
             document.getElementById("img4").src = mexico.img4;
             document.getElementById("city2_l").innerHTML = mexico.fifth;
             document.getElementById("city2_r").innerHTML = mexico.sixth;
+            con = '멕시코';
             setTip('멕시코')
             setCon('멕시코')
         }else if (conR === "usa"){
@@ -393,6 +402,7 @@
             document.getElementById("img4").src = usa.img4;
             document.getElementById("city2_l").innerHTML = usa.fifth;
             document.getElementById("city2_r").innerHTML = usa.sixth;
+            con = '미국';
             setTip('미국')
             setCon('미국')
         }else if (conR === "canada"){
@@ -411,6 +421,7 @@
             document.getElementById("img4").src = canada.img4;
             document.getElementById("city2_l").innerHTML = canada.fifth;
             document.getElementById("city2_r").innerHTML = canada.sixth;
+            con = '캐나다';
             setTip('캐나다')
             setCon('캐나다')
         }else if (conR === "cuba"){
@@ -429,6 +440,7 @@
             document.getElementById("img4").src = cuba.img4;
             document.getElementById("city2_l").innerHTML = cuba.fifth;
             document.getElementById("city2_r").innerHTML = cuba.sixth;
+            con = '쿠바';
             setTip('쿠바')
             setCon('쿠바')
         }else if (conR === "venezuela"){
@@ -447,6 +459,7 @@
             document.getElementById("img4").src = venezuela.img4;
             document.getElementById("city2_l").innerHTML = venezuela.fifth;
             document.getElementById("city2_r").innerHTML = venezuela.sixth;
+            con = '베네수엘라';
             setTip('베네수엘라')
             setCon('베네수엘라')
         }else if (conR === "bolivia"){
@@ -465,6 +478,7 @@
             document.getElementById("img4").src = bolivia.img4;
             document.getElementById("city2_l").innerHTML = bolivia.fifth;
             document.getElementById("city2_r").innerHTML = bolivia.sixth;
+            con = '볼리비아';
             setTip('볼리비아')
             setCon('볼리비아')
         }else if (conR === "brazil"){
@@ -483,6 +497,7 @@
             document.getElementById("img4").src = brazil.img4;
             document.getElementById("city2_l").innerHTML = brazil.fifth;
             document.getElementById("city2_r").innerHTML = brazil.sixth;
+            con = '브라질';
             setTip('브라질')
             setCon('브라질')
         }else if (conR === "argentina"){
@@ -501,6 +516,7 @@
             document.getElementById("img4").src = argentina.img4;
             document.getElementById("city2_l").innerHTML = argentina.fifth;
             document.getElementById("city2_r").innerHTML = argentina.sixth;
+            con = '아르헨티나';
             setTip('아르헨티나')
             setCon('아르헨티나')
         }else if (conR === "peru"){
@@ -519,6 +535,7 @@
             document.getElementById("img4").src = peru.img4;
             document.getElementById("city2_l").innerHTML = peru.fifth;
             document.getElementById("city2_r").innerHTML = peru.sixth;
+            con = '페루';
             setTip('페루')
             setCon('페루')
         }
