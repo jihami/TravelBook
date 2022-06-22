@@ -60,26 +60,31 @@ function login(){
 }
 
 function logout() {
-    firebase.auth().signOut().then(() => {
-        // Sign-out successful.
-        document.getElementById("login").innerHTML = "Login"
-        document.getElementById("userIcon").src = "img/user.png";
+    if(confirm("로그아웃하시겠습니까?")==true){
+        firebase.auth().signOut().then(() => {
+            // Sign-out successful.
+            document.getElementById("login").innerHTML = "Login"
+            document.getElementById("userIcon").src = "img/user.png";
 
-        // 로그아웃 시 버튼 숨기기
-        $(function(){
-            $('#logout').hide();
+            // 로그아웃 시 버튼 숨기기
+            $(function(){
+                $('#logout').hide();
+            })
+
+            // 로그아웃 시 세션 삭제
+            sessionStorage.removeItem("email");
+            sessionStorage.removeItem("name");
+            sessionStorage.removeItem("photoURL");
+            sessionStorage.removeItem("nickName");
+            sessionStorage.removeItem("info");
+            sessionStorage.removeItem("DocId");
+            sessionStorage.removeItem("country");
+            sessionStorage.removeItem("conR");
+            alert("로그아웃되셨습니다. " +
+                "홈으로 이동합니다.");
+            location.href = 'index.html'
         })
-
-        // 로그아웃 시 세션 삭제
-        sessionStorage.removeItem("email");
-        sessionStorage.removeItem("name");
-        sessionStorage.removeItem("photoURL");
-        sessionStorage.removeItem("nickName");
-        sessionStorage.removeItem("info");
-        sessionStorage.removeItem("DocId");
-        sessionStorage.removeItem("country");
-        sessionStorage.removeItem("conR");
-    })
+    }
 
 }
 
