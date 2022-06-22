@@ -15,13 +15,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="js/fb.js"></script>
+    <script src="js/setCountry.js"></script>
     <script src="js/travel_page_public.js"></script>
     <script>
         sessionStorage.getItem("email")
         sessionStorage.getItem("name")
-        conR = sessionStorage.getItem("conR")
-        setCon("덴마크")
-        setTip("덴마크")
+        sessionStorage.getItem("conR")
     </script>
 </head>
 <body>
@@ -98,7 +97,7 @@
     </div>
 
     <div class="city" id="city1">
-        <img src="" class="write_background" id="write_city" alt="">
+        <img src="img/write_background.png" class="write_background" id="write_city" alt="백그라운드">
 
         <div>
             <div id="city1_l">
@@ -122,13 +121,15 @@
 
 
         <div class="city" id="city2">
-            <img id="img4" src="" style="float:left; margin-top:30px; margin-left:405px;">
+            <img id="img4" src="" style="float:left; margin-top:30px; margin-left:405px;" alt="img4">
             <img src="img/write_background.png" class="write_background" id="write_odense">
 
             <div id="city2_l">
+                city2_l
             </div>
 
             <div id="city2_r">
+                city2_r
             </div>
         </div>
 
@@ -211,5 +212,27 @@
         </div>
     </div>
 </div>
+<script>
+    conR = sessionStorage.getItem("conR")
+    setext(conR)
+    function setext(conR){
+        if(conR == "greece"){
+            document.getElementById("conName").src = greece.name;
+            document.getElementById("img1").src = greece.img1;
+            document.getElementById("flag_img").src = greece.flag;
+            document.getElementById("basic_info").innerHTML = greece.first;
+            document.getElementById("info_r").innerHTML = greece.second;
+            document.getElementById("city1_l").innerHTML = greece.third;
+            document.getElementById("city1_r").innerHTML = greece.fourth;
+            document.getElementById("img2").src = greece.img2;
+            document.getElementById("img3").src = greece.img3;
+            document.getElementById("img4").src = greece.img4;
+            document.getElementById("city2_l").innerHTML = greece.fifth;
+            document.getElementById("city2_r").innerHTML = greece.sixth;
+            setTip('그리스')
+            setCon('그리스')
+        }
+    }
+</script>
 </body>
 </html>

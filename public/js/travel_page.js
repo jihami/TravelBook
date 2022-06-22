@@ -33,6 +33,10 @@ db.collection(nickName+"찜행지").get().then((data) => {
         })
     }
 })
+function goTemp(country){
+    sessionStorage.setItem("conR", country);
+    location.href = "travelTemp.html";
+}
 function favorite_on(country, name){ //로그인이 안되어 있으면 로그인 하라고 하기
     $(function (){
         if(len === 0){

@@ -1,7 +1,7 @@
 const greece = {
-    "name" : 'img/greece/greece.png',
-    "img" : 'img/greece/greece1.png,',
-    "flag" : 'img/denmark/flag.png',
+    'name' : 'img/greece/greece.png',
+    "img1" : 'img/greece/greece1.png',
+    "flag" : 'img/greece/flag.png',
     "first" :
         '<ul>' +
         '<li>종교 |&nbsp;&nbsp;&nbsp;그리스정교, 이슬람교</li>' +
@@ -60,8 +60,8 @@ const greece = {
         '    봄과 가을은 바깥 활동을 하기에 가장 좋은 계절이다. 여름은 특히 무덥고 때로는 스모그와 공해가 발행할 수도 있다.' +
         '</p>' +
         '</ul>',
-    "img2" : 'img/greece/athens2.png',
-    "img3" : 'img/greece/athens3.png',
+    "img2" : 'img/greece/athens1.png',
+    "img3" : 'img/greece/athens2.png',
     "img4" : 'img/greece/santorini1.png',
     "fifth" :
         '<p>#산토리니</p>' +
@@ -93,3 +93,4 @@ const greece = {
         '</p>' +
         '</ul>'
 }
+
