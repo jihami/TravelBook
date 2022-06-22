@@ -1,12 +1,14 @@
+len = sessionStorage.length
 // 세션이 있다면 로그인 상태 유지
 $(function (){
     let photoURL = sessionStorage.getItem("photoURL")
     let nickName = sessionStorage.getItem("nickName")
     let email = sessionStorage.getItem("email")
     let info = sessionStorage.getItem("info")
-    if(len !== 0){ //로그인 되어 있으면
+    if(email != "null"){ //로그인 되어 있으면
         if(nickName == null){
-            location.href = "login_info.html";
+            console.log()
+            // location.href = "login_info.html";
         }else{
             document.getElementById("userIcon").src = photoURL;
             document.getElementById('login').innerHTML = nickName;
@@ -15,23 +17,24 @@ $(function (){
             })
             $('#login').removeAttr("onclick");
             $('#login').attr("onclick","location.href = 'my_page.html'")
+            db.collection(nickName+"찜행지").get().then((data) => {
+                // console.log(data.size)
+                // console.log(data)
+                if (data.size>=1) {
+                    data.forEach((doc) => {
+                        // console.log(id)
+                        console.log(doc.data().country)
+                        let country = doc.data().country
+                        $(`#${country}`).hide()
+                    })
+                }
+            })
         }
     }else{
         console.log("logout")
     }
 })
-db.collection(nickName+"찜행지").get().then((data) => {
-    // console.log(data.size)
-    // console.log(data)
-    if (data.size>=1) {
-        data.forEach((doc) => {
-            // console.log(id)
-            console.log(doc.data().country)
-            let country = doc.data().country
-            $(`#${country}`).hide()
-        })
-    }
-})
+
 function goTemp(country){
     sessionStorage.removeItem("conR");
     sessionStorage.setItem("conR", country);
