@@ -17,18 +17,6 @@ $(function (){
             })
             $('#login').removeAttr("onclick");
             $('#login').attr("onclick","location.href = 'my_page.html'")
-            db.collection(nickName+"찜행지").get().then((data) => {
-                // console.log(data.size)
-                // console.log(data)
-                if (data.size>=1) {
-                    data.forEach((doc) => {
-                        // console.log(id)
-                        console.log(doc.data().country)
-                        let country = doc.data().country
-                        $(`#${country}`).hide()
-                    })
-                }
-            })
         }
     }else{
         console.log("logout")
