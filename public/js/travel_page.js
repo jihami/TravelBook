@@ -1,13 +1,10 @@
-let nickName = sessionStorage.getItem("nickName")
-let email = sessionStorage.getItem("email")
-let len = sessionStorage.length
 // 세션이 있다면 로그인 상태 유지
 $(function (){
     let photoURL = sessionStorage.getItem("photoURL")
     let nickName = sessionStorage.getItem("nickName")
     let email = sessionStorage.getItem("email")
     let info = sessionStorage.getItem("info")
-    if(email !== ""){ //로그인 되어 있으면
+    if(len !== 0){ //로그인 되어 있으면
         if(nickName == null){
             location.href = "login_info.html";
         }else{
@@ -36,6 +33,7 @@ db.collection(nickName+"찜행지").get().then((data) => {
     }
 })
 function goTemp(country){
+    sessionStorage.removeItem("conR");
     sessionStorage.setItem("conR", country);
     location.href = "travelTemp.html";
 }

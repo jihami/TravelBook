@@ -1,7 +1,13 @@
+// 나라명 받아오는 것
+sessionStorage.removeItem("DocId");
+sessionStorage.removeItem("country");
+sessionStorage.removeItem("conR");
+
 // 세션이 있다면 로그인 상태 유지
 $(function (){
+    len = sessionStorage.length
     const email = sessionStorage.getItem("email")
-    if(email !== ""){ //로그인 되어 있으면
+    if(len !== 0){ //로그인 되어 있으면
         const name = sessionStorage.getItem("name")
         document.getElementById('title').innerHTML = name + "님의 닉네임 설정"
     }else{

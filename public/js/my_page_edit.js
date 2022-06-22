@@ -1,3 +1,8 @@
+// 나라명 받아오는 것
+sessionStorage.removeItem("DocId");
+sessionStorage.removeItem("country");
+sessionStorage.removeItem("conR");
+
 // 세션이 있다면 로그인 상태 유지
 $(function (){
     len = sessionStorage.length

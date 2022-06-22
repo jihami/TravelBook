@@ -1,16 +1,15 @@
 nickName = sessionStorage.getItem("nickName")
 email = sessionStorage.getItem("email")
 info = sessionStorage.getItem("info")
+
 // 세션이 있다면 로그인 상태 유지
 $(function (){
     len = sessionStorage.length
     photoURL = sessionStorage.getItem("photoURL")
-    nickName = sessionStorage.getItem("nickName")
-    email = sessionStorage.getItem("email")
-    info = sessionStorage.getItem("info")
-    if(email != ""){ //로그인 되어 있으면
+    if(info != 0){ //로그인 되어 있으면
         if(nickName == null){
-            location.href = "login_info.html";
+            console.log("d")
+            // location.href = "login_info.html";
         }else{
             document.getElementById("userIcon").src = photoURL;
             document.getElementById('login').innerHTML = nickName;

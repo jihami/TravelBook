@@ -1,4 +1,8 @@
-// 세션이 있다면 로그인 상태 유지
+// 나라명 받아오는 것
+sessionStorage.removeItem("DocId");
+sessionStorage.removeItem("country");
+sessionStorage.removeItem("conR");
+
 // 세션이 있다면 로그인 상태 유지
 $(function (){
     len = sessionStorage.length
@@ -6,7 +10,7 @@ $(function (){
     nickName = sessionStorage.getItem("nickName")
     email = sessionStorage.getItem("email")
     info = sessionStorage.getItem("info")
-    if(email !== ""){ //로그인 되어 있으면
+    if(len !== 0){ //로그인 되어 있으면
         if(nickName == null){
             location.href = "login_info.html";
         }else{

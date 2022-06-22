@@ -78,6 +78,7 @@ function logout() {
         sessionStorage.removeItem("info");
         sessionStorage.removeItem("DocId");
         sessionStorage.removeItem("country");
+        sessionStorage.removeItem("conR");
     })
 
 }
