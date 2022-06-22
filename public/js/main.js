@@ -3,7 +3,7 @@ $(function (){
     len = sessionStorage.length
     nickName = sessionStorage.getItem("nickName")
     photoURL = sessionStorage.getItem("photoURL")
-    if(len !== 0){
+    if(email !== null){ //로그인 되어 있으면
         if(nickName == null){
             location.href = "login_info.html";
         }else{

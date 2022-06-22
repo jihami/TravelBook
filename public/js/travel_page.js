@@ -7,7 +7,7 @@ $(function (){
     let nickName = sessionStorage.getItem("nickName")
     let email = sessionStorage.getItem("email")
     let info = sessionStorage.getItem("info")
-    if(len !== 0){ //로그인 되어 있으면
+    if(email !== null){ //로그인 되어 있으면
         if(nickName == null){
             location.href = "login_info.html";
         }else{

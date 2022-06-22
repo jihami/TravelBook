@@ -1,6 +1,6 @@
 // 세션이 있다면 로그인 상태 유지
 $(function (){
-    if(sessionStorage.length !== 0){
+    if(email !== null){ //로그인 되어 있으면
         const name = sessionStorage.getItem("name")
         document.getElementById('title').innerHTML = name + "님의 닉네임 설정"
     }
