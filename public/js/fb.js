@@ -4,8 +4,8 @@ const firebaseConfig = {
     projectId: "trip-8b70a",
     storageBucket: "trip-8b70a.appspot.com",
     messagingSenderId: "1057567867513",
-    appId: "1:1057567867513:web:0e238f2993fde770138aa8",
-    measurementId: "G-L03PDZHGE9"
+    appId: "1:1057567867513:web:5a7191ae598b4fce138aa8",
+    measurementId: "G-6ZZ58NWXBQ"
 };
 
 firebase.initializeApp(firebaseConfig);
