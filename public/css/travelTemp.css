@@ -53,7 +53,7 @@ textarea:focus{
     width:100%;
     height:100px;
     float:left;
-    margin-left:15%;
+    margin-left:40%;
 }
 #head_menu ul li{
     width:200px;
@@ -105,7 +105,7 @@ textarea:focus{
 }
 
 #title{
-    width:1000px;
+    width:100%;
     height:160px;
     float:left;
     margin-top:165px;
@@ -113,7 +113,7 @@ textarea:focus{
 }
 
 #title > div{
-    width:930px;
+    width:1250px;
     height:160px;
     float:left;
     background-color:#333f32;
@@ -123,7 +123,7 @@ textarea:focus{
 #conName{
     float:left;
     margin-top:35px;
-    margin-left:783px;
+    margin-left:43.3%;
     position:absolute;
     z-index:1;
 }
@@ -229,7 +229,7 @@ textarea:focus{
 }
 
 #write_city{;
-    margin-left:460px;
+    margin-left:30%;
     position:absolute;
 }
 
@@ -238,7 +238,7 @@ textarea:focus{
     height:400px;
     float:left;
     margin-top:20px;
-    margin-left:500px;
+    margin-left:31.5%;
     position:relative;
     z-index:1;
 }
