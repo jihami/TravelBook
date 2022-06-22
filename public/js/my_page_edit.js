@@ -9,7 +9,7 @@ $(function (){
     photoURL = sessionStorage.getItem("photoURL")
     nickName = sessionStorage.getItem("nickName")
     info = sessionStorage.getItem("info")
-    if(email !== ""){ //로그인 되어 있으면
+    if(len !== 0){ //로그인 되어 있으면
         if(nickName == null){
             location.href = "login_info.html";
         }else{

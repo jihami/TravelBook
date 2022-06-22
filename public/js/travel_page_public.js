@@ -1,12 +1,11 @@
 nickName = sessionStorage.getItem("nickName")
 email = sessionStorage.getItem("email")
 info = sessionStorage.getItem("info")
-
+len = sessionStorage.length
 // 세션이 있다면 로그인 상태 유지
 $(function (){
-    len = sessionStorage.length
     photoURL = sessionStorage.getItem("photoURL")
-    if(info != 0){ //로그인 되어 있으면
+    if(email != "null"){ //로그인 되어 있으면
         if(nickName == null){
             console.log("d")
             // location.href = "login_info.html";
@@ -35,7 +34,7 @@ function setCon(country){
                 // console.log(con)
                 // console.log(doc.data())
                 let themp = `<div class="record">
-                    <img src="../img/diary.png" id="${doc.id}" onclick="recordP(this.id,con)">
+                    <img src="img/diary.png" id="${doc.id}" onclick="recordP(this.id,con)">
                     <p>${doc.data().title} / ${doc.data().name}</p>
                     <hr style="height:1px; background-color:black;">
                     <p>${doc.data().startDay} ~ ${doc.data().endDay}</p>
