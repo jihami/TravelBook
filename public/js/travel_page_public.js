@@ -5,7 +5,9 @@ len = sessionStorage.length
 // 세션이 있다면 로그인 상태 유지
 $(function (){
     photoURL = sessionStorage.getItem("photoURL")
-    if(email != "null"){ //로그인 되어 있으면
+    if(len >= 4){ //로그인 되어 있으면
+        console.log(len)
+        console.log("login")
         if(nickName == null){
             console.log("d")
             // location.href = "login_info.html";
@@ -62,14 +64,18 @@ function recordP(id,country){
 }
 
 function submitTip(con){
-    let tip = document.getElementById("tip_write").value;
-    let photoURL = sessionStorage.getItem("photoURL")
-    let info = sessionStorage.getItem("info")
-    let name = sessionStorage.getItem("nickName")
-    db.collection(con+"TIP").add({"name":name,"info":info,"photoURL":photoURL, 'tip' : tip});
-    document.getElementById("tip_write").value="";
-    alert("저장 완료!");
-    setTip(con);
+    if (len < 4){ //로그아웃이면
+        alert("로그인하세요")
+    }else {
+        let tip = document.getElementById("tip_write").value;
+        let photoURL = sessionStorage.getItem("photoURL")
+        let info = sessionStorage.getItem("info")
+        let name = sessionStorage.getItem("nickName")
+        db.collection(con + "TIP").add({"name": name, "info": info, "photoURL": photoURL, 'tip': tip});
+        document.getElementById("tip_write").value = "";
+        alert("저장 완료!");
+        setTip(con);
+    }
 }
 function setTip(country) {
     db.collection(country + "TIP").get().then((data) => {
