@@ -35,30 +35,6 @@ $(function (){
     }
 })
 
-function goTemp(country){
-    sessionStorage.removeItem("conR");
-    sessionStorage.setItem("conR", country);
-    location.href = "travelTemp.html";
-}
-function goTemp2(country){
-    sessionStorage.removeItem("conR");
-    sessionStorage.setItem("conR", country);
-    location.href = "travelTemp2.html";
-}
-function favorite_on(country, name){ //로그인이 안되어 있으면 로그인 하라고 하기
-    $(function (){
-        if(len === 0){
-            alert("로그인하세요.")
-        }else {
-            if(confirm(country+"를 찜행지에 추가하시겠습니까?")===true){
-                db.collection(nickName+"찜행지").add({ country:country, countryk:name});
-                alert("추가 완료")
-                $(`#${country}`).hide()
-            }
-        }
-    })
-}
-
 $(function(){
     $('.country > img').css({
         opacity:'20%'
