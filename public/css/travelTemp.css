@@ -113,7 +113,7 @@ textarea:focus{
 }
 
 #title > div{
-    width:1250px;
+    width:50%;
     height:160px;
     float:left;
     background-color:#333f32;
@@ -122,9 +122,10 @@ textarea:focus{
 
 #conName{
     float:left;
+    left:50.1%;
     margin-top:35px;
-    margin-left:43.3%;
     position:absolute;
+    transform:translate(-50%);
     z-index:1;
 }
 
