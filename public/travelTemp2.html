@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Denmark</title>
+    <link rel="icon" href="img/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/travelTemp.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/fb.js"></script>
+    <script src="js/setCountry.js"></script>
+    <script src="js/travel_page_public.js"></script>
+    <script>
+        sessionStorage.getItem("email")
+        sessionStorage.getItem("name")
+        sessionStorage.getItem("conR")
+    </script>
+</head>
+<body>
+<div id="head">
+    <div id="logo">
+        <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+    </div>
+
+    <div id="head_menu">
+        <ul>
+            <li>
+                <a href="my_page.html">My page</a>
+                <hr>
+            </li>
+            <li>
+                <a href="travel_page.html" style="color:black;">Travel</a>
+                <hr style="background-color:black;">
+            </li>
+
+            <li style="width:100px;">
+                <img id="userIcon" src="img/user.png" alt="userIcon">
+            </li>
+
+            <li>
+                <a href="#" style="text-align:left; line-height:95px; margin-left:10px; position:relative;" id="login"  onclick="login()">Login</a>
+                <a href="#" style="text-align:left; line-height:95px; margin-left:-90px; position:absolute; display:none;" id="logout" onclick="logout()">Logout</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div style="width:100%; height:42px;
+                    background-color:rgba(51, 63, 50, 0.48);">
+    <p style="width:400px; height:42px;
+                      float:left; margin-left:19%;
+                      color:black; font-size:11pt;
+                      text-align:center; line-height:42px;">
+        <a href="index.html">main</a> > <a href="travel_page.html">Travel</a> > <a id="root3" href=""></a> > <a id="root4" href=""></a></p>
+</div>
+
+<div id="main">
+    <div id="title">
+        <div></div>
+        <img id="conName" src="" alt="나라이름">
+    </div>
+
+    <div id="con_info">
+        <img id="img1" src="" style="margin-left:30%;" alt="이미지1">
+        <img src="img/write_background.png" class="write_background" id="write_info" alt="책1">
+
+        <div id="info_l">
+            <div id="flag">
+                <p>국기</p>
+
+                <img id="flag_img" src="" alt="flag">
+
+                <div></div>
+            </div>
+
+            <div id="basic_info">
+                종교 등
+            </div>
+        </div>
+
+        <div id="info_r">
+            역사
+        </div>
+
+        <div style="width:1050px; height:357px;
+                        float:left; margin-top:100px;
+                        margin-left:870px; position:absolute;
+                        background-color:#e1d5bf; z-index:-1;">
+        </div>
+    </div>
+
+    <div class="city" id="city1">
+        <img src="img/write_background.png" class="write_background" id="write_city" alt="백그라운드">
+
+        <div>
+            <div id="city1_l">
+               city1_l
+            </div>
+
+            <div id="city1_r">
+                city1_r
+            </div>
+
+            <div id="city2_img">
+                <img id="img2" src="" alt="이미지2" style="margin-bottom:28px;">
+                <img id="img3" src="" alt="이미지3">
+            </div>
+        </div>
+
+        <div style="width:100%; height:700px;
+             float:left; margin-top:306px;
+             position:absolute; background-color:#333f32; z-index:-1">
+        </div>
+
+
+        <div class="city" id="city2">
+            <img id="img4" src="" style="float:left; margin-top:30px; margin-left:27%;" alt="img4">
+            <img src="img/write_background.png" class="write_background" id="write_odense" alt="book">
+
+            <div id="city2_l">
+                city2_l
+            </div>
+
+            <div id="city2_r">
+                city2_r
+            </div>
+        </div>
+
+        <div style="width:100%; height:382px;
+                    float:left; margin-top:1353px;
+                    position:absolute; background-color:#E1D5BF">
+        </div>
+        <div id="con_record">
+            <p>여행 기록 구경하기</p>
+
+            <div id="record_list">
+                <div style="text-align:center; font-size: 30px; margin-left: -100px">기록이 없습니다.</div>
+                <!--                <div class="record">-->
+                <!--                    <img src="../img/diary.png">-->
+                <!--                    <hr style="height:1px; background-color:black;">-->
+                <!--                    <p>2022.4.12</p>-->
+                <!--                </div>-->
+            </div>
+        </div>
+
+        <div id="con_tip">
+            <div style="width:100%; height:82px;
+                        float:left; position:relative;
+                        background-color:#E1D5BF">
+                <p>여행 팁</p>
+            </div>
+
+            <div id="tip_top">
+                <form>
+                    <div id="write">
+                        <label for="tip_write"><textarea type="text" name="tip_write" id="tip_write" placeholder="자신만의 여행 팁을 적어주세요"></textarea></label>
+                        <button id="tip_upload" type="button" onclick="submitTip('conR')">등록</button>
+                    </div>
+                </form>
+            </div>
+
+            <hr style="background-color:black;">
+
+            <div id="tip_bottom">
+                <div id="tip_list">
+                    <div style="text-align:center; font-size: 30px">팁이 없습니다.</div>
+                    <!--                    <div class="tip">-->
+                    <!--                        <p class="user_id">유리심장</p>-->
+                    <!--                        <img src="../img/tip_input.png">-->
+                    <!--                        <p class="tip_subject">가이드 설명을 들으면서 여행하면 더욱 재미있는 여행이 될 수 있어요. 특히 박물관은 가이드 필수!</p>-->
+                    <!--                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer">
+    <div id="footer_left">
+        <img src="img/logo.png" alt="logo">
+
+        <p>
+            서울시 관악구 호암로 546 미림여자정보과학고등학교<br>
+            대표전화 02-872-4072   대외협력부 02-888-8350   진로체험문의 070-5099-8318
+
+        <table>
+            <tr>
+                <td class="position">DEVELOPER</td>
+                <td class="by">&nbsp;|&nbsp;3404 김지함&nbsp;&nbsp;3410 양가영</td>
+            </tr>
+
+            <tr>
+                <td class="position">DESIGNER</td>
+                <td class="by">&nbsp;|&nbsp;2604 김소리&nbsp;&nbsp;2613 이유리</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="footer_right">
+        <div id="sns">
+            <img src="img/facebook.png" alt="icon">
+            <img src="img/mirim.png" onclick="location.href='https://www.e-mirim.hs.kr/main.do'" alt="icon">
+            <img src="img/council.png" onclick="location.href='https://www.facebook.com/24mirimcouncil/'" style="width:50px; margin-top:3px; margin-left:18px;" alt="icon">
+        </div>
+    </div>
+</div>
+<script>
+    conR = sessionStorage.getItem("conR")
+    setext(conR)
+    function setext(conR){
+        if(conR === "nepal"){
+            document.getElementById("root3").href = 'travel_asia.html';
+            document.getElementById("root3").innerHTML = '아시아';
+            document.getElementById("root4").innerHTML = '네팔';
+            document.getElementById("conName").src = nepal.name;
+            document.getElementById("img1").src = nepal.img1;
+            document.getElementById("flag_img").src = nepal.flag;
+            document.getElementById("basic_info").innerHTML = nepal.first;
+            document.getElementById("info_r").innerHTML = nepal.second;
+            document.getElementById("city1_l").innerHTML = nepal.third;
+            document.getElementById("city1_r").innerHTML = nepal.fourth;
+            document.getElementById("img2").src = nepal.img2;
+            document.getElementById("img3").src = nepal.img3;
+            document.getElementById("img4").src = nepal.img4;
+            document.getElementById("city2_l").innerHTML = nepal.fifth;
+            document.getElementById("city2_r").innerHTML = nepal.sixth;
+            setTip('네팔')
+            setCon('네팔')
+        }else if(conR === "taiwan"){
+            document.getElementById("root3").href = 'travel_asia.html';
+            document.getElementById("root3").innerHTML = '아시아';
+            document.getElementById("root4").innerHTML = '대만';
+            document.getElementById("conName").src = taiwan.name;
+            document.getElementById("img1").src = taiwan.img1;
+            document.getElementById("flag_img").src = taiwan.flag;
+            document.getElementById("basic_info").innerHTML = taiwan.first;
+            document.getElementById("info_r").innerHTML = taiwan.second;
+            document.getElementById("city1_l").innerHTML = taiwan.third;
+            document.getElementById("city1_r").innerHTML = taiwan.fourth;
+            document.getElementById("img2").src = taiwan.img2;
+            document.getElementById("img3").src = taiwan.img3;
+            document.getElementById("img4").src = taiwan.img4;
+            document.getElementById("city2_l").innerHTML = taiwan.fifth;
+            document.getElementById("city2_r").innerHTML = taiwan.sixth;
+            setTip('대만')
+            setCon('대만')
+        }else if(conR === "korea"){
+            document.getElementById("root3").href = 'travel_asia.html';
+            document.getElementById("root3").innerHTML = '아시아';
+            document.getElementById("root4").innerHTML = '대한민국';
+            document.getElementById("conName").src = korea.name;
+            document.getElementById("img1").src = korea.img1;
+            document.getElementById("flag_img").src = korea.flag;
+            document.getElementById("basic_info").innerHTML = korea.first;
+            document.getElementById("info_r").innerHTML = korea.second;
+            document.getElementById("city1_l").innerHTML = korea.third;
+            document.getElementById("city1_r").innerHTML = korea.fourth;
+            document.getElementById("img2").src = korea.img2;
+            document.getElementById("img3").src = korea.img3;
+            document.getElementById("img4").src = korea.img4;
+            document.getElementById("city2_l").innerHTML = korea.fifth;
+            document.getElementById("city2_r").innerHTML = korea.sixth;
+            setTip('대한민국')
+            setCon('대한민국')
+        }else if(conR === "laos"){
+            document.getElementById("root3").href = 'travel_asia.html';
+            document.getElementById("root3").innerHTML = '아시아';
+            document.getElementById("root4").innerHTML = '라오스';
+            document.getElementById("conName").src = laos.name;
+            document.getElementById("img1").src = laos.img1;
+            document.getElementById("flag_img").src = laos.flag;
+            document.getElementById("basic_info").innerHTML = laos.first;
+            document.getElementById("info_r").innerHTML = laos.second;
+            document.getElementById("city1_l").innerHTML = laos.third;
+            document.getElementById("city1_r").innerHTML = laos.fourth;
+            document.getElementById("img2").src = laos.img2;
+            document.getElementById("img3").src = laos.img3;
+            document.getElementById("img4").src = laos.img4;
+            document.getElementById("city2_l").innerHTML = laos.fifth;
+            document.getElementById("city2_r").innerHTML = laos.sixth;
+            setTip('라오스')
+            setCon('라오스')
+        }else if(conR === "singapore"){
+            document.getElementById("root3").href = 'travel_asia.html';
+            document.getElementById("root3").innerHTML = '아시아';
+            document.getElementById("root4").innerHTML = '싱가포르';
+            document.getElementById("conName").src = singapore.name;
+            document.getElementById("img1").src = singapore.img1;
+            document.getElementById("flag_img").src = singapore.flag;
+            document.getElementById("basic_info").innerHTML = singapore.first;
+            document.getElementById("info_r").innerHTML = singapore.second;
+            document.getElementById("city1_l").innerHTML = singapore.third;
+            document.getElementById("city1_r").innerHTML = singapore.fourth;
+            document.getElementById("img2").src = singapore.img2;
+            document.getElementById("img3").src = singapore.img3;
+            document.getElementById("img4").src = singapore.img4;
+            document.getElementById("city2_l").innerHTML = singapore.fifth;
+            document.getElementById("city2_r").innerHTML = singapore.sixth;
+            setTip('싱가포르')
+            setCon('싱가포르')
+        }else if(conR === "japan"){
+            document.getElementById("root3").href = 'travel_asia.html';
+            document.getElementById("root3").innerHTML = '아시아';
+            document.getElementById("root4").innerHTML = '일본';
+            document.getElementById("conName").src = japan.name;
+            document.getElementById("img1").src = japan.img1;
+            document.getElementById("flag_img").src = japan.flag;
+            document.getElementById("basic_info").innerHTML = japan.first;
+            document.getElementById("info_r").innerHTML = japan.second;
+            document.getElementById("city1_l").innerHTML = japan.third;
+            document.getElementById("city1_r").innerHTML = japan.fourth;
+            document.getElementById("img2").src = japan.img2;
+            document.getElementById("img3").src = japan.img3;
+            document.getElementById("img4").src = japan.img4;
+            document.getElementById("city2_l").innerHTML = japan.fifth;
+            document.getElementById("city2_r").innerHTML = japan.sixth;
+            setTip('일본')
+            setCon('일본')
+        }else if(conR === "thailand"){
+            document.getElementById("root3").href = 'travel_asia.html';
+            document.getElementById("root3").innerHTML = '아시아';
+            document.getElementById("root4").innerHTML = '태국';
+            document.getElementById("conName").src = thailand.name;
+            document.getElementById("img1").src = thailand.img1;
+            document.getElementById("flag_img").src = thailand.flag;
+            document.getElementById("basic_info").innerHTML = thailand.first;
+            document.getElementById("info_r").innerHTML = thailand.second;
+            document.getElementById("city1_l").innerHTML = thailand.third;
+            document.getElementById("city1_r").innerHTML = thailand.fourth;
+            document.getElementById("img2").src = thailand.img2;
+            document.getElementById("img3").src = thailand.img3;
+            document.getElementById("img4").src = thailand.img4;
+            document.getElementById("city2_l").innerHTML = thailand.fifth;
+            document.getElementById("city2_r").innerHTML = thailand.sixth;
+            setTip('태국')
+            setCon('태국')
+        }
+    }
+</script>
+</body>
+</html>
