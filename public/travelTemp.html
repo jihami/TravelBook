@@ -19,6 +19,7 @@
     <script>
         sessionStorage.getItem("email")
         sessionStorage.getItem("name")
+        conR = sessionStorage.getItem("conR")
         setCon("덴마크")
         setTip("덴마크")
     </script>
@@ -120,47 +121,14 @@
         </div>
 
 
-        <div class="city" id="odense">
-            <img src="img/denmark/odense1.png" style="float:left; margin-top:30px; margin-left:405px;">
+        <div class="city" id="city2">
+            <img id="img4" src="" style="float:left; margin-top:30px; margin-left:405px;">
             <img src="img/write_background.png" class="write_background" id="write_odense">
 
-            <div id="odense_l">
-                <p>#오덴세</p>
-
-                <ul>
-                    <li>지리 |  </li>
-                    <p>
-                        퓐섬의 북동쪽에 위치하고 있다. 도시의 북쪽에는 오덴세 피오르가 있고,
-                        165번 도로를 따라 케르테미네로 향하는 북동쪽에 케르테미네 피오르가 있다
-                    </p>
-
-                    <li>기후 | </li>
-                    <p>
-                        온대 해양성 기후이다.<br>
-                        온화한 여름엔 평균 최대 온도가 20°C를 약간 넘어서며,
-                        겨울은 최저 기온이 영하 바로 아래로 떨어지는 것이 특징이다.
-                    </p>
-                </ul>
+            <div id="city2_l">
             </div>
 
-            <div id="odense_r">
-                <ul>
-                    <li>관광 |  </li>
-                    <p>
-                        에스코우 섬<br>
-                        안데르센 박물관<br>
-                        안데르센 유년기의 집<br>
-                        푸넨 민속 마을<br>
-                        덴마크 철도 박물관<br>
-                        오덴세 시청사
-                    </p>
-
-                    <li>경제 | </li>
-                    <p>
-                        대형 원예센터인 GASA는 수출뿐 아니라 전국 대부분에 과일, 채소, 꽃, 식물을 공급하고 있다.<br>
-                        2008년 오덴세 시 당국은 덴마크에서 관광 매출액 7위에 오르며 그 해 160만 덴마크 크로네(DKK)를 달성했다.
-                    </p>
-                </ul>
+            <div id="city2_r">
             </div>
         </div>
 
@@ -168,8 +136,8 @@
                     float:left; margin-top:1353px;
                     position:absolute; background-color:#E1D5BF">
         </div>
-        <div id="denmark_record">
-            <p>덴마크 여행 기록 구경하기</p>
+        <div id="con_record">
+            <p>여행 기록 구경하기</p>
 
             <div id="record_list">
                 <div style="text-align:center; font-size: 30px; margin-left: -100px">기록이 없습니다.</div>
@@ -181,18 +149,18 @@
             </div>
         </div>
 
-        <div id="denmark_tip">
+        <div id="con_tip">
             <div style="width:100%; height:82px;
                         float:left; position:relative;
                         background-color:#E1D5BF">
-                <p>덴마크 여행 팁</p>
+                <p>여행 팁</p>
             </div>
 
             <div id="tip_top">
                 <form>
                     <div id="write">
                         <textarea type="text" name="tip_write" id="tip_write" placeholder="자신만의 여행 팁을 적어주세요"></textarea>
-                        <button id="tip_upload" type="button" onclick="submitTip('덴마크')">등록</button>
+                        <button id="tip_upload" type="button" onclick="submitTip('conR')">등록</button>
                     </div>
                 </form>
             </div>
