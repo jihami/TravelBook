@@ -2,14 +2,13 @@
 sessionStorage.removeItem("DocId");
 sessionStorage.removeItem("country");
 sessionStorage.removeItem("conR");
-
+let photoURL = sessionStorage.getItem("photoURL")
+let nickName = sessionStorage.getItem("nickName")
+let email = sessionStorage.getItem("email")
+let info = sessionStorage.getItem("info")
 len = sessionStorage.length
 // 세션이 있다면 로그인 상태 유지
 $(function (){
-    let photoURL = sessionStorage.getItem("photoURL")
-    let nickName = sessionStorage.getItem("nickName")
-    let email = sessionStorage.getItem("email")
-    let info = sessionStorage.getItem("info")
     if(email !== "null"){ //로그인 되어 있으면
         if(nickName == null){
             console.log()

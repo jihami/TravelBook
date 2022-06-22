@@ -55,7 +55,7 @@ function set(){
                 // console.log(doc.data())
                 let themp = `<div class="place">
                     <a href="travel_${country}.html">
-                    <img src="../img/${country}/flag.png" alt="img" style="width:172px; height:110px;">
+                    <img src="img/${country}/flag.png" alt="img" style="width:172px; height:110px;">
                     <hr>
                     <p class="place_title">${countryk}</p></a>
                     <button type="button" id="del" name="${doc.id}" onclick="del(this.name)">삭제</button>
