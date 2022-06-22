@@ -8,9 +8,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Gowun+Batang&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/travel_denmark.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/fb.js"></script>
+    <script src="js/travel_page_public.js"></script>
     <script>
         sessionStorage.getItem("email")
         sessionStorage.getItem("name")
+        setCon("덴마크")
+        setTip("덴마크")
     </script>
 </head>
 <body>
@@ -31,11 +41,12 @@
             </li>
 
             <li style="width:100px;">
-                <img src="../img/user.png">
+                <img id="userIcon" src="../img/user.png" alt="userIcon">
             </li>
 
             <li>
-                <a href="my_page.html" id="user" style="text-align:left; line-height:95px; margin-left:10px;">여행하지함</a>
+                <a href="#" style="text-align:left; line-height:95px; margin-left:10px; position:relative;" id="login"  onclick="login()">Login</a>
+                <a href="#" style="text-align:left; line-height:95px; margin-left:-90px; position:absolute; display:none;" id="logout" onclick="logout()">Logout</a>
             </li>
         </ul>
     </div>
@@ -46,7 +57,8 @@
     <p style="width:240px; height:42px;
                       float:left; margin-left:19%;
                       color:black; font-size:11pt;
-                      text-align:center; line-height:42px;">main > Travel > 유럽 > 덴마크</p>
+                      text-align:center; line-height:42px;">
+        <a href="index.html">main</a> > <a href="travel_page.html">Travel</a> > <a href="travel_europe.html">유럽</a> > <a href="travel_denmark.html">덴마크</a></p>
 </div>
 
 <div id="main">
@@ -212,111 +224,45 @@
                     float:left; margin-top:1353px;
                     position:absolute; background-color:#E1D5BF">
         </div>
+            <div id="denmark_record">
+                <p>덴마크 여행 기록 구경하기</p>
 
-        <div id="denmark_record">
-            <p>댄마크 여행 기록 구경하기</p>
-
-            <div id="record_list">
-                <div class="record">
-                    <img src="../img/diary.png">
-                    <hr style="height:1px; background-color:black;">
-                    <p>2022.4.12</p>
-                </div>
-
-                <div class="record">
-                    <img src="../img/diary.png">
-                    <hr style="height:1px; background-color:black;">
-                    <p>2022.4.12</p>
-                </div>
-
-                <div class="record">
-                    <img src="../img/diary.png">
-                    <hr style="height:1px; background-color:black;">
-                    <p>2022.4.12</p>
-                </div>
-
-                <div class="record">
-                    <img src="../img/diary.png">
-                    <hr style="height:1px; background-color:black;">
-                    <p>2022.4.12</p>
-                </div>
-
-                <div class="record">
-                    <img src="../img/diary.png">
-                    <hr style="height:1px; background-color:black;">
-                    <p>2022.4.12</p>
-                </div>
-
-                <div class="record">
-                    <img src="../img/diary.png">
-                    <hr style="height:1px; background-color:black;">
-                    <p>2022.4.12</p>
-                </div>
-
-                <div class="record">
-                    <img src="../img/diary.png">
-                    <hr style="height:1px; background-color:black;">
-                    <p>2022.4.12</p>
-                </div>
-
-                <div class="record">
-                    <img src="../img/diary.png">
-                    <hr style="height:1px; background-color:black;">
-                    <p>2022.4.12</p>
+                <div id="record_list">
+                    <div style="text-align:center; font-size: 30px;">기록이 없습니다.</div>
+                    <!--                <div class="record">-->
+                    <!--                    <img src="../img/diary.png">-->
+                    <!--                    <hr style="height:1px; background-color:black;">-->
+                    <!--                    <p>2022.4.12</p>-->
+                    <!--                </div>-->
                 </div>
             </div>
-        </div>
 
-        <div id="denmark_tip">
-            <div style="width:100%; height:82px;
+            <div id="denmark_tip">
+                <div style="width:100%; height:82px;
                         float:left; position:relative;
                         background-color:#E1D5BF">
-                <p>덴마크 여행 팁</p>
-            </div>
+                    <p>덴마크 여행 팁</p>
+                </div>
 
-            <div id="tip_top">
-                <form>
-                    <div id="write">
-                        <textarea type="text" name="tip_write" id="tip_write" placeholder="자신만의 여행 팁을 적어주세요"></textarea>
-                        <button id="tip_upload">등록</button>
-                    </div>
-                </form>
-            </div>
+                <div id="tip_top">
+                    <form>
+                        <div id="write">
+                            <textarea type="text" name="tip_write" id="tip_write" placeholder="자신만의 여행 팁을 적어주세요"></textarea>
+                            <button id="tip_upload" type="button" onclick="submitTip('덴마크')">등록</button>
+                        </div>
+                    </form>
+                </div>
 
             <hr style="background-color:black;">
 
             <div id="tip_bottom">
                 <div id="tip_list">
-                    <div class="tip">
-                        <p class="user_id">유리심장</p>
-                        <img src="../img/tip_input.png">
-                        <p class="tip_subject">가이드 설명을 들으면서 여행하면 더욱 재미있는 여행이 될 수 있어요. 특히 박물관은 가이드 필수!</p>
-                    </div>
-
-                    <div class="tip">
-                        <p class="user_id">가영이 여행가영</p>
-                        <img src="../img/tip_input.png">
-                        <p class="tip_subject">로마 여행갈 때는 꼭 편한 운동화 준비하세요!</p>
-                    </div>
-
-                    <div class="tip">
-                        <p class="user_id">가영이 여행가영</p>
-                        <img src="../img/tip_input.png">
-                        <p class="tip_subject">피사의 사탑 근처에는 사람이 많은데, 소매치기도 많은 지역이니 조심 또 조심하세요~!</p>
-                    </div>
-
-                    <div class="tip">
-                        <p class="user_id">소리가 들리는 곳으로</p>
-                        <img src="../img/tip_input.png">
-                        <p class="tip_subject">베니스는 딱 하루면 적당한 것 같고, 작은 섬들이기 때문에 빡시게 돌아 다니지 마시고,<br>
-                            젤라또 먹고 커피 마시고 하면서~ 천천히 여행하시는거 추천드려요!</p>
-                    </div>
-
-                    <div class="tip">
-                        <p class="user_id">유리심장</p>
-                        <img src="../img/tip_input.png">
-                        <p class="tip_subject">가이드 설명을 들으면서 여행하면 더욱 재미있는 여행이 될 수 있어요. 특히 박물관은 가이드 필수!</p>
-                    </div>
+                    <div style="text-align:center; font-size: 30px">팁이 없습니다.</div>
+<!--                    <div class="tip">-->
+<!--                        <p class="user_id">유리심장</p>-->
+<!--                        <img src="../img/tip_input.png">-->
+<!--                        <p class="tip_subject">가이드 설명을 들으면서 여행하면 더욱 재미있는 여행이 될 수 있어요. 특히 박물관은 가이드 필수!</p>-->
+<!--                    </div>-->
                 </div>
             </div>
         </div>
