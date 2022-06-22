@@ -26,7 +26,7 @@
 <body>
 <div id="head">
     <div id="logo">
-        <a href="index.html"><img src="img/logo.png"></a>
+        <a href="index.html"><img src="img/logo.png" alt="logo"></a>
     </div>
 
     <div id="head_menu">
@@ -54,11 +54,11 @@
 
 <div style="width:100%; height:42px;
                     background-color:rgba(51, 63, 50, 0.48);">
-    <p style="width:240px; height:42px;
+    <p style="width:400px; height:42px;
                       float:left; margin-left:19%;
                       color:black; font-size:11pt;
                       text-align:center; line-height:42px;">
-        <a href="index.html">main</a> > <a href="travel_page.html">Travel</a> > <a href="travel_europe.html">유럽</a> > <a href="travel_denmark.html">덴마크</a></p>
+        <a href="index.html">main</a> > <a href="travel_page.html">Travel</a> > <a id="root3" href=""></a> > <a id="root4" href=""></a></p>
 </div>
 
 <div id="main">
@@ -122,7 +122,7 @@
 
         <div class="city" id="city2">
             <img id="img4" src="" style="float:left; margin-top:30px; margin-left:27%;" alt="img4">
-            <img src="img/write_background.png" class="write_background" id="write_odense">
+            <img src="img/write_background.png" class="write_background" id="write_odense" alt="book">
 
             <div id="city2_l">
                 city2_l
@@ -160,7 +160,7 @@
             <div id="tip_top">
                 <form>
                     <div id="write">
-                        <textarea type="text" name="tip_write" id="tip_write" placeholder="자신만의 여행 팁을 적어주세요"></textarea>
+                        <label for="tip_write"><textarea type="text" name="tip_write" id="tip_write" placeholder="자신만의 여행 팁을 적어주세요"></textarea></label>
                         <button id="tip_upload" type="button" onclick="submitTip('conR')">등록</button>
                     </div>
                 </form>
@@ -184,7 +184,7 @@
 
 <div id="footer">
     <div id="footer_left">
-        <img src="img/logo.png">
+        <img src="img/logo.png" alt="logo">
 
         <p>
             서울시 관악구 호암로 546 미림여자정보과학고등학교<br>
@@ -201,14 +201,13 @@
                 <td class="by">&nbsp;|&nbsp;2604 김소리&nbsp;&nbsp;2613 이유리</td>
             </tr>
         </table>
-        </p>
     </div>
 
     <div id="footer_right">
         <div id="sns">
-            <img src="img/facebook.png">
-            <img src="img/mirim.png" onclick="location.href='https://www.e-mirim.hs.kr/main.do'">
-            <img src="img/council.png" onclick="location.href='https://www.facebook.com/24mirimcouncil/'" style="width:50px; margin-top:3px; margin-left:18px;">
+            <img src="img/facebook.png" alt="icon">
+            <img src="img/mirim.png" onclick="location.href='https://www.e-mirim.hs.kr/main.do'" alt="icon">
+            <img src="img/council.png" onclick="location.href='https://www.facebook.com/24mirimcouncil/'" style="width:50px; margin-top:3px; margin-left:18px;" alt="icon">
         </div>
     </div>
 </div>
@@ -216,7 +215,10 @@
     conR = sessionStorage.getItem("conR")
     setext(conR)
     function setext(conR){
-        if(conR == "greece"){
+        if(conR === "greece"){
+            document.getElementById("root3").href = 'travel_europe.html';
+            document.getElementById("root3").innerHTML = '유럽';
+            document.getElementById("root4").innerHTML = '그리스';
             document.getElementById("conName").src = greece.name;
             document.getElementById("img1").src = greece.img1;
             document.getElementById("flag_img").src = greece.flag;
@@ -231,7 +233,10 @@
             document.getElementById("city2_r").innerHTML = greece.sixth;
             setTip('그리스')
             setCon('그리스')
-        }else if (conR == "denmark"){
+        }else if (conR === "denmark"){
+            document.getElementById("root3").href = 'travel_europe.html';
+            document.getElementById("root3").innerHTML = '유럽';
+            document.getElementById("root4").innerHTML = '덴마크';
             document.getElementById("conName").src = denmark.name;
             document.getElementById("img1").src = denmark.img1;
             document.getElementById("flag_img").src = denmark.flag;
@@ -246,7 +251,10 @@
             document.getElementById("city2_r").innerHTML = denmark.sixth;
             setTip('덴마크')
             setCon('덴마크')
-        }else if (conR == "spain"){
+        }else if (conR === "spain"){
+            document.getElementById("root3").href = 'travel_europe.html';
+            document.getElementById("root3").innerHTML = '유럽';
+            document.getElementById("root4").innerHTML = '스페인';
             document.getElementById("conName").src = spain.name;
             document.getElementById("img1").src = spain.img1;
             document.getElementById("flag_img").src = spain.flag;
@@ -261,7 +269,10 @@
             document.getElementById("city2_r").innerHTML = spain.sixth;
             setTip('스페인')
             setCon('스페인')
-        }else if (conR == "iceland"){
+        }else if (conR === "iceland"){
+            document.getElementById("root3").href = 'travel_europe.html';
+            document.getElementById("root3").innerHTML = '유럽';
+            document.getElementById("root4").innerHTML = '아이슬랜드';
             document.getElementById("conName").src = iceland.name;
             document.getElementById("img1").src = iceland.img1;
             document.getElementById("flag_img").src = iceland.flag;
@@ -276,7 +287,10 @@
             document.getElementById("city2_r").innerHTML = iceland.sixth;
             setTip('아이슬란드')
             setCon('아이슬란드')
-        }else if (conR == "unitedKingdom"){
+        }else if (conR === "unitedKingdom"){
+            document.getElementById("root3").href = 'travel_europe.html';
+            document.getElementById("root3").innerHTML = '유럽';
+            document.getElementById("root4").innerHTML = '영국';
             document.getElementById("conName").src = unitedKingdom.name;
             document.getElementById("img1").src = unitedKingdom.img1;
             document.getElementById("flag_img").src = unitedKingdom.flag;
@@ -291,7 +305,10 @@
             document.getElementById("city2_r").innerHTML = unitedKingdom.sixth;
             setTip('영국')
             setCon('영국')
-        }else if (conR == "italy"){
+        }else if (conR === "italy"){
+            document.getElementById("root3").href = 'travel_europe.html';
+            document.getElementById("root3").innerHTML = '유럽';
+            document.getElementById("root4").innerHTML = '이탈리아';
             document.getElementById("conName").src = italy.name;
             document.getElementById("img1").src = italy.img1;
             document.getElementById("flag_img").src = italy.flag;
@@ -306,7 +323,10 @@
             document.getElementById("city2_r").innerHTML = italy.sixth;
             setTip('이탈리아')
             setCon('이탈리아')
-        }else if (conR == "france"){
+        }else if (conR === "france"){
+            document.getElementById("root3").href = 'travel_europe.html';
+            document.getElementById("root3").innerHTML = '유럽';
+            document.getElementById("root4").innerHTML = '프랑스';
             document.getElementById("conName").src = france.name;
             document.getElementById("img1").src = france.img1;
             document.getElementById("flag_img").src = france.flag;
@@ -321,7 +341,10 @@
             document.getElementById("city2_r").innerHTML = france.sixth;
             setTip('프랑스')
             setCon('프랑스')
-        }else if (conR == "hungary"){
+        }else if (conR === "hungary"){
+            document.getElementById("root3").href = 'travel_europe.html';
+            document.getElementById("root3").innerHTML = '유럽';
+            document.getElementById("root4").innerHTML = '헝가리';
             document.getElementById("conName").src = hungary.name;
             document.getElementById("img1").src = hungary.img1;
             document.getElementById("flag_img").src = hungary.flag;
@@ -336,7 +359,10 @@
             document.getElementById("city2_r").innerHTML = hungary.sixth;
             setTip('헝가리')
             setCon('헝가리')
-        }else if (conR == "mexico"){
+        }else if (conR === "mexico"){
+            document.getElementById("root3").href = 'travel_north_america.html';
+            document.getElementById("root3").innerHTML = '북아메리카';
+            document.getElementById("root4").innerHTML = '멕시코';
             document.getElementById("conName").src = mexico.name;
             document.getElementById("img1").src = mexico.img1;
             document.getElementById("flag_img").src = mexico.flag;
@@ -351,7 +377,10 @@
             document.getElementById("city2_r").innerHTML = mexico.sixth;
             setTip('멕시코')
             setCon('멕시코')
-        }else if (conR == "usa"){
+        }else if (conR === "usa"){
+            document.getElementById("root3").href = 'travel_north_america.html';
+            document.getElementById("root3").innerHTML = '북아메리카';
+            document.getElementById("root4").innerHTML = '미국';
             document.getElementById("conName").src = usa.name;
             document.getElementById("img1").src = usa.img1;
             document.getElementById("flag_img").src = usa.flag;
@@ -366,7 +395,10 @@
             document.getElementById("city2_r").innerHTML = usa.sixth;
             setTip('미국')
             setCon('미국')
-        }else if (conR == "canada"){
+        }else if (conR === "canada"){
+            document.getElementById("root3").href = 'travel_north_america.html';
+            document.getElementById("root3").innerHTML = '북아메리카';
+            document.getElementById("root4").innerHTML = '캐나다';
             document.getElementById("conName").src = canada.name;
             document.getElementById("img1").src = canada.img1;
             document.getElementById("flag_img").src = canada.flag;
@@ -381,7 +413,10 @@
             document.getElementById("city2_r").innerHTML = canada.sixth;
             setTip('캐나다')
             setCon('캐나다')
-        }else if (conR == "cuba"){
+        }else if (conR === "cuba"){
+            document.getElementById("root3").href = 'travel_north_america.html';
+            document.getElementById("root3").innerHTML = '북아메리카';
+            document.getElementById("root4").innerHTML = '쿠바';
             document.getElementById("conName").src = cuba.name;
             document.getElementById("img1").src = cuba.img1;
             document.getElementById("flag_img").src = cuba.flag;
@@ -396,6 +431,96 @@
             document.getElementById("city2_r").innerHTML = cuba.sixth;
             setTip('쿠바')
             setCon('쿠바')
+        }else if (conR === "venezuela"){
+            document.getElementById("root3").href = 'travel_south_america.html';
+            document.getElementById("root3").innerHTML = '남아메리카';
+            document.getElementById("root4").innerHTML = '베네수엘라';
+            document.getElementById("conName").src = venezuela.name;
+            document.getElementById("img1").src = venezuela.img1;
+            document.getElementById("flag_img").src = venezuela.flag;
+            document.getElementById("basic_info").innerHTML = venezuela.first;
+            document.getElementById("info_r").innerHTML = venezuela.second;
+            document.getElementById("city1_l").innerHTML = venezuela.third;
+            document.getElementById("city1_r").innerHTML = venezuela.fourth;
+            document.getElementById("img2").src = venezuela.img2;
+            document.getElementById("img3").src =  venezuela.img3;
+            document.getElementById("img4").src = venezuela.img4;
+            document.getElementById("city2_l").innerHTML = venezuela.fifth;
+            document.getElementById("city2_r").innerHTML = venezuela.sixth;
+            setTip('베네수엘라')
+            setCon('베네수엘라')
+        }else if (conR === "bolivia"){
+            document.getElementById("root3").href = 'travel_south_america.html';
+            document.getElementById("root3").innerHTML = '남아메리카';
+            document.getElementById("root4").innerHTML = '볼리비아';
+            document.getElementById("conName").src = bolivia.name;
+            document.getElementById("img1").src = bolivia.img1;
+            document.getElementById("flag_img").src = bolivia.flag;
+            document.getElementById("basic_info").innerHTML = bolivia.first;
+            document.getElementById("info_r").innerHTML = bolivia.second;
+            document.getElementById("city1_l").innerHTML = bolivia.third;
+            document.getElementById("city1_r").innerHTML = bolivia.fourth;
+            document.getElementById("img2").src = bolivia.img2;
+            document.getElementById("img3").src =  bolivia.img3;
+            document.getElementById("img4").src = bolivia.img4;
+            document.getElementById("city2_l").innerHTML = bolivia.fifth;
+            document.getElementById("city2_r").innerHTML = bolivia.sixth;
+            setTip('볼리비아')
+            setCon('볼리비아')
+        }else if (conR === "brazil"){
+            document.getElementById("root3").href = 'travel_south_america.html';
+            document.getElementById("root3").innerHTML = '남아메리카';
+            document.getElementById("root4").innerHTML = '브라질';
+            document.getElementById("conName").src = brazil.name;
+            document.getElementById("img1").src = brazil.img1;
+            document.getElementById("flag_img").src = brazil.flag;
+            document.getElementById("basic_info").innerHTML = brazil.first;
+            document.getElementById("info_r").innerHTML = brazil.second;
+            document.getElementById("city1_l").innerHTML = brazil.third;
+            document.getElementById("city1_r").innerHTML = brazil.fourth;
+            document.getElementById("img2").src = brazil.img2;
+            document.getElementById("img3").src =  brazil.img3;
+            document.getElementById("img4").src = brazil.img4;
+            document.getElementById("city2_l").innerHTML = brazil.fifth;
+            document.getElementById("city2_r").innerHTML = brazil.sixth;
+            setTip('브라질')
+            setCon('브라질')
+        }else if (conR === "argentina"){
+            document.getElementById("root3").href = 'travel_south_america.html';
+            document.getElementById("root3").innerHTML = '남아메리카';
+            document.getElementById("root4").innerHTML = '아르헨티나';
+            document.getElementById("conName").src = argentina.name;
+            document.getElementById("img1").src = argentina.img1;
+            document.getElementById("flag_img").src = argentina.flag;
+            document.getElementById("basic_info").innerHTML = argentina.first;
+            document.getElementById("info_r").innerHTML = argentina.second;
+            document.getElementById("city1_l").innerHTML = argentina.third;
+            document.getElementById("city1_r").innerHTML = argentina.fourth;
+            document.getElementById("img2").src = argentina.img2;
+            document.getElementById("img3").src =  argentina.img3;
+            document.getElementById("img4").src = argentina.img4;
+            document.getElementById("city2_l").innerHTML = argentina.fifth;
+            document.getElementById("city2_r").innerHTML = argentina.sixth;
+            setTip('아르헨티나')
+            setCon('아르헨티나')
+        }else if (conR === "peru"){
+            document.getElementById("root3").href = 'travel_south_america.html';
+            document.getElementById("root3").innerHTML = '남아메리카';
+            document.getElementById("root4").innerHTML = '페루';
+            document.getElementById("conName").src = peru.name;
+            document.getElementById("img1").src = peru.img1;
+            document.getElementById("flag_img").src = peru.flag;
+            document.getElementById("basic_info").innerHTML = peru.first;
+            document.getElementById("info_r").innerHTML = peru.second;
+            document.getElementById("city1_l").innerHTML = peru.third;
+            document.getElementById("city1_r").innerHTML = peru.fourth;
+            document.getElementById("img2").src = peru.img2;
+            document.getElementById("img3").src =  peru.img3;
+            document.getElementById("img4").src = peru.img4;
+            document.getElementById("city2_l").innerHTML = peru.fifth;
+            document.getElementById("city2_r").innerHTML = peru.sixth;
+            setTip('페루')
+            setCon('페루')
         }
     }
 </script>
