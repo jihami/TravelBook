@@ -108,10 +108,11 @@ textarea:focus{
         width:1180px;
         height:200px;
         float:left;
-        left:26.85%;
+        left:50%;
         margin-top:165px;
         transform:translate(-50%);
         position:relative;
+        z-index:1
     }
 
         #title > p{
