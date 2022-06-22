@@ -399,7 +399,7 @@ button{
                 color:#333f32;
                 font-size:11pt;
                 position:relative;
-            }
+            }x
 
         #night_view{
             width:100%;
@@ -412,7 +412,7 @@ button{
                 width:1150px;
                 height:98px;
                 float:left;
-                margin-top:320px;
+                margin-top:250px;
                 margin-left:55%;
                 position:absolute;
                 background-color:#deceaa;
