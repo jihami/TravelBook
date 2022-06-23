@@ -571,10 +571,10 @@ textarea:focus{
     position:relative;
 }
 .user_id{
-    width:90%;
+    width:83%;
     height:20px;
-    margin-top:12px;
-    margin-left: 120px;
+    margin-top:20px;
+    margin-left: 130px;
     font-size:13pt;
     color:white;
     text-align:left;
@@ -583,16 +583,17 @@ textarea:focus{
 }
 
 .tip img{
-    position:absolute;
+    margin-top: 16px;
+    margin-left:16px;
     border-radius: 100%;
-    margin-top: 1%;
+    position:absolute;
 }
 
 .tip_subject{
-    width:90%;
+    width:83%;
     height:40px;
-    margin-top:55px;
-    margin-left: 120px;
+    margin-top:45px;
+    margin-left: 130px;
     color:white;
     font-size:15pt;
     text-align:left;
