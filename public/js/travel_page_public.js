@@ -37,11 +37,10 @@ function setCon(country){
                 // console.log(doc.data())
                 let themp = `<div class="record">
                     <img src="img/diary.png" id="${doc.id}" onclick="recordP(this.id,con)">
-                    <p>${doc.data().title} / ${doc.data().name}</p>
+                    <p>${doc.data().title}</p>
                     <hr style="height:1px; background-color:black;">
                     <p>${doc.data().startDay} ~ ${doc.data().endDay}</p>
                 </div>`
-                console.log(1)
                 $("#record_list").append(themp)
 
                 console.log(2)
