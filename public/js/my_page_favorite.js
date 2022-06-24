@@ -54,8 +54,8 @@ function set(){
                 // console.log(doc.id)
                 // console.log(doc.data())
                 let themp = `<div class="place">
-                    <a href="travel_${country}.html">
-                    <img src="img/${country}/flag.png" alt="img" style="width:172px; height:110px;">
+                   
+                    <img src="img/${country}/flag.png" alt="img" style="width:172px; height:110px;" id="${country}" onclick="goPage(this.id)">
                     <hr>
                     <p class="place_title">${countryk}</p></a>
                     <button type="button" id="del" name="${doc.id}" onclick="del(this.name)">삭제</button>
@@ -65,6 +65,22 @@ function set(){
         }
     })
 }
+function goPage(con){
+    switch (con) {
+        case "greece" : case "denmark": case "spain": case "iceland": case "unitedKingdom": case "italy": case "france" :
+        case "hungary" : case "mexico": case "usa" : case "canada": case "cuba": case "venezuela": case "bolivia": case "brazil":
+        case "argentina": case "peru":
+            // console.log(con)
+            goTemp(con)
+            break;
+        case "conR" : case "taiwan": case "korea": case "laos": case "singapore": case "japan": case "thailand" :
+        case "newZealand" : case "australia": case "madagascar" : case "kenya":
+            // console.log(con)
+            goTemp2(con)
+            break;
+
+    }
+}
 async function del(id){
     console.log(id)
     if(confirm("정말 삭제하시겠습니까?")==true){
@@ -73,4 +89,12 @@ async function del(id){
         location.reload()
     }
 
+}
+function goTemp(country){
+    sessionStorage.setItem("conR", country);
+    location.href = "travelTemp.html";
+}
+function goTemp2(country){
+    sessionStorage.setItem("conR", country);
+    location.href = "travelTemp2.html";
 }
