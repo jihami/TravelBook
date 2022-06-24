@@ -43,9 +43,9 @@ function set(){
     db.collection(nickName+"찜행지").get().then((data) => {
         // console.log(data.size)
         // console.log(data)
-        if (data.size < 1) {
-            document.getElementById("list").innerHTML = "<div id=\"none\" style=\"font-size:20px; text-align: center\">기록이 없습니다.</div>";
-        }else {
+        if (data.size >= 1) {
+            $('#title').hide()
+
             data.forEach((doc) => {
                 country = doc.data().country
                 countryk = doc.data().countryk
@@ -67,7 +67,7 @@ function set(){
 }
 function goPage(con){
     switch (con) {
-        case "greece" : case "denmark": case "spain": case "iceland": case "unitedKingdom": case "italy": case "france" :
+        case "greece" : case "denmark": case "spain": case "iceland": case "uk": case "italy": case "france" :
         case "hungary" : case "mexico": case "usa" : case "canada": case "cuba": case "venezuela": case "bolivia": case "brazil":
         case "argentina": case "peru":
             // console.log(con)

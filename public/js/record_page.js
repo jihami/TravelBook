@@ -29,10 +29,8 @@ nickName = sessionStorage.getItem("nickName")
 db.collection(nickName).get().then((data) => {
     // console.log(data.size)
     // console.log(data)
-    if (data.size < 1) {
-        // location.href = "login_info.html";
-        document.getElementById('list').innerHTML = "기록이 없습니다."
-    }else {
+    if (data.size >=1){
+        $('#title').hide()
         data.forEach((doc) => {
             id = doc.id
             // console.log(id)
