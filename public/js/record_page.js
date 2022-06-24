@@ -39,7 +39,7 @@ db.collection(nickName).get().then((data) => {
             // console.log(doc.data())
             let themp = `<a><div class="place" id="${doc.id}" onclick="recordP(this.id)" >
                 <img src="img/diary.png">
-                <p class="place_title" id="con">${doc.data().title} / ${doc.data().country}</p>
+                <p class="place_title" id="con">${doc.data().title}</p>
                 <hr>
                 <p class="place_count">${doc.data().startDay} ~ ${doc.data().endDay}</p>
                 </div></a>`
